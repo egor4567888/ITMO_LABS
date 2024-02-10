@@ -1,0 +1,3 @@
+[submodule "PROG_LABS/PROG_LAB2"]
+	path = PROG_LABS/PROG_LAB2
+	url = git@github.com:egor4567888/ITMO_LABS.git
