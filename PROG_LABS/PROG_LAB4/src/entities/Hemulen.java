@@ -1,14 +1,16 @@
 package entities;
-import common.Coloures;
+import common.Devotions;
+import common.Genders;
 import common.Phrases;
+import common.Races;
 import things.Flower;
 
 import java.util.ArrayList;
 
 public class Hemulen extends Entity{
     final private Phrases phrase;
-    public Hemulen(String name, Phrases phrase){
-        super(name);
+    public Hemulen(String name, Phrases phrase, int age, int height, int weight, Genders gender){
+        super(name, Devotions.FLOWERS, age, height, weight, gender);
         this.phrase = phrase;
     }
     private ArrayList<Flower> herbarium = new ArrayList<>();

@@ -1,4 +1,6 @@
+import com.thoughtworks.xstream.XStream;
 import common.*;
+import entities.Entity;
 import entities.Hattifattener;
 import entities.Hemulen;
 import ritualItems.Barometer;
@@ -7,41 +9,40 @@ import ritualItems.NamiraAltar;
 import ritualItems.ResurrectionAltar;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws NoSuchFieldException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        String filePath = "/home/egor/IdeaProjects/PROG_LAB3.1/src/HattifattenerNames";
-
-        Hattifattener[] hattifatteners = new Hattifattener[300];
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        String filePath = "/home/egor/ITMO_LABS/PROG_LABS/PROG_LAB4/src/input.txt";
+        XStream xstream = new XStream();
+        xstream.alias("Entity", Entity.class);
+        xstream.alias("devotion", Devotions.class);
+        xstream.alias("gender", Genders.class);
+        File xmlFile = new File(filePath);
+        //LinkedHashSet<Entity> hattifatteners = (LinkedHashSet<Entity>) xstream.fromXML(xmlFile);
+        /*try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
-            int index = 0;
-
-            while ((line = reader.readLine()) != null && index < 75) {
-                hattifatteners[index] = new Hattifattener(line,Devotions.BAROMETER);
-                index++;
-            }
-            while ((line = reader.readLine()) != null && index < 150) {
-                hattifatteners[index] = new Hattifattener(line,Devotions.BOETHIAH);
-                index++;
-            }
-            while ((line = reader.readLine()) != null && index < 225) {
-                hattifatteners[index] = new Hattifattener(line,Devotions.NAMIRA);
-                index++;
-            }
-            while ((line = reader.readLine()) != null && index < 300) {
-                hattifatteners[index] = new Hattifattener(line,Devotions.LIGHT);
-                index++;
+            while ((line = reader.readLine()) != null) {
+                String[] lines = new String[5];
+                for (int i = 0; i < 5; i++)
+                {
+                    lines[i] = reader.readLine();
+                }
+                hattifatteners.add(new Hattifattener(line,Devotions.valueOf(lines[0]), Integer.parseInt(lines[1]), Integer.parseInt(lines[2]), Integer.parseInt(lines[3]), Genders.valueOf(lines[4])));
             }
         } catch (IOException e) {
             e.printStackTrace();
-       }
-        System.out.println(hattifatteners.getClass());
+       }*/
+
         class Starter{
             String plName;
             float plLatitude;
@@ -129,11 +130,16 @@ public class Main {
         Gathering gathering4 = new Gathering(hattifatteners,resurrectionAltar, place);
         gathering4.startRitual();*/
 
-        Hemulen hemulen = new Hemulen("Хемуль", Phrases.NUMBER_TWO_HUNDREED_NINTEEN_IN_MY_HERBARIUM);
+        Hemulen hemulen = new Hemulen("Хемуль", Phrases.NUMBER_TWO_HUNDREED_NINTEEN_IN_MY_HERBARIUM, 25, 180, 120, Genders.HELICOPTER);
         hemulen.collectFlowers(7);
         hemulen.countPetals();
-        Method method = hattifatteners[0].getClass().getMethod("Prnt");
-        method.setAccessible(true);
-        method.invoke(null);
+       // Method method = hattifatteners[0].getClass().getMethod("Prnt");
+       // method.setAccessible(true);
+        //method.invoke(null);
+        ArrayList<Entity> list = new ArrayList<>(hattifatteners);
+        Collections.sort(list);
+        for (int i = 0; i < list.size(); i++){
+            System.out.println(list.get(i).getScore() + " " + list.get(i).getAge());
+        }
     }
 }

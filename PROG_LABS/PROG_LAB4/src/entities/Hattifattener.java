@@ -1,15 +1,16 @@
 package entities;
 
 import common.Devotions;
+import common.Genders;
+import common.Races;
 import common.RitualItems;
 import interfaces.EatHat;
 import interfaces.KillHat;
 
 public class Hattifattener extends Entity implements KillHat, EatHat {
-    private final Devotions devotion;
-    public Hattifattener(String name, Devotions devotion){
-        super(name);
-        this.devotion = devotion;
+
+    public Hattifattener(String name, Devotions devotion, int age, int height, int weight, Genders gender){
+        super(name,devotion, age, height, weight, gender);
     }
     public void kneelHat(Hattifattener hattifattener){
         System.out.println(this + " поклонился " + hattifattener);
@@ -23,7 +24,7 @@ public class Hattifattener extends Entity implements KillHat, EatHat {
     public void scornfulGlance(String ritualItem){
         System.out.println(this + " презрительно посмотрел на " + ritualItem);
     }
-    public static void Prnt(){
+   /*public static void Prnt(){
         System.out.println(1);
     }
     /*public void barometersRitual(Hattifattener hattifattener, RitualItems ritualItem){
@@ -70,9 +71,6 @@ public class Hattifattener extends Entity implements KillHat, EatHat {
 
 
 
-    public Devotions getDevotion(){
-        return devotion;
-    }
     public boolean equals(Hattifattener hattifattener) {
         return this.hashCode() == hattifattener.hashCode();
     }

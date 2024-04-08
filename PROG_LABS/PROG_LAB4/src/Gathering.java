@@ -1,14 +1,16 @@
+import entities.Entity;
 import entities.Hattifattener;
 import common.Place;
 import ritualItems.*;
 
+import java.util.LinkedHashSet;
 import java.util.Objects;
 
 public class Gathering {
-    private Hattifattener[] hattifatteners;
+    private LinkedHashSet<Entity> hattifatteners;
     private RitualItem ritualItem;
     private Place place;
-    Gathering(Hattifattener[] hattifatteners, RitualItem ritual_item, Place place){
+    Gathering(LinkedHashSet<Entity> hattifatteners, RitualItem ritual_item, Place place){
         this.hattifatteners = hattifatteners;
         this.ritualItem = ritual_item;
         this.place = place;

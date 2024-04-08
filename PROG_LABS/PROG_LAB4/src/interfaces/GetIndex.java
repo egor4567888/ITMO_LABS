@@ -2,14 +2,14 @@ package interfaces;
 
 import common.Conditions;
 import common.Devotions;
-import entities.Hattifattener;
-import exceptions.Ex;
+import entities.Entity;
 
 public interface GetIndex {
-    default int[] getIndex(Hattifattener[] hattifatteners, Devotions devotion){
+    default int[] getIndex(Entity[] hattifatteners, Devotions devotion){
         boolean someoneAlive = false;
+        int n = hattifatteners.length;
         int [] ind = new int[2];
-        for (int i = 0; i < 300; ++i)
+        for (int i = 0; i < n; ++i)
         {
             if (hattifatteners[i].getDevotion() == devotion && (hattifatteners[i].getCondition() == Conditions.ALIVE || hattifatteners[i].getCondition() == Conditions.UNDEAD))
                 someoneAlive = true;

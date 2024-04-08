@@ -19,4 +19,5 @@ public interface KillHat {
         }
     }
     public Conditions getCondition();
+
 }

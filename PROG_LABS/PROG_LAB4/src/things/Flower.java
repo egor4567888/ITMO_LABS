@@ -29,6 +29,7 @@ public class Flower {
     public int getNumOfPetals(){
         return numOfPetals;
     }
+    public Rarities getRarity(){return rarity;}
     @Override
     public String toString() {
         return this.rarity + " " + this.colour + " цветок";

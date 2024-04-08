@@ -2,17 +2,22 @@ package ritualItems;
 
 import common.Devotions;
 import common.Place;
+import common.RitualItems;
+import entities.Entity;
 import entities.Hattifattener;
 import exceptions.noCultistException;
 import interfaces.GetIndex;
 
+import java.util.LinkedHashSet;
+
 public class Barometer extends RitualItem implements GetIndex {
 
     public Barometer(String name){
-        super(name);
+        super(name, RitualItems.BAROMETER);
     }
     @Override
-    public void ritual(Hattifattener[] hattifatteners, Place place){
+    public void ritual(LinkedHashSet<Entity> listHattifatteners, Place place){
+        Hattifattener[] hattifatteners = listHattifatteners.toArray(new Hattifattener[0]);
         System.out.println("В " + place + " начался ритуал барометра");
         int ind[] = this.getIndex(hattifatteners, Devotions.BAROMETER);
         int hat1 = ind[0];

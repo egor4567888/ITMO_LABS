@@ -1,16 +1,21 @@
 package ritualItems;
 
 import common.Place;
+import common.RitualItems;
+import entities.Entity;
 import entities.Hattifattener;
 
+import java.util.LinkedHashSet;
 import java.util.Objects;
 
 public abstract class RitualItem {
     private final String name;
-    protected RitualItem(String name){
+    private final RitualItems type;
+    protected RitualItem(String name, RitualItems type){
         this.name = name;
+        this.type = type;
     }
-    public abstract void ritual(Hattifattener[] hattifatteners, Place place);
+    public abstract void ritual(LinkedHashSet<Entity> hattifatteners, Place place);
 
     public String getName() {
         return name;
@@ -32,5 +37,8 @@ public abstract class RitualItem {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    public RitualItems getType() { return type;
     }
 }
