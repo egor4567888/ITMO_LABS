@@ -47,6 +47,7 @@ public class Applicaton {
                 invoker.invoke(input);
 
             }
+            //test
             System.exit(0);
 
         }
