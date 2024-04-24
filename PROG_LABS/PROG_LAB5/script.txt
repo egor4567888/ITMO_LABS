@@ -1,4 +1,8 @@
-info as
-show
-
+add
+1
+asf
+1
+1
+1
+1
 info

@@ -9,11 +9,9 @@ public class Hemulen extends Entity{
     public Hemulen(String name, Phrases phrase, int age, int height, int weight, Genders gender, Races race){
         super(name, Devotions.FLOWERS, age, height, weight, gender, race);
         this.phrase = phrase;
-        setCondition(Conditions.ALIVE);
     }
     public Hemulen(String name, int age, int height, int weight, Genders gender, Races race){
         super(name, Devotions.FLOWERS, age, height, weight, gender, race);
-        setCondition(Conditions.ALIVE);
     }
     private ArrayList<Flower> herbarium = new ArrayList<>();
     public void collectFlower()

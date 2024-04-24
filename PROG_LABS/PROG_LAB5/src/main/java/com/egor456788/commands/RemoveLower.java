@@ -4,14 +4,23 @@ import com.egor456788.menegers.CollectionMeneger;
 
 import java.util.Collections;
 
+/**
+ * Команда удаляющая элементы меньшие элемента с введённым индексом
+ */
 public class RemoveLower extends Command{
 
     final CollectionMeneger collectionMeneger;
     public RemoveLower(CollectionMeneger collectionMeneger) {
-        super("removeLower", "Удаляет все элементы меньшие элемента с введёным индексом");
+        super("remove_lower", "Удаляет все элементы меньшие элемента с введённым индексом");
         this.collectionMeneger = collectionMeneger;
     }
 
+    /**
+     * Удаляет элементы меньшие элемента с введённым индексом
+     * @param args
+     * @return
+     * @param <T>
+     */
     @Override
     public <T> T execute(String args) {
         Collections.sort(collectionMeneger.getCollection());

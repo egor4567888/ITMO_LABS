@@ -4,13 +4,22 @@ import com.egor456788.menegers.CollectionMeneger;
 
 import java.util.Collections;
 
+/**
+ * Команда для вывода элементов коллекции отсортировав по возрасту
+ */
 public class FilterByAge extends Command{
     final CollectionMeneger collectionMeneger;
     public FilterByAge(CollectionMeneger collectionMeneger) {
-        super("filterByAge", "выводит элементы с данным возрастом");
+        super("filter_by_age", "выводит элементы с данным возрастом");
         this.collectionMeneger = collectionMeneger;
     }
 
+    /**
+     * Выводит отсортированные по возрасту элементы коллекции
+     * @param args
+     * @return
+     * @param <T>
+     */
     @Override
     public <T> T execute(String args) {
         String output = "";

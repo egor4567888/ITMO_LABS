@@ -10,6 +10,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Менеджер коллекции
+ */
+
 public class CollectionMeneger {
     private List<Entity> collection;
     final private LocalDateTime creationDate;

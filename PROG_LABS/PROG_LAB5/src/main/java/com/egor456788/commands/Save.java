@@ -11,6 +11,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Команда сохраняющая коллекцию в введённый файл в формате xml
+ */
 public class Save extends Command{
     final CollectionMeneger collectionMeneger;
     public Save(CollectionMeneger collectionMeneger) {
@@ -18,8 +21,15 @@ public class Save extends Command{
         this.collectionMeneger = collectionMeneger;
     }
 
+    /**
+     * Команда сохраняющая коллекцию в введённый файл в формате xml
+     * @param args
+     * @return
+     * @param <T>
+     */
     @Override
     public <T> T execute(String args) {
+
         XStream xstream = new XStream(new DomDriver());
 
         xstream.alias("Hemulen", Hemulen.class);

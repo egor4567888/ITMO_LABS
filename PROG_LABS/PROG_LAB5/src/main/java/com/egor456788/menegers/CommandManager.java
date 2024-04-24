@@ -7,7 +7,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Менеджер ккоманд
+ */
 public class CommandManager {
     private final Map<String, Command> commands = new HashMap<>();
     private final List<String> commandHistory = new ArrayList<>();

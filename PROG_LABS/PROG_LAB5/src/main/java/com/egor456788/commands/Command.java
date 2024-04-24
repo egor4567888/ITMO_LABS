@@ -2,6 +2,10 @@ package com.egor456788.commands;
 import com.egor456788.interfaces.Describable;
 
 import java.util.Objects;
+
+/**
+ * Абстрактый класс предок для команд
+ */
 public abstract class Command implements Describable {
     private final String name;
     private final String description;

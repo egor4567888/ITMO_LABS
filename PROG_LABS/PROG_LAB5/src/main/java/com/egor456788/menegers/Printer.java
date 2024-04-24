@@ -1,5 +1,8 @@
 package com.egor456788.menegers;
 
+/**
+ * Класс для вывода
+ */
 public class Printer {
     public void print(Object o){
         System.out.print(o);

@@ -2,6 +2,9 @@ package com.egor456788.commands;
 
 import com.egor456788.menegers.CommandManager;
 
+/**
+ * Команда выводящая историю исполненных комад
+ */
 public class History extends Command{
     final CommandManager commandManager;
     public History(CommandManager commandManager) {
@@ -9,10 +12,17 @@ public class History extends Command{
         this.commandManager = commandManager;
     }
 
+    /**
+     * Выводит историю исполненных команд
+     * @param args
+     * @return
+     * @param <T>
+     */
     @Override
     public <T> T execute(String args) {
         if (args != null)
-            return (T)(getName() + " " + args + ": ОШИБКА избыточное число аргументов");
+            return (T)(getName() + ": ОШИБКА избыточное число аргументов");
+        else args = "";
         String output = "";
         for (int i = commandManager.getCommandHistory().size() - 1; i > commandManager.getCommandHistory().size() - 16; i--){
             try {

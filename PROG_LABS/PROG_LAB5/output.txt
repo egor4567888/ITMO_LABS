@@ -1,0 +1,2426 @@
+<list>
+  <com.egor456788.entities.Entity>
+    <name>Аркадий Камнеков</name>
+    <devotion>BOETHIAH</devotion>
+    <age>79</age>
+    <height>187</height>
+    <weight>62</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лиана Теневое Крыло</name>
+    <devotion>BOETHIAH</devotion>
+    <age>64</age>
+    <height>162</height>
+    <weight>80</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Торин Грозовое Сердце</name>
+    <devotion>NAMIRA</devotion>
+    <age>69</age>
+    <height>176</height>
+    <weight>62</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Элара Лунный Шепот</name>
+    <devotion>LIGHT</devotion>
+    <age>38</age>
+    <height>198</height>
+    <weight>69</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Вариан Железная Душа</name>
+    <devotion>BOETHIAH</devotion>
+    <age>66</age>
+    <height>151</height>
+    <weight>52</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Исольда Морозный Склон</name>
+    <devotion>BOETHIAH</devotion>
+    <age>28</age>
+    <height>187</height>
+    <weight>97</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Гарет Страж Бурь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>19</age>
+    <height>163</height>
+    <weight>56</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Серафина Скоростной Клинок</name>
+    <devotion>BOETHIAH</devotion>
+    <age>23</age>
+    <height>187</height>
+    <weight>82</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Келдорн Огненное Сердце</name>
+    <devotion>BAROMETER</devotion>
+    <age>32</age>
+    <height>183</height>
+    <weight>52</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Элисия Сумеречное Падение</name>
+    <devotion>LIGHT</devotion>
+    <age>25</age>
+    <height>183</height>
+    <weight>90</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Каэлум Грозовой Взгляд</name>
+    <devotion>NAMIRA</devotion>
+    <age>28</age>
+    <height>155</height>
+    <weight>91</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валерия Пламенный Зов</name>
+    <devotion>BOETHIAH</devotion>
+    <age>63</age>
+    <height>168</height>
+    <weight>52</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Харальд Быстрый Удар</name>
+    <devotion>BAROMETER</devotion>
+    <age>52</age>
+    <height>157</height>
+    <weight>72</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Астрид Морозное Цветение</name>
+    <devotion>NAMIRA</devotion>
+    <age>79</age>
+    <height>151</height>
+    <weight>87</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Гаррик Пылающий Клинок</name>
+    <devotion>BAROMETER</devotion>
+    <age>28</age>
+    <height>176</height>
+    <weight>95</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Селена Теневая Тень</name>
+    <devotion>BOETHIAH</devotion>
+    <age>43</age>
+    <height>196</height>
+    <weight>51</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Рагнар Грозовой Молот</name>
+    <devotion>BAROMETER</devotion>
+    <age>41</age>
+    <height>188</height>
+    <weight>89</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ария Зов Рассвета</name>
+    <devotion>BAROMETER</devotion>
+    <age>42</age>
+    <height>193</height>
+    <weight>95</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Дравен Железная Крепость</name>
+    <devotion>BOETHIAH</devotion>
+    <age>37</age>
+    <height>198</height>
+    <weight>92</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Фрея Огненное Пламя</name>
+    <devotion>BAROMETER</devotion>
+    <age>48</age>
+    <height>188</height>
+    <weight>73</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Торн Пылающий Кузнец</name>
+    <devotion>NAMIRA</devotion>
+    <age>39</age>
+    <height>194</height>
+    <weight>94</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Силас Теневой Чародей</name>
+    <devotion>LIGHT</devotion>
+    <age>55</age>
+    <height>175</height>
+    <weight>67</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лорна Ледяное Сердце</name>
+    <devotion>LIGHT</devotion>
+    <age>19</age>
+    <height>168</height>
+    <weight>61</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Бринья Морозное Шепот</name>
+    <devotion>BAROMETER</devotion>
+    <age>38</age>
+    <height>159</height>
+    <weight>51</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Киран Пламенная Борода</name>
+    <devotion>BOETHIAH</devotion>
+    <age>30</age>
+    <height>171</height>
+    <weight>51</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Аларик Лунная Тень</name>
+    <devotion>BAROMETER</devotion>
+    <age>27</age>
+    <height>171</height>
+    <weight>82</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Элоуэн Песнь Бури</name>
+    <devotion>BAROMETER</devotion>
+    <age>67</age>
+    <height>189</height>
+    <weight>89</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ульрик Ледяной Клинок</name>
+    <devotion>LIGHT</devotion>
+    <age>30</age>
+    <height>151</height>
+    <weight>89</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Морвен Железная Душа</name>
+    <devotion>BOETHIAH</devotion>
+    <age>47</age>
+    <height>164</height>
+    <weight>73</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сорен Зов Бури</name>
+    <devotion>BAROMETER</devotion>
+    <age>60</age>
+    <height>192</height>
+    <weight>73</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Изабо Эмбертхорн</name>
+    <devotion>BOETHIAH</devotion>
+    <age>57</age>
+    <height>153</height>
+    <weight>72</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лейф Грозовой Удар</name>
+    <devotion>LIGHT</devotion>
+    <age>70</age>
+    <height>189</height>
+    <weight>70</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Эира Ледяной Клык</name>
+    <devotion>LIGHT</devotion>
+    <age>69</age>
+    <height>150</height>
+    <weight>87</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Рован Пламенное Сердце</name>
+    <devotion>BAROMETER</devotion>
+    <age>55</age>
+    <height>179</height>
+    <weight>94</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лилит Теневое Пламя</name>
+    <devotion>BOETHIAH</devotion>
+    <age>36</age>
+    <height>177</height>
+    <weight>90</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Таддеус Камнелом</name>
+    <devotion>LIGHT</devotion>
+    <age>61</age>
+    <height>171</height>
+    <weight>61</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Галадриэль Звездное Мерцание</name>
+    <devotion>BAROMETER</devotion>
+    <age>61</age>
+    <height>187</height>
+    <weight>97</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Бальтазар Клинок Бури</name>
+    <devotion>BOETHIAH</devotion>
+    <age>46</age>
+    <height>193</height>
+    <weight>98</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Элара Ледяной Цветок</name>
+    <devotion>LIGHT</devotion>
+    <age>45</age>
+    <height>163</height>
+    <weight>50</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Седрик Пылающий Кузнец</name>
+    <devotion>LIGHT</devotion>
+    <age>65</age>
+    <height>154</height>
+    <weight>80</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Серафина Морозное Шепот</name>
+    <devotion>BAROMETER</devotion>
+    <age>63</age>
+    <height>151</height>
+    <weight>73</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Арик Быстрый Клинок</name>
+    <devotion>LIGHT</devotion>
+    <age>80</age>
+    <height>182</height>
+    <weight>57</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валькирия Взгляд Грозы</name>
+    <devotion>BAROMETER</devotion>
+    <age>46</age>
+    <height>193</height>
+    <weight>57</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Эйрик Железная Рука</name>
+    <devotion>BOETHIAH</devotion>
+    <age>57</age>
+    <height>163</height>
+    <weight>90</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лира Теневое Пламя</name>
+    <devotion>BOETHIAH</devotion>
+    <age>30</age>
+    <height>173</height>
+    <weight>63</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Каэл Огненное Сердце</name>
+    <devotion>BOETHIAH</devotion>
+    <age>39</age>
+    <height>191</height>
+    <weight>87</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ильяна Морозное Плетение</name>
+    <devotion>BAROMETER</devotion>
+    <age>58</age>
+    <height>191</height>
+    <weight>50</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Торн Страж Бурь</name>
+    <devotion>NAMIRA</devotion>
+    <age>29</age>
+    <height>179</height>
+    <weight>73</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Исольда Морозное Цветение</name>
+    <devotion>LIGHT</devotion>
+    <age>47</age>
+    <height>184</height>
+    <weight>84</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Вариан Грозовой Ветер</name>
+    <devotion>BAROMETER</devotion>
+    <age>38</age>
+    <height>194</height>
+    <weight>87</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Всеволод Лесной Тень</name>
+    <devotion>BOETHIAH</devotion>
+    <age>20</age>
+    <height>166</height>
+    <weight>59</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Милена Солнечный Луч</name>
+    <devotion>BAROMETER</devotion>
+    <age>60</age>
+    <height>181</height>
+    <weight>99</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ратибор Гордый Орел</name>
+    <devotion>BAROMETER</devotion>
+    <age>49</age>
+    <height>191</height>
+    <weight>50</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Зинаида Весенний Ветер</name>
+    <devotion>BOETHIAH</devotion>
+    <age>80</age>
+    <height>175</height>
+    <weight>69</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валерий Янтарный Закат</name>
+    <devotion>LIGHT</devotion>
+    <age>59</age>
+    <height>200</height>
+    <weight>97</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Галина Звездная Роса</name>
+    <devotion>NAMIRA</devotion>
+    <age>59</age>
+    <height>181</height>
+    <weight>63</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артемий Медвежья Сила</name>
+    <devotion>LIGHT</devotion>
+    <age>42</age>
+    <height>162</height>
+    <weight>59</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Татьяна Золотая Листва</name>
+    <devotion>BOETHIAH</devotion>
+    <age>53</age>
+    <height>151</height>
+    <weight>66</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Владислав Лунный Свет</name>
+    <devotion>LIGHT</devotion>
+    <age>69</age>
+    <height>175</height>
+    <weight>53</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ростислав Жаркий Камень</name>
+    <devotion>LIGHT</devotion>
+    <age>67</age>
+    <height>153</height>
+    <weight>53</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Наталья Радуга Надежды</name>
+    <devotion>BOETHIAH</devotion>
+    <age>65</age>
+    <height>192</height>
+    <weight>66</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Иван Соколиное Перо</name>
+    <devotion>NAMIRA</devotion>
+    <age>45</age>
+    <height>188</height>
+    <weight>70</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лидия Вечерний Луг</name>
+    <devotion>BAROMETER</devotion>
+    <age>53</age>
+    <height>188</height>
+    <weight>81</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валентин Вечерняя Звезда</name>
+    <devotion>BOETHIAH</devotion>
+    <age>59</age>
+    <height>191</height>
+    <weight>60</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Оксана Лебединое Озеро</name>
+    <devotion>BAROMETER</devotion>
+    <age>61</age>
+    <height>157</height>
+    <weight>81</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Богдан Грозовая Сила</name>
+    <devotion>NAMIRA</devotion>
+    <age>76</age>
+    <height>171</height>
+    <weight>69</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лариса Златогривый Конь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>63</age>
+    <height>184</height>
+    <weight>96</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валентина Вечерний Свет</name>
+    <devotion>BAROMETER</devotion>
+    <age>33</age>
+    <height>187</height>
+    <weight>71</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Виталий Орлиный Взгляд</name>
+    <devotion>NAMIRA</devotion>
+    <age>38</age>
+    <height>156</height>
+    <weight>76</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Анастасия Звездный Путь</name>
+    <devotion>LIGHT</devotion>
+    <age>69</age>
+    <height>176</height>
+    <weight>74</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Михаил Серебряный Дождь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>57</age>
+    <height>197</height>
+    <weight>58</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Эльвира Лесной Ручей</name>
+    <devotion>NAMIRA</devotion>
+    <age>47</age>
+    <height>170</height>
+    <weight>79</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Родион Ветреный Лес</name>
+    <devotion>NAMIRA</devotion>
+    <age>51</age>
+    <height>177</height>
+    <weight>87</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Алина Янтарный Сумрак</name>
+    <devotion>LIGHT</devotion>
+    <age>76</age>
+    <height>153</height>
+    <weight>65</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Глеб Золотой Рассвет</name>
+    <devotion>BAROMETER</devotion>
+    <age>50</age>
+    <height>150</height>
+    <weight>50</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Всеслав Грозовая Туча</name>
+    <devotion>BAROMETER</devotion>
+    <age>54</age>
+    <height>193</height>
+    <weight>56</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лилия Радужное Небо</name>
+    <devotion>BAROMETER</devotion>
+    <age>55</age>
+    <height>162</height>
+    <weight>86</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Степан Жаркий Ковыль</name>
+    <devotion>NAMIRA</devotion>
+    <age>20</age>
+    <height>182</height>
+    <weight>97</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валерия Лесная Ведьма</name>
+    <devotion>LIGHT</devotion>
+    <age>60</age>
+    <height>157</height>
+    <weight>72</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Игнат Златой Песок</name>
+    <devotion>NAMIRA</devotion>
+    <age>30</age>
+    <height>185</height>
+    <weight>95</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лидия Серебряный Звон</name>
+    <devotion>LIGHT</devotion>
+    <age>73</age>
+    <height>155</height>
+    <weight>71</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Добрыня Соколиный Гнездо</name>
+    <devotion>BOETHIAH</devotion>
+    <age>50</age>
+    <height>190</height>
+    <weight>81</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Альберт Золотистый Рассвет</name>
+    <devotion>BOETHIAH</devotion>
+    <age>23</age>
+    <height>155</height>
+    <weight>79</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Людмила Ветреный Шепот</name>
+    <devotion>BOETHIAH</devotion>
+    <age>66</age>
+    <height>166</height>
+    <weight>87</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валерий Медвежья Сила</name>
+    <devotion>BOETHIAH</devotion>
+    <age>25</age>
+    <height>194</height>
+    <weight>74</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Анна Солнечный Свет</name>
+    <devotion>NAMIRA</devotion>
+    <age>23</age>
+    <height>150</height>
+    <weight>63</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артур Вечерний Звездопад</name>
+    <devotion>BAROMETER</devotion>
+    <age>50</age>
+    <height>174</height>
+    <weight>72</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лариса Златогривая Пантера</name>
+    <devotion>NAMIRA</devotion>
+    <age>61</age>
+    <height>164</height>
+    <weight>80</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Герман Лесной Грозовик</name>
+    <devotion>NAMIRA</devotion>
+    <age>69</age>
+    <height>186</height>
+    <weight>51</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Елена Золотая Тропа</name>
+    <devotion>BAROMETER</devotion>
+    <age>76</age>
+    <height>173</height>
+    <weight>94</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Станислав Грозовая Тень</name>
+    <devotion>BOETHIAH</devotion>
+    <age>72</age>
+    <height>163</height>
+    <weight>85</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Руслан Ветреный Век</name>
+    <devotion>LIGHT</devotion>
+    <age>69</age>
+    <height>150</height>
+    <weight>67</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Надежда Серебряное Перо</name>
+    <devotion>BOETHIAH</devotion>
+    <age>54</age>
+    <height>166</height>
+    <weight>91</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Владлен Вечерний Огонь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>26</age>
+    <height>185</height>
+    <weight>83</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мария Жаркий Луч</name>
+    <devotion>LIGHT</devotion>
+    <age>61</age>
+    <height>171</height>
+    <weight>82</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Всеволод Златистый Лес</name>
+    <devotion>NAMIRA</devotion>
+    <age>49</age>
+    <height>182</height>
+    <weight>60</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ирина Янтарная Луна</name>
+    <devotion>BOETHIAH</devotion>
+    <age>38</age>
+    <height>164</height>
+    <weight>92</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ростислав Лесной Камень</name>
+    <devotion>NAMIRA</devotion>
+    <age>19</age>
+    <height>196</height>
+    <weight>95</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Нина Солнечное Зеркало</name>
+    <devotion>BOETHIAH</devotion>
+    <age>28</age>
+    <height>168</height>
+    <weight>57</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Борис Златогривый Орел</name>
+    <devotion>BAROMETER</devotion>
+    <age>33</age>
+    <height>167</height>
+    <weight>78</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Таисия Ветреная Сирень</name>
+    <devotion>LIGHT</devotion>
+    <age>72</age>
+    <height>168</height>
+    <weight>72</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Глеб Вечерний Сумрак</name>
+    <devotion>BAROMETER</devotion>
+    <age>22</age>
+    <height>176</height>
+    <weight>62</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Екатерина Лунная Сказка</name>
+    <devotion>BAROMETER</devotion>
+    <age>72</age>
+    <height>166</height>
+    <weight>75</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артем Золотистый Луг</name>
+    <devotion>BAROMETER</devotion>
+    <age>42</age>
+    <height>160</height>
+    <weight>84</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лилия Звездный Луч</name>
+    <devotion>NAMIRA</devotion>
+    <age>49</age>
+    <height>180</height>
+    <weight>79</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Всеслав Лесная Радуга</name>
+    <devotion>LIGHT</devotion>
+    <age>60</age>
+    <height>173</height>
+    <weight>66</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Милана Златогривый Конь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>31</age>
+    <height>182</height>
+    <weight>69</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Григорий Гордый Воин</name>
+    <devotion>BOETHIAH</devotion>
+    <age>51</age>
+    <height>194</height>
+    <weight>100</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Раиса Вечерний Сумрак</name>
+    <devotion>BAROMETER</devotion>
+    <age>22</age>
+    <height>170</height>
+    <weight>53</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валентин Ветреный Скиталец</name>
+    <devotion>LIGHT</devotion>
+    <age>18</age>
+    <height>152</height>
+    <weight>82</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Любовь Солнечная Поляна</name>
+    <devotion>BOETHIAH</devotion>
+    <age>75</age>
+    <height>158</height>
+    <weight>52</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Максим Янтарный Вихрь</name>
+    <devotion>BAROMETER</devotion>
+    <age>52</age>
+    <height>195</height>
+    <weight>97</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ольга Златая Звезда</name>
+    <devotion>NAMIRA</devotion>
+    <age>24</age>
+    <height>162</height>
+    <weight>66</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Игорь Соколиный Гребень</name>
+    <devotion>LIGHT</devotion>
+    <age>41</age>
+    <height>192</height>
+    <weight>78</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Таисия Лесное Сердце</name>
+    <devotion>BOETHIAH</devotion>
+    <age>79</age>
+    <height>187</height>
+    <weight>52</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Никита Гордый Витязь</name>
+    <devotion>BAROMETER</devotion>
+    <age>51</age>
+    <height>177</height>
+    <weight>82</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Алена Звездный Ветер</name>
+    <devotion>BAROMETER</devotion>
+    <age>60</age>
+    <height>197</height>
+    <weight>86</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Даниил Лесной Каприз</name>
+    <devotion>BAROMETER</devotion>
+    <age>56</age>
+    <height>194</height>
+    <weight>81</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Маргарита Золотой Огонь</name>
+    <devotion>NAMIRA</devotion>
+    <age>75</age>
+    <height>193</height>
+    <weight>64</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Владимир Вечерний Бриз</name>
+    <devotion>BOETHIAH</devotion>
+    <age>22</age>
+    <height>180</height>
+    <weight>59</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Елена Ветреная Вишня</name>
+    <devotion>BAROMETER</devotion>
+    <age>70</age>
+    <height>181</height>
+    <weight>97</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артур Златая Сова</name>
+    <devotion>BOETHIAH</devotion>
+    <age>19</age>
+    <height>168</height>
+    <weight>66</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Светлана Янтарная Роза</name>
+    <devotion>BAROMETER</devotion>
+    <age>51</age>
+    <height>152</height>
+    <weight>50</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Александр Лесной Дух</name>
+    <devotion>BAROMETER</devotion>
+    <age>44</age>
+    <height>156</height>
+    <weight>60</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Надежда Лунная Лазурь</name>
+    <devotion>BAROMETER</devotion>
+    <age>20</age>
+    <height>180</height>
+    <weight>94</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Дмитрий Солнечный Свет</name>
+    <devotion>BAROMETER</devotion>
+    <age>50</age>
+    <height>183</height>
+    <weight>95</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ольга Златая Лоза</name>
+    <devotion>LIGHT</devotion>
+    <age>35</age>
+    <height>157</height>
+    <weight>95</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Антон Вечерний Ковыль</name>
+    <devotion>BAROMETER</devotion>
+    <age>45</age>
+    <height>188</height>
+    <weight>91</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Анастасия Звездный Туман</name>
+    <devotion>NAMIRA</devotion>
+    <age>52</age>
+    <height>195</height>
+    <weight>50</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Аркадий Грозовая Туча</name>
+    <devotion>BOETHIAH</devotion>
+    <age>25</age>
+    <height>175</height>
+    <weight>99</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Нина Серебряный Взгляд</name>
+    <devotion>BOETHIAH</devotion>
+    <age>42</age>
+    <height>171</height>
+    <weight>58</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Владислав Лесной Ветер</name>
+    <devotion>BOETHIAH</devotion>
+    <age>19</age>
+    <height>159</height>
+    <weight>95</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Светлана Вечерний Каскад</name>
+    <devotion>NAMIRA</devotion>
+    <age>68</age>
+    <height>176</height>
+    <weight>91</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Игнат Золотая Роса</name>
+    <devotion>LIGHT</devotion>
+    <age>69</age>
+    <height>170</height>
+    <weight>62</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валерия Солнечный Бриз</name>
+    <devotion>BOETHIAH</devotion>
+    <age>51</age>
+    <height>189</height>
+    <weight>61</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Виктор Гордый Лев</name>
+    <devotion>BAROMETER</devotion>
+    <age>65</age>
+    <height>198</height>
+    <weight>54</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Юлия Янтарное Сердце</name>
+    <devotion>NAMIRA</devotion>
+    <age>42</age>
+    <height>197</height>
+    <weight>71</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Роман Лесной Лик</name>
+    <devotion>NAMIRA</devotion>
+    <age>72</age>
+    <height>186</height>
+    <weight>62</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Марина Вечерний Огонь</name>
+    <devotion>LIGHT</devotion>
+    <age>66</age>
+    <height>159</height>
+    <weight>75</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Всеволод Златой Луг</name>
+    <devotion>LIGHT</devotion>
+    <age>62</age>
+    <height>170</height>
+    <weight>50</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Эвелина Звездный Путь</name>
+    <devotion>LIGHT</devotion>
+    <age>42</age>
+    <height>194</height>
+    <weight>99</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валентин Лунный Свет</name>
+    <devotion>BOETHIAH</devotion>
+    <age>25</age>
+    <height>154</height>
+    <weight>65</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Оксана Златая Трава</name>
+    <devotion>BAROMETER</devotion>
+    <age>68</age>
+    <height>180</height>
+    <weight>95</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Арсений Соколиный Взгляд</name>
+    <devotion>LIGHT</devotion>
+    <age>80</age>
+    <height>154</height>
+    <weight>91</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Елена Вечерний Ветер</name>
+    <devotion>BAROMETER</devotion>
+    <age>31</age>
+    <height>150</height>
+    <weight>82</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Александра Лесное Счастье</name>
+    <devotion>NAMIRA</devotion>
+    <age>39</age>
+    <height>158</height>
+    <weight>53</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Григорий Златая Дуга</name>
+    <devotion>BAROMETER</devotion>
+    <age>31</age>
+    <height>164</height>
+    <weight>93</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Людмила Серебряная Лилия</name>
+    <devotion>LIGHT</devotion>
+    <age>31</age>
+    <height>173</height>
+    <weight>72</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артемий Гордый Витязь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>33</age>
+    <height>179</height>
+    <weight>89</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Милана Ветреный Шепот</name>
+    <devotion>BOETHIAH</devotion>
+    <age>79</age>
+    <height>198</height>
+    <weight>50</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Бризантный Веретеноносец</name>
+    <devotion>BOETHIAH</devotion>
+    <age>46</age>
+    <height>153</height>
+    <weight>78</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мракобесная Теневолна</name>
+    <devotion>NAMIRA</devotion>
+    <age>69</age>
+    <height>171</height>
+    <weight>84</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Шепотливая Сияниестая</name>
+    <devotion>BAROMETER</devotion>
+    <age>48</age>
+    <height>185</height>
+    <weight>86</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Туманобесный Звездокружев</name>
+    <devotion>LIGHT</devotion>
+    <age>18</age>
+    <height>199</height>
+    <weight>100</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветрозаветная Травосплеть</name>
+    <devotion>LIGHT</devotion>
+    <age>80</age>
+    <height>196</height>
+    <weight>64</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мракотканая Волновь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>53</age>
+    <height>152</height>
+    <weight>50</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сквознячное Полночное Сияние</name>
+    <devotion>BAROMETER</devotion>
+    <age>44</age>
+    <height>150</height>
+    <weight>97</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Забытое Ветвевещание</name>
+    <devotion>LIGHT</devotion>
+    <age>35</age>
+    <height>191</height>
+    <weight>93</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тайноплетущая Лунорыба</name>
+    <devotion>NAMIRA</devotion>
+    <age>79</age>
+    <height>179</height>
+    <weight>94</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лучепутаная Мглистая Склока</name>
+    <devotion>BOETHIAH</devotion>
+    <age>70</age>
+    <height>190</height>
+    <weight>69</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Звездоблистательная Тенепереплеть</name>
+    <devotion>BOETHIAH</devotion>
+    <age>71</age>
+    <height>197</height>
+    <weight>56</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Вихревитая Мракопустота</name>
+    <devotion>BAROMETER</devotion>
+    <age>41</age>
+    <height>172</height>
+    <weight>90</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Луноласточная Травопрядь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>76</age>
+    <height>187</height>
+    <weight>57</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Пеленгрейная Тайнозаря</name>
+    <devotion>BAROMETER</devotion>
+    <age>41</age>
+    <height>152</height>
+    <weight>83</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветровязаная Сумеречная Сеть</name>
+    <devotion>BOETHIAH</devotion>
+    <age>76</age>
+    <height>168</height>
+    <weight>87</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мракокружевная Тайноплеть</name>
+    <devotion>LIGHT</devotion>
+    <age>43</age>
+    <height>167</height>
+    <weight>71</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Полуночная Звездовь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>66</age>
+    <height>157</height>
+    <weight>82</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Теньсумрачная Пелена</name>
+    <devotion>NAMIRA</devotion>
+    <age>29</age>
+    <height>195</height>
+    <weight>87</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Светоплетущая Луновой Вихрь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>71</age>
+    <height>174</height>
+    <weight>67</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тумановеющая Ветровесна</name>
+    <devotion>LIGHT</devotion>
+    <age>45</age>
+    <height>190</height>
+    <weight>89</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Звездопрядильная Тайнозвезда</name>
+    <devotion>BAROMETER</devotion>
+    <age>69</age>
+    <height>181</height>
+    <weight>85</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лунозмейкая Теньткань</name>
+    <devotion>LIGHT</devotion>
+    <age>34</age>
+    <height>156</height>
+    <weight>71</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветроросчерканая Сумраклепесть</name>
+    <devotion>BAROMETER</devotion>
+    <age>43</age>
+    <height>165</height>
+    <weight>86</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тайногрозная Мракопутань</name>
+    <devotion>LIGHT</devotion>
+    <age>55</age>
+    <height>184</height>
+    <weight>91</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Туманосияющая Лунная Вьюга</name>
+    <devotion>LIGHT</devotion>
+    <age>29</age>
+    <height>194</height>
+    <weight>69</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветрозаревая Звездофата</name>
+    <devotion>BOETHIAH</devotion>
+    <age>74</age>
+    <height>150</height>
+    <weight>74</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мглистоволновая Пеленавь</name>
+    <devotion>LIGHT</devotion>
+    <age>25</age>
+    <height>176</height>
+    <weight>87</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Травозвездная Сумракозлата</name>
+    <devotion>BAROMETER</devotion>
+    <age>57</age>
+    <height>161</height>
+    <weight>78</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сумеречная Теневолость</name>
+    <devotion>BAROMETER</devotion>
+    <age>30</age>
+    <height>176</height>
+    <weight>63</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лунодуновидная Звездоплеть</name>
+    <devotion>BOETHIAH</devotion>
+    <age>32</age>
+    <height>160</height>
+    <weight>58</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Туманошепотная Ветрокружевь</name>
+    <devotion>NAMIRA</devotion>
+    <age>18</age>
+    <height>194</height>
+    <weight>55</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Звездозаветная Тенеутка</name>
+    <devotion>NAMIRA</devotion>
+    <age>66</age>
+    <height>181</height>
+    <weight>70</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тайноглубая Мракокудель</name>
+    <devotion>LIGHT</devotion>
+    <age>41</age>
+    <height>193</height>
+    <weight>70</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветрохрустальная Сумракословь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>58</age>
+    <height>179</height>
+    <weight>65</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сияниеструйная Луноплеть</name>
+    <devotion>LIGHT</devotion>
+    <age>37</age>
+    <height>161</height>
+    <weight>90</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мраковая Тенекудель</name>
+    <devotion>LIGHT</devotion>
+    <age>24</age>
+    <height>190</height>
+    <weight>65</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Туманодревесная Ветролепесть</name>
+    <devotion>BOETHIAH</devotion>
+    <age>49</age>
+    <height>154</height>
+    <weight>51</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Звездопаутина Сумраклазурь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>48</age>
+    <height>164</height>
+    <weight>63</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лунотайная Тенеблеск</name>
+    <devotion>BAROMETER</devotion>
+    <age>37</age>
+    <height>153</height>
+    <weight>58</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветроблуждающая Звездопрядь</name>
+    <devotion>BAROMETER</devotion>
+    <age>63</age>
+    <height>176</height>
+    <weight>100</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Туманословесная Луноберег</name>
+    <devotion>BOETHIAH</devotion>
+    <age>74</age>
+    <height>169</height>
+    <weight>61</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Звездотканая Сумракоструйка</name>
+    <devotion>NAMIRA</devotion>
+    <age>61</age>
+    <height>174</height>
+    <weight>51</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Луновоздушная Ветромгла</name>
+    <devotion>BAROMETER</devotion>
+    <age>71</age>
+    <height>174</height>
+    <weight>71</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тенетканая Мраковьюга</name>
+    <devotion>BAROMETER</devotion>
+    <age>32</age>
+    <height>162</height>
+    <weight>74</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сумракосплетенная Тайнозвезда</name>
+    <devotion>BOETHIAH</devotion>
+    <age>18</age>
+    <height>184</height>
+    <weight>97</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветролазурная Лунотень</name>
+    <devotion>LIGHT</devotion>
+    <age>27</age>
+    <height>197</height>
+    <weight>77</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мракоплетучая Тумановьюга</name>
+    <devotion>BAROMETER</devotion>
+    <age>67</age>
+    <height>153</height>
+    <weight>93</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тайноволновая Звездоспираль</name>
+    <devotion>BOETHIAH</devotion>
+    <age>26</age>
+    <height>183</height>
+    <weight>89</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Луноткая Тенеукладка</name>
+    <devotion>BOETHIAH</devotion>
+    <age>76</age>
+    <height>184</height>
+    <weight>94</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сумракосияющая Ветрозвезда</name>
+    <devotion>BOETHIAH</devotion>
+    <age>37</age>
+    <height>153</height>
+    <weight>85</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Звездолепестная Тайносклока</name>
+    <devotion>BOETHIAH</devotion>
+    <age>60</age>
+    <height>194</height>
+    <weight>51</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Туманотканая Мракоциклон</name>
+    <devotion>NAMIRA</devotion>
+    <age>37</age>
+    <height>160</height>
+    <weight>87</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветрозаревая Лунопрядь</name>
+    <devotion>BAROMETER</devotion>
+    <age>44</age>
+    <height>170</height>
+    <weight>75</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мракосветная Тенецветь</name>
+    <devotion>NAMIRA</devotion>
+    <age>59</age>
+    <height>167</height>
+    <weight>81</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Луноблестящая Тайнозаря</name>
+    <devotion>BAROMETER</devotion>
+    <age>40</age>
+    <height>198</height>
+    <weight>96</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сумракосияющая Звездопуть</name>
+    <devotion>NAMIRA</devotion>
+    <age>39</age>
+    <height>167</height>
+    <weight>55</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тайногрозная Ветрокоса</name>
+    <devotion>LIGHT</devotion>
+    <age>30</age>
+    <height>197</height>
+    <weight>54</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветробережная Тумановьюга</name>
+    <devotion>LIGHT</devotion>
+    <age>29</age>
+    <height>186</height>
+    <weight>98</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мракосияющая Лунобрея</name>
+    <devotion>LIGHT</devotion>
+    <age>23</age>
+    <height>185</height>
+    <weight>87</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тенетканая Звездовольта</name>
+    <devotion>BAROMETER</devotion>
+    <age>74</age>
+    <height>180</height>
+    <weight>78</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Луноблуждающая Сумракомгла</name>
+    <devotion>NAMIRA</devotion>
+    <age>67</age>
+    <height>179</height>
+    <weight>71</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Туманотканая Ветроночь</name>
+    <devotion>BAROMETER</devotion>
+    <age>19</age>
+    <height>164</height>
+    <weight>87</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Звездосплетенная Тайновьюга</name>
+    <devotion>LIGHT</devotion>
+    <age>80</age>
+    <height>161</height>
+    <weight>85</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лунозарничная Тенегрань</name>
+    <devotion>BOETHIAH</devotion>
+    <age>28</age>
+    <height>165</height>
+    <weight>68</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветрозаревая Мракоплеть</name>
+    <devotion>LIGHT</devotion>
+    <age>59</age>
+    <height>160</height>
+    <weight>65</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мглистосияющая Сумраковязь</name>
+    <devotion>BOETHIAH</devotion>
+    <age>41</age>
+    <height>185</height>
+    <weight>58</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тайнозмейкая Звездопрядь</name>
+    <devotion>NAMIRA</devotion>
+    <age>73</age>
+    <height>200</height>
+    <weight>64</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Луноткая Теневьюга</name>
+    <devotion>BOETHIAH</devotion>
+    <age>54</age>
+    <height>192</height>
+    <weight>94</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветробрюзжащая Тумановсплеск</name>
+    <devotion>NAMIRA</devotion>
+    <age>30</age>
+    <height>150</height>
+    <weight>51</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мракосияющая Луноволна</name>
+    <devotion>NAMIRA</devotion>
+    <age>30</age>
+    <height>175</height>
+    <weight>50</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сумраколепестная Тайнозвезда</name>
+    <devotion>BAROMETER</devotion>
+    <age>41</age>
+    <height>168</height>
+    <weight>58</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Звездоблистательная Тенецветь</name>
+    <devotion>NAMIRA</devotion>
+    <age>54</age>
+    <height>179</height>
+    <weight>63</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Тумановодвижная Ветрозаря</name>
+    <devotion>LIGHT</devotion>
+    <age>71</age>
+    <height>182</height>
+    <weight>70</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Лунозаветная Мракопаутина</name>
+    <devotion>BOETHIAH</devotion>
+    <age>60</age>
+    <height>177</height>
+    <weight>99</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ветрокружевная Сумракоструйка</name>
+    <devotion>NAMIRA</devotion>
+    <age>36</age>
+    <height>191</height>
+    <weight>54</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Александр Иванов</name>
+    <devotion>LIGHT</devotion>
+    <age>35</age>
+    <height>159</height>
+    <weight>83</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Екатерина Смирнова</name>
+    <devotion>NAMIRA</devotion>
+    <age>75</age>
+    <height>187</height>
+    <weight>93</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Дмитрий Кузнецов</name>
+    <devotion>LIGHT</devotion>
+    <age>55</age>
+    <height>185</height>
+    <weight>83</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Анна Петрова</name>
+    <devotion>NAMIRA</devotion>
+    <age>46</age>
+    <height>183</height>
+    <weight>84</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артем Соколов</name>
+    <devotion>NAMIRA</devotion>
+    <age>24</age>
+    <height>179</height>
+    <weight>69</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Алиса Козлова</name>
+    <devotion>LIGHT</devotion>
+    <age>25</age>
+    <height>197</height>
+    <weight>94</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Илья Федоров</name>
+    <devotion>BAROMETER</devotion>
+    <age>35</age>
+    <height>161</height>
+    <weight>72</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Мария Морозова</name>
+    <devotion>LIGHT</devotion>
+    <age>44</age>
+    <height>157</height>
+    <weight>94</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Владимир Волков</name>
+    <devotion>NAMIRA</devotion>
+    <age>56</age>
+    <height>158</height>
+    <weight>50</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ангелина Никитина</name>
+    <devotion>BAROMETER</devotion>
+    <age>34</age>
+    <height>180</height>
+    <weight>73</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Станислав Захаров</name>
+    <devotion>BAROMETER</devotion>
+    <age>76</age>
+    <height>184</height>
+    <weight>66</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ольга Павлова</name>
+    <devotion>LIGHT</devotion>
+    <age>54</age>
+    <height>162</height>
+    <weight>87</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Николай Семенов</name>
+    <devotion>BOETHIAH</devotion>
+    <age>76</age>
+    <height>179</height>
+    <weight>59</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Анастасия Орлова</name>
+    <devotion>BAROMETER</devotion>
+    <age>52</age>
+    <height>164</height>
+    <weight>70</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Антон Лебедев</name>
+    <devotion>BAROMETER</devotion>
+    <age>24</age>
+    <height>169</height>
+    <weight>63</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Юлия Егорова</name>
+    <devotion>BOETHIAH</devotion>
+    <age>69</age>
+    <height>158</height>
+    <weight>97</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Владислав Комаров</name>
+    <devotion>BOETHIAH</devotion>
+    <age>36</age>
+    <height>171</height>
+    <weight>65</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Елена Беляева</name>
+    <devotion>BAROMETER</devotion>
+    <age>79</age>
+    <height>157</height>
+    <weight>80</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Глеб Исаев</name>
+    <devotion>BOETHIAH</devotion>
+    <age>27</age>
+    <height>198</height>
+    <weight>57</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Татьяна Чернова</name>
+    <devotion>BOETHIAH</devotion>
+    <age>57</age>
+    <height>166</height>
+    <weight>87</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Павел Степанов</name>
+    <devotion>NAMIRA</devotion>
+    <age>21</age>
+    <height>192</height>
+    <weight>69</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>София Князева</name>
+    <devotion>BOETHIAH</devotion>
+    <age>23</age>
+    <height>158</height>
+    <weight>57</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Роман Богданов</name>
+    <devotion>BOETHIAH</devotion>
+    <age>18</age>
+    <height>180</height>
+    <weight>99</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Виктория Соловьева</name>
+    <devotion>LIGHT</devotion>
+    <age>71</age>
+    <height>150</height>
+    <weight>82</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Даниил Виноградов</name>
+    <devotion>NAMIRA</devotion>
+    <age>66</age>
+    <height>160</height>
+    <weight>67</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Арина Куликова</name>
+    <devotion>NAMIRA</devotion>
+    <age>60</age>
+    <height>159</height>
+    <weight>93</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Арсений Андреев</name>
+    <devotion>LIGHT</devotion>
+    <age>78</age>
+    <height>189</height>
+    <weight>53</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Анастасия Гусева</name>
+    <devotion>NAMIRA</devotion>
+    <age>28</age>
+    <height>188</height>
+    <weight>100</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Игорь Титов</name>
+    <devotion>NAMIRA</devotion>
+    <age>60</age>
+    <height>152</height>
+    <weight>55</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ксения Королева</name>
+    <devotion>NAMIRA</devotion>
+    <age>37</age>
+    <height>188</height>
+    <weight>69</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Максим Макаров</name>
+    <devotion>NAMIRA</devotion>
+    <age>31</age>
+    <height>150</height>
+    <weight>52</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Вероника Кудрявцева</name>
+    <devotion>BAROMETER</devotion>
+    <age>51</age>
+    <height>174</height>
+    <weight>59</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Кирилл Белов</name>
+    <devotion>BOETHIAH</devotion>
+    <age>53</age>
+    <height>188</height>
+    <weight>58</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ева Афанасьева</name>
+    <devotion>BOETHIAH</devotion>
+    <age>43</age>
+    <height>174</height>
+    <weight>84</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артур Мельников</name>
+    <devotion>BAROMETER</devotion>
+    <age>65</age>
+    <height>167</height>
+    <weight>59</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Алина Фомина</name>
+    <devotion>NAMIRA</devotion>
+    <age>60</age>
+    <height>193</height>
+    <weight>74</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Андрей Григорьев</name>
+    <devotion>LIGHT</devotion>
+    <age>58</age>
+    <height>160</height>
+    <weight>90</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Дарья Березина</name>
+    <devotion>BOETHIAH</devotion>
+    <age>35</age>
+    <height>156</height>
+    <weight>55</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сергей Жуков</name>
+    <devotion>LIGHT</devotion>
+    <age>29</age>
+    <height>164</height>
+    <weight>73</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Алёна Шестакова</name>
+    <devotion>NAMIRA</devotion>
+    <age>19</age>
+    <height>155</height>
+    <weight>96</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Михаил Крылов</name>
+    <devotion>LIGHT</devotion>
+    <age>36</age>
+    <height>181</height>
+    <weight>68</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Алена Чернышева</name>
+    <devotion>BAROMETER</devotion>
+    <age>24</age>
+    <height>158</height>
+    <weight>77</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Валентин Денисов</name>
+    <devotion>BOETHIAH</devotion>
+    <age>67</age>
+    <height>182</height>
+    <weight>63</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Нина Матвеева</name>
+    <devotion>NAMIRA</devotion>
+    <age>59</age>
+    <height>176</height>
+    <weight>91</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Егор Козлов</name>
+    <devotion>LIGHT</devotion>
+    <age>41</age>
+    <height>188</height>
+    <weight>58</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Анжела Попова</name>
+    <devotion>NAMIRA</devotion>
+    <age>51</age>
+    <height>167</height>
+    <weight>90</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Руслан Сергеев</name>
+    <devotion>NAMIRA</devotion>
+    <age>20</age>
+    <height>186</height>
+    <weight>71</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Юлия Макарова</name>
+    <devotion>BOETHIAH</devotion>
+    <age>58</age>
+    <height>165</height>
+    <weight>79</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Антонина Васнецова</name>
+    <devotion>BOETHIAH</devotion>
+    <age>55</age>
+    <height>157</height>
+    <weight>60</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Иван Лебедев</name>
+    <devotion>LIGHT</devotion>
+    <age>62</age>
+    <height>174</height>
+    <weight>89</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Елизавета Волохова</name>
+    <devotion>BOETHIAH</devotion>
+    <age>53</age>
+    <height>186</height>
+    <weight>60</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артемий Шилов</name>
+    <devotion>NAMIRA</devotion>
+    <age>55</age>
+    <height>153</height>
+    <weight>97</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Виктория Лисина</name>
+    <devotion>NAMIRA</devotion>
+    <age>61</age>
+    <height>156</height>
+    <weight>93</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Василий Попов</name>
+    <devotion>LIGHT</devotion>
+    <age>69</age>
+    <height>171</height>
+    <weight>60</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Ариадна Логинова</name>
+    <devotion>BAROMETER</devotion>
+    <age>68</age>
+    <height>152</height>
+    <weight>99</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Никита Миронов</name>
+    <devotion>BAROMETER</devotion>
+    <age>57</age>
+    <height>166</height>
+    <weight>65</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Оксана Федотова</name>
+    <devotion>BAROMETER</devotion>
+    <age>80</age>
+    <height>158</height>
+    <weight>61</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Григорий Романов</name>
+    <devotion>BOETHIAH</devotion>
+    <age>50</age>
+    <height>188</height>
+    <weight>87</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Екатерина Мельникова</name>
+    <devotion>BAROMETER</devotion>
+    <age>47</age>
+    <height>196</height>
+    <weight>95</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Денис Филатов</name>
+    <devotion>BAROMETER</devotion>
+    <age>74</age>
+    <height>159</height>
+    <weight>55</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Маргарита Краснова</name>
+    <devotion>BAROMETER</devotion>
+    <age>20</age>
+    <height>157</height>
+    <weight>51</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Константин Сергеев</name>
+    <devotion>BAROMETER</devotion>
+    <age>32</age>
+    <height>165</height>
+    <weight>63</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Светлана Анисимова</name>
+    <devotion>NAMIRA</devotion>
+    <age>50</age>
+    <height>192</height>
+    <weight>65</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Роман Стрелков</name>
+    <devotion>NAMIRA</devotion>
+    <age>65</age>
+    <height>199</height>
+    <weight>80</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Анна Соколова</name>
+    <devotion>NAMIRA</devotion>
+    <age>74</age>
+    <height>165</height>
+    <weight>87</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Игнат Колесников</name>
+    <devotion>NAMIRA</devotion>
+    <age>80</age>
+    <height>185</height>
+    <weight>68</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Полина Григорьева</name>
+    <devotion>BAROMETER</devotion>
+    <age>29</age>
+    <height>163</height>
+    <weight>69</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Степан Королев</name>
+    <devotion>NAMIRA</devotion>
+    <age>76</age>
+    <height>165</height>
+    <weight>81</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Дарья Белякова</name>
+    <devotion>LIGHT</devotion>
+    <age>72</age>
+    <height>195</height>
+    <weight>81</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Егор Сухов</name>
+    <devotion>BOETHIAH</devotion>
+    <age>44</age>
+    <height>188</height>
+    <weight>90</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Алёна Андреева</name>
+    <devotion>LIGHT</devotion>
+    <age>54</age>
+    <height>179</height>
+    <weight>64</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Владислава Шишкина</name>
+    <devotion>BOETHIAH</devotion>
+    <age>18</age>
+    <height>162</height>
+    <weight>97</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Артем Воробьев</name>
+    <devotion>LIGHT</devotion>
+    <age>35</age>
+    <height>170</height>
+    <weight>58</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Наталия Лазарева</name>
+    <devotion>NAMIRA</devotion>
+    <age>30</age>
+    <height>199</height>
+    <weight>89</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Сергей Беляев</name>
+    <devotion>LIGHT</devotion>
+    <age>37</age>
+    <height>193</height>
+    <weight>64</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Александр Морозов</name>
+    <devotion>BOETHIAH</devotion>
+    <age>61</age>
+    <height>171</height>
+    <weight>97</weight>
+    <gender>FEMALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Екатерина Логинова</name>
+    <devotion>NAMIRA</devotion>
+    <age>61</age>
+    <height>193</height>
+    <weight>55</weight>
+    <gender>MALE</gender>
+  </com.egor456788.entities.Entity>
+  <com.egor456788.entities.Entity>
+    <name>Максим Яковлев</name>
+    <devotion>NAMIRA</devotion>
+    <age>54</age>
+    <height>181</height>
+    <weight>86</weight>
+    <gender>HELICOPTER</gender>
+  </com.egor456788.entities.Entity>
+</list>

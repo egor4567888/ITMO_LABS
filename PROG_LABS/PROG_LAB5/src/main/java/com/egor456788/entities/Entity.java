@@ -37,6 +37,8 @@ public class Entity implements Comparable <Entity> {
         this.height = height;
         this.weight = weight;
         this.gender = gender;
+
+        this.setCondition(condition.ALIVE); // тест
     }
     @XStreamOmitField
     ScoreCounter scounter = new ScoreCounter(){

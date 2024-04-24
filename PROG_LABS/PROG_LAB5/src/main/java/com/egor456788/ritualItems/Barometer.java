@@ -24,7 +24,7 @@ public class Barometer extends RitualItem implements GetIndex {
         int hat2 = ind[1];
         try {
             if (hat1 == hat2) {
-                throw new noCultistException("Нет достуаных последователей, ритуал не удался.");
+                throw new noCultistException("Нет доступных последователей, ритуал не удался.");
             } else {
                 switch (hattifatteners[hat2].getDevotion()) {
                     case BAROMETER -> {
