@@ -1,2 +1,3 @@
-rootProject.name = "PROG_LAB5"
-
+rootProject.name = "PROG_LAB6"
+include("server")
+include("client")
