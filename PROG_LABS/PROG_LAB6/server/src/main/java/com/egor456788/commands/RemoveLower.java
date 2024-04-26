@@ -1,9 +1,12 @@
 package com.egor456788.commands;
 
 import com.egor456788.Request;
+import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
 
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Команда удаляющая элементы меньшие элемента с введённым индексом

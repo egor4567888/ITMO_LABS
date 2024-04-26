@@ -5,6 +5,8 @@ import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
 
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 /**
  * Команда выводящая все элементы коллекции
@@ -19,7 +21,7 @@ public class Show extends Command{
 
     /**
      * Выводит элементы коллекции
-     * @param args
+     * @param request
      * @return
      * @param <T>
      */
@@ -30,10 +32,11 @@ public class Show extends Command{
             return (T)(getName() + ": ОШИБКА избыточное число аргументов");
         else args = "";
 
-        Collections.sort(collectionMeneger.getCollection());
+
         String output = "";
         int i = 0;
-        for (Entity entity: collectionMeneger.getCollection())
+        Comparator<Entity> nameComparator = Comparator.comparing(Entity::getName);
+        for (Entity entity: collectionMeneger.getCollection().stream().sorted(nameComparator).toList())
         {
                 output += i + " " + entity + "\n";
                 i++;

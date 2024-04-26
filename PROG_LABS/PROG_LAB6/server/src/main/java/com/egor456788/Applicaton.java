@@ -29,7 +29,7 @@ public class Applicaton {
         commandManager.register("show", new Show(collectionMeneger));
         commandManager.register("exit",new Exit());
         commandManager.register("history",new History(commandManager));
-        //commandManager.register("add_if_min", new AddIfMin(collectionMeneger,printer, readerSystemIn, false));
+        commandManager.register("add_if_min", new AddIfMin(collectionMeneger,printer, readerSystemIn, false));
         commandManager.register("help", new Help(commandManager));
         commandManager.register("clear", new Clear(collectionMeneger));
         commandManager.register("remove_by_id",new RemoveById(collectionMeneger));

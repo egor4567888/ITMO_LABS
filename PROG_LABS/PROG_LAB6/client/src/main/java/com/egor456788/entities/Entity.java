@@ -36,7 +36,7 @@ public class Entity implements Comparable <Entity>, Serializable {
         this.gender = gender;
         this.score = 0;
 
-        this.setCondition(condition.ALIVE); // тест
+
     }
     @XStreamOmitField
     ScoreCounter scounter = new ScoreCounter(){
@@ -116,9 +116,9 @@ public class Entity implements Comparable <Entity>, Serializable {
 
     @Override
     public int compareTo(Entity entity) {
-        int scoreComparison = Integer.compare(this.score, entity.score);
+        /*int scoreComparison = Integer.compare(this.score, entity.score);
         if (scoreComparison != 0)
-            return scoreComparison;
+            return scoreComparison;*/
         return Integer.compare(this.age, entity.age);
     }
 

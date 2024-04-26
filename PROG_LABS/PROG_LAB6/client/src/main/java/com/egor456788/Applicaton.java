@@ -76,7 +76,7 @@ public class Applicaton {
                         try {
                             entity = Creator.create(printer, readerSystemIn, false);
                         }catch (InputException e){
-                            printer.println(line + ": " + e + " ВВЕДИТЕ КОМАНДУ ЗАНОВО");
+                            printer.println(line + ": " + e.getMessage() + " ВВЕДИТЕ КОМАНДУ ЗАНОВО");
                             continue;
                         }
 

@@ -1,9 +1,12 @@
 package com.egor456788.commands;
 
 import com.egor456788.Request;
+import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
 
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 /**
  * Команда для вывода элементов коллекции отсортировав по возрасту
@@ -25,14 +28,12 @@ public class FilterByAge extends Command{
     public <T> T execute(Request request) {
         String args = request.getArgs();
         String output = "";
-        Collections.sort(collectionMeneger.getCollection());
         try {
             int age = Integer.parseInt(args);
-            for (int i = 0; i < collectionMeneger.getCollection().size(); i++) {
-                if (collectionMeneger.getCollection().get(i).getAge() == age)
-                    output += collectionMeneger.getCollection().get(i) + "\n";
-                if (collectionMeneger.getCollection().get(i).getAge() > age)
-                    break;
+
+            Comparator<Entity> nameComparator = Comparator.comparing(Entity::getName);
+            for(Entity entity: collectionMeneger.getCollection().stream().filter(entity -> entity.getAge() < age).sorted(nameComparator).collect(Collectors.toList())){
+                output += entity + "\n";
             }
         }
         catch (RuntimeException e){

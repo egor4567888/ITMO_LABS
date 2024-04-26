@@ -1,7 +1,10 @@
 package com.egor456788.commands;
 
 import com.egor456788.Request;
+import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
+
+import java.util.Comparator;
 
 public class PrintNameById extends Command{
     final CollectionMeneger collectionMeneger;
@@ -19,7 +22,8 @@ public class PrintNameById extends Command{
             return (T) "Ошибка ввода";
         }
         try {
-            return (T) collectionMeneger.getCollection().get(Integer.parseInt(args)).getName();
+            Comparator<Entity> nameComparator = Comparator.comparing(Entity::getName);
+            return (T) collectionMeneger.getCollection().stream().sorted(nameComparator).toList().get(Integer.parseInt(args)).getName();
         } catch (NumberFormatException e) {
             return (T) "Элемент не найден";
         }

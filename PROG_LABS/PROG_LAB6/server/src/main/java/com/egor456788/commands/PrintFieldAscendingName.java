@@ -5,6 +5,7 @@ import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
 
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 /**
  * Команда выводящая имена в порядке возрастания элементов
@@ -28,10 +29,9 @@ public class PrintFieldAscendingName extends Command{
             return (T)(getName() + ": ОШИБКА избыточное число аргументов");
         else args = "";
 
-        Collections.sort(collectionMeneger.getCollection());
+
         String output = "";
-        for (Entity entity: collectionMeneger.getCollection())
-        {
+        for(Entity entity: collectionMeneger.getCollection().stream().sorted().collect(Collectors.toList())){
             output += entity.getName() + "\n";
         }
         output =  output.trim().replaceAll("\\n+$", "");
