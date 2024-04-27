@@ -1,5 +1,7 @@
 package com.egor456788.commands;
 
+import com.egor456788.Applicaton;
+import com.egor456788.Creator;
 import com.egor456788.Request;
 import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
@@ -10,6 +12,7 @@ import com.egor456788.menegers.Printer;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,6 +94,8 @@ public class ExecuteScript extends Command {
                         if (input.length == 2)
                             comArgs = input[1];
                         try {
+                            if (Applicaton.commandsPack.getCommands().contains(input[0]))
+                                entity = Creator.create(new Printer(),reader,true);
                             output += invoker.invokeAlter(new Request(input[0], comArgs, entity)) + "\n";
                         }
                         catch (Exception e){
