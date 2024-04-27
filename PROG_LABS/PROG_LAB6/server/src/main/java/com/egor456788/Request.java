@@ -15,6 +15,14 @@ public class Request implements Serializable {
         this.entity = entity;
         this.port = port;
     }
+
+    public Request(String commandName, String args, Entity entity) {
+        this.commandName = commandName;
+        this.args = args;
+        this.entity = entity;
+        port = 0;
+    }
+
     public Request(String commandName, String args, int port){
         this.commandName = commandName;
         this.args = args;

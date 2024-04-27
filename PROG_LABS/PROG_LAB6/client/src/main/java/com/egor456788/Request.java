@@ -5,7 +5,7 @@ import com.egor456788.entities.Entity;
 import java.io.Serializable;
 
 public class Request implements Serializable {
-   final private String commandName;
+    final private String commandName;
     final private String args;
     final private Entity entity;
     final private Integer port;
@@ -15,6 +15,14 @@ public class Request implements Serializable {
         this.entity = entity;
         this.port = port;
     }
+
+    public Request(String commandName, String args, Entity entity) {
+        this.commandName = commandName;
+        this.args = args;
+        this.entity = entity;
+        port = 0;
+    }
+
     public Request(String commandName, String args, int port){
         this.commandName = commandName;
         this.args = args;

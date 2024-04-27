@@ -14,14 +14,14 @@ public class Invoker {
         this.commandManager = commandManager;
     }
     public String invoke(Request request){
-
+        String output="";
         try {
             if (commandManager.getCommands().get(request.getCommandName()) == null)
                 throw new InputException("Комманда " + request.getCommandName() + " не найдена");
             String args = request.getArgs();
 
 
-            String output = commandManager.getCommands().get(request.getCommandName()).<String>execute(request);
+            output = commandManager.getCommands().get(request.getCommandName()).<String>execute(request);
             OutputBlocker.unblockOutput();
             String toHistory = request.getCommandName();
             if (request.getArgs() != null)
@@ -36,26 +36,15 @@ public class Invoker {
         }
 
     }
-    /*public void invokeAlter (String input){
-        String[] command = input.trim().split("\s+");
-        try {
-            String args = null;
-            if (command.length > 2)
-                throw new InputException("избыточное число аргументов");
-            if (command.length == 2)
-                args = command[1];
-            command[0] += "_alter";
-            if (commandManager.getCommands().get(command[0]) == null) {
-                invoke(input);
-                return;
-            }
-            String output = commandManager.getCommands().get(command[0]).<String>execute(args);
-            OutputBlocker.unblockOutput();
-            printer.println(output);
-            commandManager.addToHistory(command[0]);
+    public String invokeAlter (Request request){
+        String commandName;
+        commandName = request.getCommandName();
+        commandName += "_alter";
+        if (commandManager.getCommands().get(commandName) == null){
+            return invoke(request);
+
         }
-        catch (InputException e) {
-            printer.printErr(e.getMessage());
-        }
-    }*/
+        else return invoke(new Request(commandName,request.getArgs(),request.getEntity(),request.getPort()));
+
+    }
 }

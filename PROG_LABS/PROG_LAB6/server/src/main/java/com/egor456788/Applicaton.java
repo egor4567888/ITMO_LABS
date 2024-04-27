@@ -17,6 +17,7 @@ import java.util.Scanner;
 
 public class Applicaton {
 
+    public static CommandsPack commandsPack = new CommandsPack(new  ArrayList<String>(Arrays.asList(new String[]{"update_id","add","add_if_min"})));
     public void run(String[] args) {
         Printer printer = new Printer();
         CommandManager commandManager = new CommandManager();
@@ -39,9 +40,9 @@ public class Applicaton {
         commandManager.register("filter_by_age", new FilterByAge(collectionMeneger));
         commandManager.register("print_field_ascending_name",new PrintFieldAscendingName(collectionMeneger));
         commandManager.register("print_unique_age", new PrintUniqueAge(collectionMeneger));
-        //commandManager.register("execute_script", new ExecuteScript(invoker,commandManager,collectionMeneger,printer));
+        commandManager.register("execute_script", new ExecuteScript(invoker,commandManager,collectionMeneger,printer));
         commandManager.register("print_name_by_id",new PrintNameById(collectionMeneger));
-        CommandsPack commandsPack = new CommandsPack(new  ArrayList<String>(Arrays.asList(new String[]{"update_id","add","add_if_min"})));
+
         printer.println("Введите help для вывода информации о командах");
         int serverPort = 9876;
         int clientPort;

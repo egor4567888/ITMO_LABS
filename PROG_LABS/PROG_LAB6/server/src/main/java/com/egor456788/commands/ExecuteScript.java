@@ -1,6 +1,7 @@
 package com.egor456788.commands;
 
 import com.egor456788.Request;
+import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
 import com.egor456788.menegers.CommandManager;
 import com.egor456788.menegers.Invoker;
@@ -39,6 +40,8 @@ public class ExecuteScript extends Command {
     @Override
     public <T> T execute(Request request) {
         String args = request.getArgs();
+        if (args == null)
+            args = "";
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         String currentMethod = stackTraceElements[1].getClassName() + " " + args;
         if (recursionCheck.contains(currentMethod))
@@ -65,7 +68,7 @@ public class ExecuteScript extends Command {
             return (T)(getName() + " " + args + ": ОШИБКА файл не найден");
         }
 
-
+        String output = "";
         try {
 
             BufferedReader reader = new BufferedReader(new FileReader(args));
@@ -74,17 +77,34 @@ public class ExecuteScript extends Command {
             commandManager.register("update_id_alter", new UpdateId(collectionMeneger, printer, reader, true));
 
             String line;
-
-            /*while ((line = reader.readLine()) != null) {
-                if (!line.isEmpty())
-                    invoker.invokeAlter(line);
-            }*/
+            String[] input;
+            String comArgs = null;
+            Entity entity = null;
+            while ((line = reader.readLine()) != null) {
+                comArgs = null;
+                entity = null;
+                if (!line.isEmpty()) {
+                    input = line.trim().split(" ");
+                    if (input.length >2)
+                        output +=line + ": ОШИБКА избыточное число аргументов" + "\n";
+                    else {
+                        if (input.length == 2)
+                            comArgs = input[1];
+                        try {
+                            output += invoker.invokeAlter(new Request(input[0], comArgs, entity)) + "\n";
+                        }
+                        catch (Exception e){
+                            output+=getName() + " " + args + ": ОШИБКА "+ e.getMessage();
+                        }
+                    }
+                }
+            }
 
         } catch (Exception e) {
             recursionCheck.remove(recursionCheck.size()-1);
             return (T)(getName() + " " + args + ": ОШИБКА чтения файла " + e.getMessage());
         }
         recursionCheck.remove(recursionCheck.size()-1);
-        return (T) ("Скрипт " + args + " выполнен");
+        return (T) (output + "Скрипт " + args + " выполнен");
     }
 }
