@@ -1,6 +1,7 @@
 plugins {
     id("java")
     application
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 application{
@@ -26,4 +27,11 @@ tasks.test {
 }
 tasks.named<JavaExec>("run") {
     standardInput = System.`in`
+}
+tasks.shadowJar {
+    archiveBaseName.set("client")
+    archiveVersion.set("1.0.0")
+    manifest {
+        attributes["Main-Class"] = "com.egor456788.Main"
+    }
 }

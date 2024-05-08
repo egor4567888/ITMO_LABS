@@ -1,46 +1,18 @@
-package com.egor456788.commands;
+package com.egor456788;
 
 import com.egor456788.common.Devotions;
 import com.egor456788.common.Genders;
 import com.egor456788.common.Races;
+import com.egor456788.entities.Entity;
 import com.egor456788.entities.Hattifattener;
 import com.egor456788.entities.Hemulen;
-import com.egor456788.menegers.CollectionMeneger;
-import com.egor456788.menegers.OutputBlocker;
-import com.egor456788.menegers.Printer;
+import com.egor456788.exceptions.InputException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-
-/**
- * Команда добавляющая новый элемент в коллекцию
- */
-public class Add extends Command {
-    final CollectionMeneger collectionMeneger;
-    final Printer printer;
-    final BufferedReader reader;
-    final boolean silence;
-
-    public Add(CollectionMeneger collectionMeneger, Printer printer, BufferedReader reader, boolean silence)  {
-        super("add", "Добавляет элемент в коллекцию");
-        this.collectionMeneger = collectionMeneger;
-        this.printer = printer;
-        this.reader = reader;
-        this.silence = silence;
-    }
-
-    /**
-     * Добавляет в коллекцию новый элемент
-     * @param args
-     * @return
-     * @param <T>
-     */
-    @Override
-    public <T> T execute(String args) {
-        if (args != null)
-            return (T)(getName() + ": ОШИБКА избыточное число аргументов");
-        else args = "";
+public class Creator {
+    static public Entity create(Printer printer, BufferedReader reader, boolean silence) throws InputException {
         String line;
         String name;
         Devotions devotion = null;
@@ -66,7 +38,8 @@ public class Add extends Command {
                 case "2" -> race = Races.Hattifattner;
             }
             if (race == null)
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат расы");
+                throw new InputException("ОШИБКА неверный формат расы");
+
 
 
             printer.println("Введите имя");
@@ -74,7 +47,7 @@ public class Add extends Command {
             if (!line.trim().isEmpty() && line.matches("^[A-Za-zА-Яа-я\\s]+$"))
                 name = line;
             else
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат имени");
+                throw new InputException("ОШИБКА неверный формат имени");
 
 
             if (race != Races.HEMULEN) {
@@ -93,7 +66,7 @@ public class Add extends Command {
                     case "4" -> devotion = Devotions.BOETHIAH;
                 }
                 if (devotion == null)
-                    return (T) (getName() + " " + args + ": ОШИБКА неверный формат приверженности");
+                    throw new InputException("ОШИБКА неверный формат приверженности");
             } else
                 devotion = Devotions.FLOWERS;
 
@@ -102,30 +75,30 @@ public class Add extends Command {
             try {
                 age = Integer.parseInt(reader.readLine());
             } catch (NumberFormatException e) {
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат возраста");
+                throw new InputException("ОШИБКА неверный формат возраста");
             }
             if (age <= 0)
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат возраста");
+                throw new InputException("ОШИБКА неверный формат возраста");
 
 
             printer.println("Введите рост");
             try {
                 height = Integer.parseInt(reader.readLine());
             } catch (NumberFormatException e) {
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат роста");
+                throw new InputException("ОШИБКА неверный формат роста");
             }
             if (height <= 0)
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат роста");
+                throw new InputException("ОШИБКА неверный формат роста");
 
 
             printer.println("Введите вес");
             try {
                 weight = Integer.parseInt(reader.readLine());
             } catch (NumberFormatException e) {
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат веса");
+                throw new InputException("ОШИБКА неверный формат веса");
             }
             if (weight <= 0)
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат веса");
+                throw new InputException("ОШИБКА неверный формат веса");
 
 
             printer.println("Введите пол (1 Самец, 2 Самка, 3 Боевой вертолёт)");
@@ -143,17 +116,16 @@ public class Add extends Command {
                 case "3" -> gender = Genders.HELICOPTER;
             }
             if (gender == null)
-                return (T) (getName() + " " + args + ": ОШИБКА неверный формат пола");
+                throw new InputException("ОШИБКА неверный формат пола");
         }
         catch (IOException e){
-            return (T) (getName() + " " + args + ": ОШИБКА чтения " + e);
+            throw new InputException("ОШИБКА чтения " + e);
         }
 
 
-            if (race == Races.HEMULEN)
-                collectionMeneger.add(new Hemulen(name, age, height, weight, gender, race));
-            else collectionMeneger.add(new Hattifattener(name, devotion, age, height, weight, gender, race));
-            return (T)"Элемент добавлен";
+        if (race == Races.HEMULEN)
+            return (new Hemulen(name, age, height, weight, gender, race));
+        else return (new Hattifattener(name, devotion, age, height, weight, gender, race));
 
     }
 }

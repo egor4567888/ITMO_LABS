@@ -1,4 +1,4 @@
-package com.egor456788.menegers;
+package com.egor456788;
 
 /**
  * Класс для вывода

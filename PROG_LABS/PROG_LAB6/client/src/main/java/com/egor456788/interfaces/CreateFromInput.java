@@ -1,6 +1,6 @@
 package com.egor456788.interfaces;
 
-import com.egor456788.menegers.Printer;
+import com.egor456788.Printer;
 
 import java.io.BufferedReader;
 

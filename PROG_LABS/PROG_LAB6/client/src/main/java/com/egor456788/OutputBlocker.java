@@ -1,4 +1,4 @@
-package com.egor456788.menegers;
+package com.egor456788;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

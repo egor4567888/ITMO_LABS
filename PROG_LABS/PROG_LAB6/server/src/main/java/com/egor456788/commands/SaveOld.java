@@ -12,16 +12,16 @@ import java.io.FileWriter;
 /**
  * Команда сохраняющая коллекцию в введённый файл в формате xml
  */
-public class Save extends Command{
+public class SaveOld extends Command{
     final CollectionMeneger collectionMeneger;
-    public Save(CollectionMeneger collectionMeneger) {
+    public SaveOld(CollectionMeneger collectionMeneger) {
         super("save", "Сохраняет коллекцию");
         this.collectionMeneger = collectionMeneger;
     }
 
     /**
      * Команда сохраняющая коллекцию в введённый файл в формате xml
-     * @param args
+     * @param request
      * @return
      * @param <T>
      */

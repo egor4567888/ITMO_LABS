@@ -2,6 +2,7 @@ package com.egor456788.entities;
 
 import com.egor456788.common.*;
 import com.egor456788.interfaces.ScoreCounter;
+
 import com.egor456788.ritualItems.RitualItem;
 import com.egor456788.things.Flower;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
