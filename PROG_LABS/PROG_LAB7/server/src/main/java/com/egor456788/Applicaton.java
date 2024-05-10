@@ -5,6 +5,8 @@ package com.egor456788;
 
 import com.egor456788.commands.*;
 import com.egor456788.menegers.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 
 import java.io.*;
 import java.net.DatagramPacket;
@@ -18,7 +20,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 public class Applicaton {
-
+    private static final Logger logger = (Logger) LogManager.getLogger(Applicaton.class);
     private static final int bufSize = 1024*64;
     public static CommandsPack commandsPack = new CommandsPack(new  ArrayList<String>(Arrays.asList(new String[]{"update_id","add","add_if_min"})));
     public Invoker invoker = null;
@@ -58,7 +60,7 @@ public class Applicaton {
             Selector selector = Selector.open();
             serverChannel.configureBlocking(false);
             serverChannel.register(selector, SelectionKey.OP_READ);
-            System.out.println("Server started on port" + serverPort);
+            logger.info("Server started on port" + serverPort);
 
             ExecutorService readExecutorService = Executors.newCachedThreadPool(new PriorityThreadFactory(Thread.MAX_PRIORITY));
             ForkJoinPool executeExecutorService = new ForkJoinPool();
@@ -110,15 +112,24 @@ public class Applicaton {
                              sendData = baos.toByteArray();
                         } else {
                             String output;
-                            if (request.getCommandName().contains("alter")) {
-                                output = "Ещё раз введёшь системную комманду и я тебя забаню";
-                            } else {
-                                output = invoker.invoke(request);
+                            if (request.getCommandName().equals("register")){
+                                output = AccountsMeneger.register(request.getUserName(),request.getPassword());
                             }
-
-                             sendData = output.getBytes();
-                            System.out.println(output);
-
+                            else
+                            {
+                                if (AccountsMeneger.login(request.getUserName(),request.getPassword())) {
+                                    if (request.getCommandName().contains("alter")) {
+                                        output = "Ещё раз введёшь системную комманду и я тебя забаню";
+                                    } else {
+                                        output = invoker.invoke(request);
+                                    }
+                                }
+                                else{
+                                    output = "Неверное имя пользователя или пароль";
+                                }
+                            }
+                            sendData = output.getBytes();
+                            logger.info("Command" + request.getCommandName() + " output: " + output);
                         }
 
                     } catch (IOException e) {
@@ -149,7 +160,7 @@ public class Applicaton {
                         ObjectInputStream ois;
                         ois = new ObjectInputStream(bais);
                         Request request = (Request) ois.readObject();
-                        System.out.println(request.getCommandName());
+                        logger.info("Processed command: " + request.getCommandName());
                         executeExecutorService.execute(new ExecuteTask(request,clientAddress));
                         buffer.clear();
                     } catch (IOException | ClassNotFoundException e) {
@@ -174,7 +185,7 @@ public class Applicaton {
                 while (iter.hasNext()) {
                     SelectionKey selectionKey = (SelectionKey) iter.next();
                     if (selectionKey.isReadable()) {
-                        System.out.println("Reading channel");
+                        logger.info("Reading channel");
                         readExecutorService.execute(new ReadTask((DatagramChannel) selectionKey.channel()));
 
                     }

@@ -9,30 +9,48 @@ public class Request implements Serializable {
     final private String args;
     final private Entity entity;
     final private Integer port;
-    public Request(String commandName, String args, Entity entity, int port){
+    final private String userName;
+    final private String password;
+    public Request(String commandName, String args, Entity entity, int port, String userName, String password){
         this.commandName = commandName;
         this.args = args;
         this.entity = entity;
         this.port = port;
+        this.userName = userName;
+        this.password = password;
     }
 
-    public Request(String commandName, String args, Entity entity) {
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Request(String commandName, String args, Entity entity, String userName, String password) {
         this.commandName = commandName;
         this.args = args;
         this.entity = entity;
+        this.userName = userName;
+        this.password = password;
         port = 0;
     }
 
-    public Request(String commandName, String args, int port){
+    public Request(String commandName, String args, int port, String userName, String password){
         this.commandName = commandName;
         this.args = args;
         this.port = port;
+        this.userName = userName;
+        this.password = password;
         this.entity = null;
     }
-    public Request(String commandName, Entity entity, int port){
+    public Request(String commandName, Entity entity, int port, String userName, String password){
         this.commandName = commandName;
         this.entity = entity;
         this.port = port;
+        this.userName = userName;
+        this.password = password;
         this.args = null;
     }
 
@@ -40,9 +58,11 @@ public class Request implements Serializable {
         return port;
     }
 
-    public Request(String commandName, int port){
+    public Request(String commandName, int port, String userName, String password){
         this.commandName = commandName;
         this.port = port;
+        this.userName = userName;
+        this.password = password;
         this.args = null;
         this.entity = null;
     }
