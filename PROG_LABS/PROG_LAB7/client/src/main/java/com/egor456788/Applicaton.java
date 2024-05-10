@@ -1,9 +1,10 @@
 package com.egor456788;
 
 
+
+
 import com.egor456788.entities.Entity;
 import com.egor456788.exceptions.InputException;
-
 
 import java.io.*;
 import java.net.*;
@@ -14,18 +15,18 @@ import java.util.Scanner;
 
 public class Applicaton {
 
-
+    private static final int bufSize = 1024*64;
     public void run(String[] args) {
         Printer printer = new Printer();
         BufferedReader readerSystemIn = new BufferedReader(new InputStreamReader(System.in));
         CommandsPack commands = null;
-        int clientPort = 6786;
+        int clientPort = 6788;
         int serverPort = 9875;
 
         try (DatagramChannel clientChannel = DatagramChannel.open(); DatagramSocket ds = new DatagramSocket(clientPort)) {
 
             clientChannel.configureBlocking(false); // Не блокировать поток при чтении и записи
-            ByteBuffer buffer = ByteBuffer.allocate(100024);
+            ByteBuffer buffer = ByteBuffer.allocate(bufSize);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(baos);
             oos.writeObject(new Request("get_commands", clientPort));
@@ -35,13 +36,14 @@ public class Applicaton {
             clientChannel.send(buffer, serverAddress); // Отправляем сообщение серверу
             oos.close();
 
-            byte[] arr = new byte[10024];
+            byte[] arr = new byte[bufSize];
             DatagramPacket dp = new DatagramPacket(arr, arr.length);
-            ds.setSoTimeout(50000);
+            ds.setSoTimeout(5000);
             ds.receive(dp);
             ByteArrayInputStream bais = new ByteArrayInputStream(dp.getData());
             ObjectInputStream ois = new ObjectInputStream(bais);
             commands = (CommandsPack) ois.readObject();
+
             ois.close();
 
 
@@ -61,9 +63,9 @@ public class Applicaton {
 
             String comArgs;
             Entity entity;
-            ByteBuffer buffer = ByteBuffer.allocate(100024);
+            ByteBuffer buffer = ByteBuffer.allocate(bufSize);
             InetSocketAddress serverAddress = new InetSocketAddress("localhost", serverPort);
-            byte[] DtgrByteArr = new byte[100024];
+            byte[] DtgrByteArr = new byte[bufSize];
             String receivedMessage;
             while (scanner.hasNextLine()) {
                 comArgs = null;

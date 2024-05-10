@@ -1,0 +1,1818 @@
+Аркадий Камнеков
+LIGHT
+29
+183
+74
+HELICOPTER
+Лиана Теневое Крыло
+BOETHIAH
+39
+177
+70
+HELICOPTER
+Торин Грозовое Сердце
+BOETHIAH
+65
+167
+73
+HELICOPTER
+Элара Лунный Шепот
+BOETHIAH
+48
+188
+67
+HELICOPTER
+Вариан Железная Душа
+LIGHT
+59
+160
+93
+HELICOPTER
+Исольда Морозный Склон
+BAROMETER
+69
+188
+78
+MALE
+Гарет Страж Бурь
+NAMIRA
+52
+174
+87
+HELICOPTER
+Серафина Скоростной Клинок
+NAMIRA
+48
+177
+50
+HELICOPTER
+Келдорн Огненное Сердце
+BAROMETER
+41
+164
+69
+MALE
+Элисия Сумеречное Падение
+BOETHIAH
+21
+199
+95
+HELICOPTER
+Каэлум Грозовой Взгляд
+BOETHIAH
+74
+180
+100
+MALE
+Валерия Пламенный Зов
+BOETHIAH
+28
+153
+85
+HELICOPTER
+Харальд Быстрый Удар
+BAROMETER
+39
+151
+93
+MALE
+Астрид Морозное Цветение
+BOETHIAH
+78
+179
+87
+FEMALE
+Гаррик Пылающий Клинок
+NAMIRA
+22
+192
+62
+HELICOPTER
+Селена Теневая Тень
+NAMIRA
+21
+198
+89
+HELICOPTER
+Рагнар Грозовой Молот
+BOETHIAH
+27
+170
+94
+MALE
+Ария Зов Рассвета
+BAROMETER
+56
+169
+61
+FEMALE
+Дравен Железная Крепость
+BOETHIAH
+40
+161
+71
+FEMALE
+Фрея Огненное Пламя
+BOETHIAH
+78
+154
+70
+HELICOPTER
+Торн Пылающий Кузнец
+LIGHT
+50
+172
+54
+FEMALE
+Силас Теневой Чародей
+LIGHT
+27
+200
+91
+HELICOPTER
+Лорна Ледяное Сердце
+NAMIRA
+64
+185
+91
+HELICOPTER
+Бринья Морозное Шепот
+NAMIRA
+39
+168
+82
+FEMALE
+Киран Пламенная Борода
+NAMIRA
+34
+179
+53
+HELICOPTER
+Аларик Лунная Тень
+NAMIRA
+54
+196
+73
+FEMALE
+Элоуэн Песнь Бури
+NAMIRA
+36
+153
+78
+HELICOPTER
+Ульрик Ледяной Клинок
+BOETHIAH
+49
+184
+54
+MALE
+Морвен Железная Душа
+LIGHT
+24
+169
+87
+MALE
+Сорен Зов Бури
+LIGHT
+53
+160
+83
+MALE
+Изабо Эмбертхорн
+LIGHT
+52
+184
+80
+FEMALE
+Лейф Грозовой Удар
+NAMIRA
+27
+185
+95
+MALE
+Эира Ледяной Клык
+BOETHIAH
+70
+159
+53
+FEMALE
+Рован Пламенное Сердце
+BAROMETER
+19
+153
+78
+MALE
+Лилит Теневое Пламя
+BOETHIAH
+27
+152
+99
+MALE
+Таддеус Камнелом
+LIGHT
+27
+162
+63
+HELICOPTER
+Галадриэль Звездное Мерцание
+BAROMETER
+45
+170
+74
+HELICOPTER
+Бальтазар Клинок Бури
+NAMIRA
+65
+160
+87
+FEMALE
+Элара Ледяной Цветок
+BOETHIAH
+21
+166
+68
+FEMALE
+Седрик Пылающий Кузнец
+BAROMETER
+62
+186
+85
+HELICOPTER
+Серафина Морозное Шепот
+LIGHT
+43
+156
+91
+FEMALE
+Арик Быстрый Клинок
+LIGHT
+74
+153
+66
+HELICOPTER
+Валькирия Взгляд Грозы
+BOETHIAH
+59
+166
+64
+FEMALE
+Эйрик Железная Рука
+BOETHIAH
+19
+166
+75
+MALE
+Лира Теневое Пламя
+BAROMETER
+35
+164
+71
+FEMALE
+Каэл Огненное Сердце
+LIGHT
+77
+170
+77
+MALE
+Ильяна Морозное Плетение
+BOETHIAH
+62
+177
+54
+FEMALE
+Торн Страж Бурь
+BAROMETER
+65
+194
+85
+MALE
+Исольда Морозное Цветение
+BOETHIAH
+19
+191
+50
+MALE
+Вариан Грозовой Ветер
+NAMIRA
+33
+156
+77
+FEMALE
+Всеволод Лесной Тень
+BOETHIAH
+34
+177
+53
+FEMALE
+Милена Солнечный Луч
+LIGHT
+34
+196
+68
+MALE
+Ратибор Гордый Орел
+LIGHT
+66
+170
+72
+MALE
+Зинаида Весенний Ветер
+NAMIRA
+50
+178
+87
+HELICOPTER
+Валерий Янтарный Закат
+LIGHT
+30
+170
+60
+FEMALE
+Галина Звездная Роса
+BAROMETER
+58
+172
+90
+FEMALE
+Артемий Медвежья Сила
+BAROMETER
+50
+189
+93
+MALE
+Татьяна Золотая Листва
+NAMIRA
+68
+155
+69
+MALE
+Владислав Лунный Свет
+BAROMETER
+60
+171
+100
+HELICOPTER
+Ростислав Жаркий Камень
+BOETHIAH
+21
+188
+67
+FEMALE
+Наталья Радуга Надежды
+LIGHT
+65
+173
+66
+FEMALE
+Иван Соколиное Перо
+BOETHIAH
+29
+190
+77
+HELICOPTER
+Лидия Вечерний Луг
+LIGHT
+30
+178
+51
+FEMALE
+Валентин Вечерняя Звезда
+BAROMETER
+56
+191
+55
+FEMALE
+Оксана Лебединое Озеро
+BAROMETER
+36
+198
+96
+FEMALE
+Богдан Грозовая Сила
+BAROMETER
+18
+169
+100
+MALE
+Лариса Златогривый Конь
+LIGHT
+61
+183
+60
+HELICOPTER
+Валентина Вечерний Свет
+BAROMETER
+26
+183
+83
+HELICOPTER
+Виталий Орлиный Взгляд
+LIGHT
+31
+179
+78
+HELICOPTER
+Анастасия Звездный Путь
+NAMIRA
+35
+156
+77
+HELICOPTER
+Михаил Серебряный Дождь
+LIGHT
+32
+152
+94
+FEMALE
+Эльвира Лесной Ручей
+BAROMETER
+41
+188
+59
+HELICOPTER
+Родион Ветреный Лес
+LIGHT
+21
+169
+89
+FEMALE
+Алина Янтарный Сумрак
+BAROMETER
+27
+160
+78
+FEMALE
+Глеб Золотой Рассвет
+BOETHIAH
+50
+169
+69
+HELICOPTER
+Всеслав Грозовая Туча
+LIGHT
+47
+156
+72
+HELICOPTER
+Лилия Радужное Небо
+BOETHIAH
+37
+167
+84
+FEMALE
+Степан Жаркий Ковыль
+BAROMETER
+71
+186
+63
+FEMALE
+Валерия Лесная Ведьма
+LIGHT
+40
+166
+72
+MALE
+Игнат Златой Песок
+LIGHT
+30
+189
+87
+HELICOPTER
+Лидия Серебряный Звон
+BAROMETER
+18
+158
+92
+MALE
+Добрыня Соколиный Гнездо
+BOETHIAH
+75
+199
+72
+FEMALE
+Альберт Золотистый Рассвет
+BOETHIAH
+53
+192
+91
+FEMALE
+Людмила Ветреный Шепот
+LIGHT
+76
+191
+64
+MALE
+Валерий Медвежья Сила
+NAMIRA
+40
+195
+92
+FEMALE
+Анна Солнечный Свет
+BOETHIAH
+47
+175
+77
+FEMALE
+Артур Вечерний Звездопад
+LIGHT
+70
+151
+62
+MALE
+Лариса Златогривая Пантера
+LIGHT
+19
+199
+58
+MALE
+Герман Лесной Грозовик
+BAROMETER
+41
+194
+90
+FEMALE
+Елена Золотая Тропа
+BOETHIAH
+74
+150
+57
+FEMALE
+Станислав Грозовая Тень
+BAROMETER
+29
+160
+54
+HELICOPTER
+Руслан Ветреный Век
+BOETHIAH
+27
+154
+61
+FEMALE
+Надежда Серебряное Перо
+NAMIRA
+20
+159
+54
+HELICOPTER
+Владлен Вечерний Огонь
+LIGHT
+28
+191
+65
+FEMALE
+Мария Жаркий Луч
+BOETHIAH
+33
+162
+53
+FEMALE
+Всеволод Златистый Лес
+NAMIRA
+24
+192
+99
+FEMALE
+Ирина Янтарная Луна
+LIGHT
+78
+169
+76
+FEMALE
+Ростислав Лесной Камень
+NAMIRA
+19
+165
+70
+FEMALE
+Нина Солнечное Зеркало
+BAROMETER
+55
+167
+94
+FEMALE
+Борис Златогривый Орел
+BOETHIAH
+30
+157
+94
+MALE
+Таисия Ветреная Сирень
+LIGHT
+30
+173
+96
+HELICOPTER
+Глеб Вечерний Сумрак
+NAMIRA
+49
+168
+66
+FEMALE
+Екатерина Лунная Сказка
+LIGHT
+33
+200
+92
+FEMALE
+Артем Золотистый Луг
+LIGHT
+43
+196
+90
+HELICOPTER
+Лилия Звездный Луч
+NAMIRA
+78
+164
+52
+MALE
+Всеслав Лесная Радуга
+LIGHT
+55
+157
+89
+FEMALE
+Милана Златогривый Конь
+NAMIRA
+43
+190
+60
+HELICOPTER
+Григорий Гордый Воин
+BAROMETER
+69
+159
+63
+MALE
+Раиса Вечерний Сумрак
+BOETHIAH
+32
+156
+97
+FEMALE
+Валентин Ветреный Скиталец
+BAROMETER
+54
+156
+78
+MALE
+Любовь Солнечная Поляна
+BOETHIAH
+53
+173
+79
+HELICOPTER
+Максим Янтарный Вихрь
+BOETHIAH
+47
+153
+70
+FEMALE
+Ольга Златая Звезда
+BOETHIAH
+58
+173
+72
+HELICOPTER
+Игорь Соколиный Гребень
+BOETHIAH
+39
+167
+53
+FEMALE
+Таисия Лесное Сердце
+NAMIRA
+47
+174
+57
+HELICOPTER
+Никита Гордый Витязь
+BOETHIAH
+57
+162
+51
+FEMALE
+Алена Звездный Ветер
+BOETHIAH
+40
+168
+66
+MALE
+Даниил Лесной Каприз
+BOETHIAH
+78
+154
+72
+HELICOPTER
+Маргарита Золотой Огонь
+NAMIRA
+63
+193
+79
+FEMALE
+Владимир Вечерний Бриз
+BOETHIAH
+78
+168
+91
+MALE
+Елена Ветреная Вишня
+BOETHIAH
+19
+155
+100
+MALE
+Артур Златая Сова
+BAROMETER
+45
+170
+63
+MALE
+Светлана Янтарная Роза
+BAROMETER
+74
+182
+63
+FEMALE
+Александр Лесной Дух
+BOETHIAH
+22
+186
+56
+FEMALE
+Надежда Лунная Лазурь
+LIGHT
+28
+193
+84
+HELICOPTER
+Дмитрий Солнечный Свет
+BAROMETER
+59
+197
+56
+HELICOPTER
+Ольга Златая Лоза
+NAMIRA
+66
+195
+65
+MALE
+Антон Вечерний Ковыль
+LIGHT
+68
+173
+87
+FEMALE
+Анастасия Звездный Туман
+BOETHIAH
+72
+166
+62
+FEMALE
+Аркадий Грозовая Туча
+NAMIRA
+63
+160
+67
+HELICOPTER
+Нина Серебряный Взгляд
+BAROMETER
+29
+189
+77
+HELICOPTER
+Владислав Лесной Ветер
+NAMIRA
+61
+167
+79
+MALE
+Светлана Вечерний Каскад
+BOETHIAH
+54
+151
+79
+HELICOPTER
+Игнат Золотая Роса
+NAMIRA
+69
+174
+96
+FEMALE
+Валерия Солнечный Бриз
+NAMIRA
+43
+157
+74
+HELICOPTER
+Виктор Гордый Лев
+BAROMETER
+75
+157
+79
+FEMALE
+Юлия Янтарное Сердце
+BOETHIAH
+70
+198
+78
+MALE
+Роман Лесной Лик
+NAMIRA
+18
+165
+50
+HELICOPTER
+Марина Вечерний Огонь
+BOETHIAH
+49
+156
+76
+MALE
+Всеволод Златой Луг
+NAMIRA
+45
+159
+68
+MALE
+Эвелина Звездный Путь
+NAMIRA
+79
+158
+98
+FEMALE
+Валентин Лунный Свет
+BAROMETER
+23
+181
+58
+FEMALE
+Оксана Златая Трава
+BAROMETER
+55
+187
+80
+MALE
+Арсений Соколиный Взгляд
+BAROMETER
+31
+176
+97
+FEMALE
+Елена Вечерний Ветер
+NAMIRA
+44
+156
+66
+MALE
+Александра Лесное Счастье
+NAMIRA
+46
+171
+77
+FEMALE
+Григорий Златая Дуга
+NAMIRA
+53
+184
+92
+FEMALE
+Людмила Серебряная Лилия
+BOETHIAH
+54
+153
+78
+FEMALE
+Артемий Гордый Витязь
+BOETHIAH
+22
+154
+69
+MALE
+Милана Ветреный Шепот
+BAROMETER
+22
+191
+67
+FEMALE
+Бризантный Веретеноносец
+LIGHT
+46
+167
+76
+HELICOPTER
+Мракобесная Теневолна
+BAROMETER
+55
+168
+72
+MALE
+Шепотливая Сияниестая
+BAROMETER
+59
+165
+71
+FEMALE
+Туманобесный Звездокружев
+NAMIRA
+48
+189
+73
+MALE
+Ветрозаветная Травосплеть
+LIGHT
+75
+187
+73
+MALE
+Мракотканая Волновь
+LIGHT
+29
+198
+71
+MALE
+Сквознячное Полночное Сияние
+NAMIRA
+75
+188
+85
+FEMALE
+Забытое Ветвевещание
+NAMIRA
+72
+186
+96
+HELICOPTER
+Тайноплетущая Лунорыба
+NAMIRA
+52
+184
+61
+FEMALE
+Лучепутаная Мглистая Склока
+BAROMETER
+48
+185
+86
+FEMALE
+Звездоблистательная Тенепереплеть
+BOETHIAH
+56
+168
+58
+MALE
+Вихревитая Мракопустота
+BOETHIAH
+53
+185
+81
+FEMALE
+Луноласточная Травопрядь
+BAROMETER
+39
+179
+60
+MALE
+Пеленгрейная Тайнозаря
+BAROMETER
+19
+170
+70
+FEMALE
+Ветровязаная Сумеречная Сеть
+BOETHIAH
+42
+161
+93
+FEMALE
+Мракокружевная Тайноплеть
+LIGHT
+67
+173
+60
+HELICOPTER
+Полуночная Звездовь
+BOETHIAH
+49
+190
+99
+MALE
+Теньсумрачная Пелена
+BOETHIAH
+68
+155
+96
+MALE
+Светоплетущая Луновой Вихрь
+LIGHT
+27
+170
+94
+FEMALE
+Тумановеющая Ветровесна
+BAROMETER
+47
+196
+56
+HELICOPTER
+Звездопрядильная Тайнозвезда
+BOETHIAH
+70
+164
+60
+HELICOPTER
+Лунозмейкая Теньткань
+LIGHT
+23
+169
+79
+FEMALE
+Ветроросчерканая Сумраклепесть
+BAROMETER
+19
+162
+64
+MALE
+Тайногрозная Мракопутань
+BOETHIAH
+64
+165
+81
+FEMALE
+Туманосияющая Лунная Вьюга
+NAMIRA
+41
+183
+50
+HELICOPTER
+Ветрозаревая Звездофата
+LIGHT
+18
+168
+84
+FEMALE
+Мглистоволновая Пеленавь
+LIGHT
+77
+173
+90
+HELICOPTER
+Травозвездная Сумракозлата
+LIGHT
+61
+180
+82
+FEMALE
+Сумеречная Теневолость
+LIGHT
+32
+153
+94
+HELICOPTER
+Лунодуновидная Звездоплеть
+LIGHT
+21
+185
+87
+FEMALE
+Туманошепотная Ветрокружевь
+BOETHIAH
+38
+197
+55
+MALE
+Звездозаветная Тенеутка
+NAMIRA
+43
+189
+89
+HELICOPTER
+Тайноглубая Мракокудель
+LIGHT
+32
+150
+88
+HELICOPTER
+Ветрохрустальная Сумракословь
+NAMIRA
+21
+153
+91
+HELICOPTER
+Сияниеструйная Луноплеть
+BAROMETER
+55
+163
+96
+FEMALE
+Мраковая Тенекудель
+BOETHIAH
+79
+200
+61
+MALE
+Туманодревесная Ветролепесть
+LIGHT
+23
+153
+51
+FEMALE
+Звездопаутина Сумраклазурь
+NAMIRA
+45
+181
+84
+FEMALE
+Лунотайная Тенеблеск
+NAMIRA
+24
+186
+58
+HELICOPTER
+Ветроблуждающая Звездопрядь
+BAROMETER
+58
+153
+76
+FEMALE
+Туманословесная Луноберег
+NAMIRA
+40
+164
+91
+FEMALE
+Звездотканая Сумракоструйка
+NAMIRA
+29
+200
+74
+FEMALE
+Луновоздушная Ветромгла
+BOETHIAH
+24
+186
+100
+FEMALE
+Тенетканая Мраковьюга
+NAMIRA
+33
+182
+74
+FEMALE
+Сумракосплетенная Тайнозвезда
+LIGHT
+30
+193
+61
+FEMALE
+Ветролазурная Лунотень
+LIGHT
+25
+153
+67
+FEMALE
+Мракоплетучая Тумановьюга
+LIGHT
+20
+195
+54
+FEMALE
+Тайноволновая Звездоспираль
+NAMIRA
+55
+155
+73
+MALE
+Луноткая Тенеукладка
+NAMIRA
+29
+177
+89
+FEMALE
+Сумракосияющая Ветрозвезда
+BAROMETER
+23
+191
+77
+HELICOPTER
+Звездолепестная Тайносклока
+NAMIRA
+45
+157
+68
+MALE
+Туманотканая Мракоциклон
+LIGHT
+25
+189
+50
+MALE
+Ветрозаревая Лунопрядь
+BAROMETER
+43
+153
+85
+HELICOPTER
+Мракосветная Тенецветь
+LIGHT
+79
+177
+79
+HELICOPTER
+Луноблестящая Тайнозаря
+LIGHT
+67
+169
+67
+HELICOPTER
+Сумракосияющая Звездопуть
+NAMIRA
+31
+196
+85
+HELICOPTER
+Тайногрозная Ветрокоса
+BOETHIAH
+64
+186
+81
+MALE
+Ветробережная Тумановьюга
+BAROMETER
+62
+180
+88
+HELICOPTER
+Мракосияющая Лунобрея
+NAMIRA
+35
+154
+61
+MALE
+Тенетканая Звездовольта
+NAMIRA
+55
+174
+77
+FEMALE
+Луноблуждающая Сумракомгла
+BOETHIAH
+52
+186
+91
+HELICOPTER
+Туманотканая Ветроночь
+BAROMETER
+78
+171
+93
+FEMALE
+Звездосплетенная Тайновьюга
+BOETHIAH
+68
+163
+66
+MALE
+Лунозарничная Тенегрань
+BOETHIAH
+75
+184
+71
+HELICOPTER
+Ветрозаревая Мракоплеть
+NAMIRA
+70
+187
+71
+MALE
+Мглистосияющая Сумраковязь
+BAROMETER
+72
+160
+93
+FEMALE
+Тайнозмейкая Звездопрядь
+NAMIRA
+36
+195
+97
+FEMALE
+Луноткая Теневьюга
+BOETHIAH
+66
+183
+51
+FEMALE
+Ветробрюзжащая Тумановсплеск
+LIGHT
+35
+195
+88
+HELICOPTER
+Мракосияющая Луноволна
+BOETHIAH
+69
+169
+87
+HELICOPTER
+Сумраколепестная Тайнозвезда
+NAMIRA
+19
+196
+68
+MALE
+Звездоблистательная Тенецветь
+BAROMETER
+30
+177
+99
+FEMALE
+Тумановодвижная Ветрозаря
+NAMIRA
+27
+162
+60
+FEMALE
+Лунозаветная Мракопаутина
+BOETHIAH
+22
+185
+52
+HELICOPTER
+Ветрокружевная Сумракоструйка
+NAMIRA
+57
+182
+63
+FEMALE
+Александр Иванов
+LIGHT
+69
+184
+68
+FEMALE
+Екатерина Смирнова
+BAROMETER
+22
+163
+93
+MALE
+Дмитрий Кузнецов
+LIGHT
+69
+166
+75
+MALE
+Анна Петрова
+BAROMETER
+54
+163
+97
+HELICOPTER
+Артем Соколов
+BAROMETER
+66
+185
+84
+FEMALE
+Алиса Козлова
+NAMIRA
+76
+179
+86
+HELICOPTER
+Илья Федоров
+BOETHIAH
+74
+176
+76
+MALE
+Мария Морозова
+NAMIRA
+31
+155
+60
+FEMALE
+Владимир Волков
+NAMIRA
+34
+188
+59
+HELICOPTER
+Ангелина Никитина
+NAMIRA
+48
+190
+50
+HELICOPTER
+Станислав Захаров
+BAROMETER
+18
+166
+89
+MALE
+Ольга Павлова
+LIGHT
+27
+179
+51
+FEMALE
+Николай Семенов
+NAMIRA
+60
+159
+95
+FEMALE
+Анастасия Орлова
+BOETHIAH
+75
+196
+94
+FEMALE
+Антон Лебедев
+LIGHT
+64
+165
+97
+FEMALE
+Юлия Егорова
+BOETHIAH
+33
+168
+90
+FEMALE
+Владислав Комаров
+BOETHIAH
+20
+178
+59
+HELICOPTER
+Елена Беляева
+NAMIRA
+41
+172
+82
+HELICOPTER
+Глеб Исаев
+NAMIRA
+41
+198
+71
+HELICOPTER
+Татьяна Чернова
+NAMIRA
+80
+172
+72
+FEMALE
+Павел Степанов
+BOETHIAH
+70
+184
+76
+HELICOPTER
+София Князева
+LIGHT
+32
+192
+66
+MALE
+Роман Богданов
+BAROMETER
+37
+192
+89
+MALE
+Виктория Соловьева
+BOETHIAH
+54
+155
+87
+MALE
+Даниил Виноградов
+LIGHT
+57
+154
+89
+FEMALE
+Арина Куликова
+BOETHIAH
+43
+157
+92
+FEMALE
+Арсений Андреев
+BAROMETER
+28
+177
+64
+MALE
+Анастасия Гусева
+LIGHT
+19
+167
+62
+MALE
+Игорь Титов
+BOETHIAH
+40
+167
+99
+HELICOPTER
+Ксения Королева
+BAROMETER
+64
+185
+89
+FEMALE
+Максим Макаров
+BAROMETER
+30
+200
+61
+FEMALE
+Вероника Кудрявцева
+BOETHIAH
+73
+170
+74
+HELICOPTER
+Кирилл Белов
+BOETHIAH
+70
+195
+50
+FEMALE
+Ева Афанасьева
+LIGHT
+56
+188
+58
+HELICOPTER
+Артур Мельников
+BAROMETER
+77
+167
+55
+MALE
+Алина Фомина
+BAROMETER
+39
+153
+89
+HELICOPTER
+Андрей Григорьев
+LIGHT
+74
+157
+78
+HELICOPTER
+Дарья Березина
+NAMIRA
+39
+156
+71
+FEMALE
+Сергей Жуков
+NAMIRA
+55
+165
+95
+HELICOPTER
+Алёна Шестакова
+LIGHT
+56
+200
+66
+MALE
+Михаил Крылов
+LIGHT
+32
+174
+83
+HELICOPTER
+Алена Чернышева
+NAMIRA
+51
+176
+89
+MALE
+Валентин Денисов
+BAROMETER
+63
+200
+51
+HELICOPTER
+Нина Матвеева
+BAROMETER
+79
+190
+90
+MALE
+Егор Козлов
+LIGHT
+26
+196
+77
+HELICOPTER
+Анжела Попова
+NAMIRA
+24
+186
+75
+HELICOPTER
+Руслан Сергеев
+BOETHIAH
+78
+164
+73
+HELICOPTER
+Юлия Макарова
+LIGHT
+59
+156
+59
+HELICOPTER
+Антонина Васнецова
+LIGHT
+78
+166
+64
+FEMALE
+Иван Лебедев
+LIGHT
+22
+179
+75
+HELICOPTER
+Елизавета Волохова
+BAROMETER
+49
+162
+59
+MALE
+Артемий Шилов
+BOETHIAH
+52
+193
+88
+MALE
+Виктория Лисина
+LIGHT
+67
+191
+99
+HELICOPTER
+Василий Попов
+NAMIRA
+62
+174
+59
+FEMALE
+Ариадна Логинова
+BAROMETER
+52
+164
+54
+MALE
+Никита Миронов
+BOETHIAH
+22
+171
+86
+FEMALE
+Оксана Федотова
+NAMIRA
+72
+158
+96
+FEMALE
+Григорий Романов
+BOETHIAH
+22
+196
+51
+MALE
+Екатерина Мельникова
+LIGHT
+59
+192
+95
+MALE
+Денис Филатов
+LIGHT
+70
+187
+93
+FEMALE
+Маргарита Краснова
+LIGHT
+74
+154
+98
+FEMALE
+Константин Сергеев
+BAROMETER
+44
+191
+66
+MALE
+Светлана Анисимова
+LIGHT
+72
+160
+81
+MALE
+Роман Стрелков
+NAMIRA
+32
+191
+65
+FEMALE
+Анна Соколова
+NAMIRA
+19
+161
+92
+HELICOPTER
+Игнат Колесников
+LIGHT
+66
+171
+68
+HELICOPTER
+Полина Григорьева
+LIGHT
+80
+168
+75
+MALE
+Степан Королев
+LIGHT
+70
+195
+88
+FEMALE
+Дарья Белякова
+LIGHT
+48
+173
+74
+HELICOPTER
+Егор Сухов
+NAMIRA
+20
+187
+60
+MALE
+Алёна Андреева
+BOETHIAH
+70
+171
+79
+MALE
+Владислава Шишкина
+BOETHIAH
+60
+167
+96
+HELICOPTER
+Артем Воробьев
+BAROMETER
+29
+186
+90
+FEMALE
+Наталия Лазарева
+NAMIRA
+38
+171
+52
+MALE
+Сергей Беляев
+BAROMETER
+45
+157
+66
+MALE
+Александр Морозов
+NAMIRA
+59
+161
+52
+FEMALE
+Екатерина Логинова
+BAROMETER
+57
+195
+58
+FEMALE
+Максим Яковлев
+LIGHT
+24
+195
+75
+HELICOPTER

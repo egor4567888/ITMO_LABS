@@ -5,6 +5,8 @@ import com.egor456788.menegers.CollectionMeneger;
 import com.egor456788.menegers.CommandManager;
 import com.egor456788.menegers.Invoker;
 import com.egor456788.menegers.Printer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 
 import java.io.*;
 import java.net.*;
@@ -14,8 +16,9 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.util.*;
 
-public class Applicaton {
 
+public class Applicaton {
+    private static final Logger logger = (Logger) LogManager.getLogger(Applicaton.class);
     public static CommandsPack commandsPack = new CommandsPack(new  ArrayList<String>(Arrays.asList(new String[]{"update_id","add","add_if_min"})));
     public void run(String[] args) {
         Printer printer = new Printer();
@@ -51,7 +54,7 @@ public class Applicaton {
             Selector selector = Selector.open();
             serverChannel.configureBlocking(false);
             serverChannel.register(selector, SelectionKey.OP_READ);
-            System.out.println("Server started on port" + serverPort);
+            logger.info("Server started on port" + serverPort);
 
             ByteBuffer buffer = ByteBuffer.allocate(100024);
 
@@ -66,16 +69,14 @@ public class Applicaton {
                     SelectionKey selectionKey = (SelectionKey) itor.next();
                     itor.remove();
                     if (selectionKey.isReadable()) {
-                        System.out.println("Reading channel");
+                        logger.info("Reading channel");
                         DatagramChannel channel = (DatagramChannel)  selectionKey.channel();
                         buffer.clear();
-                        System.out.println(1);
                         InetSocketAddress clientAddress = (InetSocketAddress) channel.receive(buffer); // Ждем получение пакета от клиента
-                        System.out.println(2);
                         ByteArrayInputStream bais = new ByteArrayInputStream(buffer.array());
                         ObjectInputStream ois = new ObjectInputStream(bais);
                         request = (Request) ois.readObject();
-                        System.out.println(request.getCommandName());
+                        logger.info("Processed command: " + request.getCommandName());
                         if (Objects.equals(request.getCommandName(), "get_commands")) {
                             ByteArrayOutputStream baos = new ByteArrayOutputStream();
                             ObjectOutputStream oos = new ObjectOutputStream(baos);
@@ -83,14 +84,18 @@ public class Applicaton {
                             byte[] sendData = baos.toByteArray();
                             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress.getAddress(), request.getPort());
                             ds.send(sendPacket);
-                            System.out.println(5);
                         } else {
-                            String output = invoker.invoke(request);
-                            System.out.println(output);
+                            String output = null;
+                            if(request.getCommandName().contains("alter")){
+                                output = "Ещё раз введёшь системную комманду и я тебя забаню";
+                            }
+                            else {
+                                output = invoker.invoke(request);
+                            }
+                            logger.info("output: " + output);
                             byte[] sendData = output.getBytes();
                             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress.getAddress(), request.getPort());
                             ds.send(sendPacket);
-                            System.out.println(6);
                         }
 
                     }
