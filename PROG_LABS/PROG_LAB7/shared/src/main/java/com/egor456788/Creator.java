@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class Creator {
-    static public Entity create(Printer printer, BufferedReader reader, boolean silence) throws InputException {
+    static public Entity create(Printer printer, BufferedReader reader, String userName, boolean silence) throws InputException {
         String line;
         String name;
         Devotions devotion = null;
@@ -124,8 +124,8 @@ public class Creator {
 
 
         if (race == Races.HEMULEN)
-            return (new Hemulen(name, age, height, weight, gender, race));
-        else return (new Hattifattener(name, devotion, age, height, weight, gender, race));
+            return (new Hemulen(name, age, height, weight, gender, race,userName));
+        else return (new Hattifattener(name, devotion, age, height, weight, gender, race,userName));
 
     }
 }

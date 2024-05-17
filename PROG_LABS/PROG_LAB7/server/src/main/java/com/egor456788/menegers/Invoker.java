@@ -45,7 +45,7 @@ public class Invoker {
             return invoke(request);
 
         }
-        else return invoke(new Request(commandName,request.getArgs(),request.getEntity(),request.getPort()));
+        else return invoke(new Request(commandName,request.getArgs(),request.getEntity(),request.getPort(),request.getUserName(),request.getPassword()));
 
     }
 }

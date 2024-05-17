@@ -99,8 +99,6 @@ public class Applicaton {
                         System.exit(0);
                     }
                     DatagramPacket dp = new DatagramPacket(DtgrByteArr, DtgrByteArr.length);
-                    ds.setSoTimeout(5000);
-                    ds.receive(dp);
                     receivedMessage = new String(dp.getData(), 0, dp.getLength());
                     printer.println(receivedMessage);
 

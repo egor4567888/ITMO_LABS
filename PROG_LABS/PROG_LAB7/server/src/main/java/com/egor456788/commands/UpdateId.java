@@ -2,9 +2,14 @@ package com.egor456788.commands;
 
 import com.egor456788.Printer;
 import com.egor456788.Request;
+import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
+import com.egor456788.menegers.DataBaseManager;
 
 import java.io.BufferedReader;
+import java.util.Optional;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
 
 /**
  * Команда обновляющая элемент с введённым ID
@@ -33,14 +38,16 @@ public class UpdateId extends Command{
     @Override
     public <T> T execute(Request request) {
         String args = request.getArgs();
-        try {
-            collectionMeneger.getCollection().get(Integer.parseInt(args));
-        }
-        catch (RuntimeException e){
+
+        OptionalInt index = IntStream.range(0, collectionMeneger.getCollection().size())
+                .filter(i -> collectionMeneger.getCollection().get(i).getId() == Integer.parseInt(request.getArgs()))
+                .findFirst();
+        if(!index.isPresent()) {
             return (T)(getName() + " " + args + ": ОШИБКА Элемент не найден");
         }
-
-        collectionMeneger.getCollection().set(Integer.parseInt(args),request.getEntity());
+        request.getEntity().setId(Integer.parseInt(request.getArgs()));
+        collectionMeneger.getCollection().set(index.getAsInt(),request.getEntity());
+        DataBaseManager.updateEntity(request.getEntity());
         return (T)"Элемент изменён";
     }
 }

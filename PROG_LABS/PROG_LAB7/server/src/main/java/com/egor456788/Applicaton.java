@@ -1,8 +1,6 @@
 package com.egor456788;
 
 
-
-
 import com.egor456788.commands.*;
 import com.egor456788.menegers.*;
 import org.apache.logging.log4j.LogManager;
@@ -16,37 +14,44 @@ import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Applicaton {
-    private static final Logger logger = (Logger) LogManager.getLogger(Applicaton.class);
-    private static final int bufSize = 1024*64;
-    public static CommandsPack commandsPack = new CommandsPack(new  ArrayList<String>(Arrays.asList(new String[]{"update_id","add","add_if_min"})));
+    public static final Logger logger = (Logger) LogManager.getLogger(Applicaton.class);
+    private static final int bufSize = 1024 * 64;
+    public static CommandsPack commandsPack = new CommandsPack(new ArrayList<String>(Arrays.asList(new String[]{"update_id", "add", "add_if_min"})));
     public Invoker invoker = null;
+
     public void run(String[] args) {
         Printer printer = new Printer();
         CommandManager commandManager = new CommandManager();
         CollectionMeneger collectionMeneger = new CollectionMeneger();
-        collectionMeneger.addFromFile(args[0]);
+        ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+            DataBaseManager.fill(collectionMeneger,lock);
+            DataBaseManager.fillAcc(lock);
         invoker = new Invoker(commandManager);
         BufferedReader readerSystemIn = new BufferedReader(new InputStreamReader(System.in));
         commandManager.register("info", new Info(collectionMeneger));
-        commandManager.register("add", new Add(collectionMeneger,printer, readerSystemIn, false));
+        commandManager.register("add", new Add(collectionMeneger, printer, readerSystemIn, false));
         commandManager.register("show", new Show(collectionMeneger));
-        commandManager.register("exit",new Exit(collectionMeneger,"output.xml"));
-        commandManager.register("history",new History(commandManager));
-        commandManager.register("add_if_min", new AddIfMin(collectionMeneger,printer, readerSystemIn, false));
+        commandManager.register("exit", new Exit(collectionMeneger, "output.xml"));
+        commandManager.register("history", new History(commandManager));
+        commandManager.register("add_if_min", new AddIfMin(collectionMeneger, printer, readerSystemIn, false));
         commandManager.register("help", new Help(commandManager));
         commandManager.register("clear", new Clear(collectionMeneger));
-        commandManager.register("remove_by_id",new RemoveById(collectionMeneger));
-        commandManager.register("update_id", new UpdateId(collectionMeneger,printer, readerSystemIn, false));
+        commandManager.register("remove_by_id", new RemoveById(collectionMeneger));
+        commandManager.register("update_id", new UpdateId(collectionMeneger, printer, readerSystemIn, false));
         commandManager.register("remove_lower", new RemoveLower(collectionMeneger));
         commandManager.register("filter_by_age", new FilterByAge(collectionMeneger));
-        commandManager.register("print_field_ascending_name",new PrintFieldAscendingName(collectionMeneger));
+        commandManager.register("print_field_ascending_name", new PrintFieldAscendingName(collectionMeneger));
         commandManager.register("print_unique_age", new PrintUniqueAge(collectionMeneger));
-        commandManager.register("execute_script", new ExecuteScript(invoker,commandManager,collectionMeneger,printer));
-        commandManager.register("print_name_by_id",new PrintNameById(collectionMeneger));
+        commandManager.register("execute_script", new ExecuteScript(invoker, commandManager, collectionMeneger, printer));
+        commandManager.register("print_name_by_id", new PrintNameById(collectionMeneger));
+        commandManager.register("register_alter", new Register());
+        commandManager.register("login_alter", new Login());
 
         printer.println("Введите help для вывода информации о командах");
         int serverPort = 9875;
@@ -54,7 +59,7 @@ public class Applicaton {
         Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
 
         Request request = null;
-        try (DatagramChannel serverChannel = DatagramChannel.open(); DatagramSocket ds = new DatagramSocket()){
+        try (DatagramChannel serverChannel = DatagramChannel.open(); DatagramSocket ds = new DatagramSocket()) {
 
             serverChannel.socket().bind(new InetSocketAddress(serverPort));
             Selector selector = Selector.open();
@@ -64,7 +69,7 @@ public class Applicaton {
 
             ExecutorService readExecutorService = Executors.newCachedThreadPool(new PriorityThreadFactory(Thread.MAX_PRIORITY));
             ForkJoinPool executeExecutorService = new ForkJoinPool();
-            ForkJoinPool sendExecutorService = new  ForkJoinPool();
+            ForkJoinPool sendExecutorService = new ForkJoinPool();
 
             class SendTask implements Runnable {
 
@@ -109,42 +114,31 @@ public class Applicaton {
                             ByteArrayOutputStream baos = new ByteArrayOutputStream();
                             ObjectOutputStream oos = new ObjectOutputStream(baos);
                             oos.writeObject(output);
-                             sendData = baos.toByteArray();
+                            sendData = baos.toByteArray();
                         } else {
                             String output;
-                            if (request.getCommandName().equals("register")){
-                                output = AccountsMeneger.register(request.getUserName(),request.getPassword());
+
+                            if (request.getCommandName().contains("alter") && request.getUserId()!=-1) {
+                                output = "Ещё раз введёшь системную комманду и я тебя забаню";
+                            } else {
+                                output = invoker.invoke(request);
                             }
-                            else
-                            {
-                                if (AccountsMeneger.login(request.getUserName(),request.getPassword())) {
-                                    if (request.getCommandName().contains("alter")) {
-                                        output = "Ещё раз введёшь системную комманду и я тебя забаню";
-                                    } else {
-                                        output = invoker.invoke(request);
-                                    }
-                                }
-                                else{
-                                    output = "Неверное имя пользователя или пароль";
-                                }
-                            }
+
+
                             sendData = output.getBytes();
-                            logger.info("Command" + request.getCommandName() + " output: " + output);
+                            logger.info("Command " + request.getCommandName() + " output: " + output);
                         }
 
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
 
-                    sendExecutorService.execute(new SendTask(sendData,request,clientAddress));
+                    sendExecutorService.execute(new SendTask(sendData, request, clientAddress));
                 }
             }
 
 
-
-
-
-            class ReadTask implements Runnable{
+            class ReadTask implements Runnable {
                 final DatagramChannel channel;
 
                 private ReadTask(DatagramChannel channel) {
@@ -161,7 +155,7 @@ public class Applicaton {
                         ois = new ObjectInputStream(bais);
                         Request request = (Request) ois.readObject();
                         logger.info("Processed command: " + request.getCommandName());
-                        executeExecutorService.execute(new ExecuteTask(request,clientAddress));
+                        executeExecutorService.execute(new ExecuteTask(request, clientAddress));
                         buffer.clear();
                     } catch (IOException | ClassNotFoundException e) {
                         throw new RuntimeException(e);
@@ -174,10 +168,8 @@ public class Applicaton {
             while (true) {
 
 
-
-
                 int count = selector.select();
-                if (count == 0){
+                if (count == 0) {
                     continue;
                 }
                 Set keySet = selector.selectedKeys();
@@ -202,6 +194,7 @@ public class Applicaton {
             throw new RuntimeException(e);
         }
     }
+
     class PriorityThreadFactory implements ThreadFactory {
         private final int priority;
 
@@ -216,5 +209,5 @@ public class Applicaton {
             return t;
         }
     }
-    }
+}
 

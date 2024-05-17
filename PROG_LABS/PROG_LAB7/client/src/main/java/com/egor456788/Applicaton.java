@@ -10,6 +10,8 @@ import java.io.*;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -29,7 +31,7 @@ public class Applicaton {
             ByteBuffer buffer = ByteBuffer.allocate(bufSize);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(baos);
-            oos.writeObject(new Request("get_commands", clientPort));
+            oos.writeObject(new Request("get_commands", clientPort,null,null));
             buffer.put(baos.toByteArray());
             buffer.flip();
             InetSocketAddress serverAddress = new InetSocketAddress("localhost", serverPort); // Адрес сервера
@@ -38,7 +40,7 @@ public class Applicaton {
 
             byte[] arr = new byte[bufSize];
             DatagramPacket dp = new DatagramPacket(arr, arr.length);
-            ds.setSoTimeout(5000);
+            ds.setSoTimeout(10000);
             ds.receive(dp);
             ByteArrayInputStream bais = new ByteArrayInputStream(dp.getData());
             ObjectInputStream ois = new ObjectInputStream(bais);
@@ -58,15 +60,63 @@ public class Applicaton {
         }
 
         String line = null;
-        printer.println("Введите help для вывода информации о командах");
+
         try (Scanner scanner = new Scanner(System.in); DatagramChannel clientChannel = DatagramChannel.open(); DatagramSocket ds = new DatagramSocket(clientPort);) {
 
+            clientChannel.configureBlocking(false);
             String comArgs;
             Entity entity;
             ByteBuffer buffer = ByteBuffer.allocate(bufSize);
             InetSocketAddress serverAddress = new InetSocketAddress("localhost", serverPort);
             byte[] DtgrByteArr = new byte[bufSize];
             String receivedMessage;
+            String userName = "";
+            String password = "";
+            boolean isLoggedIn = false;
+            String command;
+            while (!isLoggedIn) {
+                System.out.println("1 Войти, 2 Зарегистрироваться");
+                comArgs = null;
+                entity = null;
+                line = scanner.nextLine().trim();
+                if (!(line.equals("1")|| line.equals("2"))){
+                    printer.println("Введите 1 для авторизации или 2 для регистрации");
+                }
+
+                else {
+                    if (line.equals("1")) {
+                        command = "login_alter";
+                    }
+                    else {
+                        command = "register_alter";
+                    }
+                    printer.println("Введите имя");
+                    userName = scanner.nextLine();
+                    printer.println("Введите пароль");
+                    password = hashPassword(scanner.nextLine());
+
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    ObjectOutputStream oos = new ObjectOutputStream(baos);
+                    oos.writeObject(new Request(command,  clientPort,userName,password,-1));
+                    buffer.clear();
+                    buffer.put(baos.toByteArray());
+                    buffer.flip();
+
+                    clientChannel.send(buffer, serverAddress); // Отправляем сообщение серверу
+
+
+                    DatagramPacket dp = new DatagramPacket(DtgrByteArr, DtgrByteArr.length);
+                    ds.setSoTimeout(5000);
+                    ds.receive(dp);
+                    receivedMessage = new String(dp.getData(), 0, dp.getLength());
+                    printer.println(receivedMessage);
+                    if (receivedMessage.contains("успешно")){
+                        isLoggedIn = true;
+                    }
+
+                }
+            }
+            printer.println("Введите help для вывода информации о командах");
             while (scanner.hasNextLine()) {
                 comArgs = null;
                 entity = null;
@@ -82,7 +132,7 @@ public class Applicaton {
                     clientChannel.configureBlocking(false); // Не блокировать поток при чтении и записи
                     if ((commands.getCommands()).contains(input[0]))
                         try {
-                            entity = Creator.create(printer, readerSystemIn, false);
+                            entity = Creator.create(printer, readerSystemIn,userName, false);
                         } catch (InputException e) {
                             printer.println(line + ": " + e.getMessage() + " ВВЕДИТЕ КОМАНДУ ЗАНОВО");
                             continue;
@@ -90,7 +140,7 @@ public class Applicaton {
 
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     ObjectOutputStream oos = new ObjectOutputStream(baos);
-                    oos.writeObject(new Request(input[0], comArgs, entity, clientPort));
+                    oos.writeObject(new Request(input[0], comArgs, entity, clientPort,userName,password));
                     buffer.clear();
                     buffer.put(baos.toByteArray());
                     buffer.flip();
@@ -114,8 +164,18 @@ public class Applicaton {
             System.out.println("Не удалось подключится к серверу: " + e);
         } catch (SocketException e) {
             printer.println("Ошибка подключения к серверу" + e);
-        } catch (IOException e) {
+        } catch (IOException | NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
+    }
+    public static String hashPassword(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-1");
+        byte[] hashedBytes = md.digest(password.getBytes());
+
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hashedBytes) {
+            sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
     }
 }

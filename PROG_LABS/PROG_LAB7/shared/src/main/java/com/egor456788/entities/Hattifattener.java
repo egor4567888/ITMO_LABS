@@ -9,8 +9,12 @@ import com.egor456788.interfaces.KillHat;
 public class Hattifattener extends Entity implements KillHat, EatHat {
 
 
-    public Hattifattener(String name, Devotions devotion, int age, int height, int weight, Genders gender, Races race){
-        super(name,devotion, age, height, weight, gender, race);
+    public Hattifattener(String name, Devotions devotion, int age, int height, int weight, Genders gender, Races race, String creatorName){
+        super(name,devotion, age, height, weight, gender, race,creatorName);
+
+    }
+    public Hattifattener(int id,String name, Devotions devotion, int age, int height, int weight, Genders gender, Races race, String creatorName){
+        super(id,name,devotion, age, height, weight, gender, race,creatorName);
 
     }
     public void kneelHat(Hattifattener hattifattener){

@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * Менеджер коллекции
@@ -18,7 +19,8 @@ import java.util.List;
 
 public class CollectionMeneger {
     private List<Entity> collection;
-    final private LocalDateTime creationDate;
+     private LocalDateTime creationDate;
+     final private  ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     public CollectionMeneger() {
         this.collection = new ArrayList<Entity>();
@@ -26,14 +28,25 @@ public class CollectionMeneger {
     }
 
     public List<Entity> getCollection() {
-        return collection;
+        lock.readLock().lock();
+        List<Entity> col = collection;
+        lock.readLock().unlock();
+        return col;
+
     }
 
     public LocalDateTime getCreationDate() {
         return creationDate;
     }
     public void add(Entity entity){
+        lock.writeLock().lock();
         collection.add(entity);
+        lock.writeLock().unlock();
+    }
+    public void add(int index, Entity entity){
+        lock.writeLock().lock();
+        collection.add(index, entity);
+    lock.writeLock().unlock();
     }
     public void addFromFile(String filePath){
         XStream xstream = new XStream();
@@ -67,5 +80,11 @@ public class CollectionMeneger {
             return (path + ": ОШИБКА файл не найден, не удалось сохранить коллекцию");
 
         }
+    }
+    public void clear(){
+        collection.clear();
+    }
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 }

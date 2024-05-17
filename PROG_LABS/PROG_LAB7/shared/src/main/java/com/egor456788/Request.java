@@ -11,6 +11,16 @@ public class Request implements Serializable {
     final private Integer port;
     final private String userName;
     final private String password;
+    private Integer userId;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
     public Request(String commandName, String args, Entity entity, int port, String userName, String password){
         this.commandName = commandName;
         this.args = args;
@@ -65,6 +75,15 @@ public class Request implements Serializable {
         this.password = password;
         this.args = null;
         this.entity = null;
+    }
+    public Request(String commandName, int port, String userName, String password,int userId){
+        this.commandName = commandName;
+        this.port = port;
+        this.userName = userName;
+        this.password = password;
+        this.args = null;
+        this.entity = null;
+        this.userId = userId;
     }
 
     public String getCommandName() {

@@ -94,8 +94,8 @@ public class ExecuteScript extends Command {
                             comArgs = input[1];
                         try {
                             if (Applicaton.commandsPack.getCommands().contains(input[0]))
-                                entity = Creator.create(new Printer(),reader,true);
-                            output += invoker.invokeAlter(new Request(input[0], comArgs, entity)) + "\n";
+                                entity = Creator.create(new Printer(),reader,request.getUserName(),true);
+                            output += invoker.invokeAlter(new Request(input[0], comArgs, entity,request.getUserName(),request.getPassword())) + "\n";
                         }
                         catch (Exception e){
                             output+=getName() + " " + args + ": ОШИБКА "+ e.getMessage();

@@ -13,6 +13,7 @@ import java.util.Objects;
 
 public class Entity implements Comparable <Entity>, Serializable {
 
+    private int id;
     final private String name;
     private Conditions condition;
     private final Devotions devotion;
@@ -23,15 +24,32 @@ public class Entity implements Comparable <Entity>, Serializable {
     final private Integer height;
     final private Integer weight;
     final private Genders gender;
+    final private String creatorName;
 
 
 
 
-    public Entity(String name, Devotions devotion, int age, int height, int weight, Genders gender, Races race) {
+    public Entity(String name, Devotions devotion, int age, int height, int weight, Genders gender, Races race, String creatorName) {
         this.name = name;
         this.devotion = devotion;
+        this.creatorName = creatorName;
         this.condition = Conditions.ALIVE;
-        this.race = Races.HEMULEN;
+        this.race = race;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.gender = gender;
+        this.score = 0;
+
+
+    }
+    public Entity(int id,String name, Devotions devotion, int age, int height, int weight, Genders gender, Races race, String creatorName) {
+        this.id = id;
+        this.name = name;
+        this.devotion = devotion;
+        this.creatorName = creatorName;
+        this.condition = Conditions.ALIVE;
+        this.race = race;
         this.age = age;
         this.height = height;
         this.weight = weight;
@@ -85,7 +103,8 @@ public class Entity implements Comparable <Entity>, Serializable {
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + " {" +
-                "name='" + name + '\'' +
+                "ent_id='" + id + '\'' +
+                "name='" + name  +
                 ", devotion=" + devotion +
                 ", race=" + race +
                 ", age=" + age +
@@ -135,5 +154,33 @@ public class Entity implements Comparable <Entity>, Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    public Races getRace() {
+        return race;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public Genders getGender() {
+        return gender;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCreatorName() {
+        return creatorName;
     }
 }

@@ -10,14 +10,17 @@ import java.util.ArrayList;
 
 public class Hemulen extends Entity{
     private Phrases phrase;
-    public Hemulen(String name, Phrases phrase, int age, int height, int weight, Genders gender, Races race){
-        super(name, Devotions.FLOWERS, age, height, weight, gender, race);
+    public Hemulen(String name, Phrases phrase, int age, int height, int weight, Genders gender, Races race,String creatorName){
+        super(name, Devotions.FLOWERS, age, height, weight, gender, race, creatorName);
         this.phrase = phrase;
     }
-    public Hemulen(String name, int age, int height, int weight, Genders gender, Races race){
-        super(name, Devotions.FLOWERS, age, height, weight, gender, race);
+    public Hemulen(String name, int age, int height, int weight, Genders gender, Races race, String creatorName){
+        super(name, Devotions.FLOWERS, age, height, weight, gender, race,creatorName);
     }
-    private ArrayList<Flower> herbarium = new ArrayList<>();
+    public Hemulen(int id,String name, int age, int height, int weight, Genders gender, Races race, String creatorName){
+        super(id,name, Devotions.FLOWERS, age, height, weight, gender, race,creatorName);
+    }
+    private final ArrayList<Flower> herbarium = new ArrayList<>();
     public void collectFlower()
     {
         Flower flower = new Flower();
