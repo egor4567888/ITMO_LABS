@@ -1,5 +1,12 @@
 package com.egor456788;
 
+import com.egor456788.common.Devotions;
+import com.egor456788.common.Genders;
+import com.egor456788.common.Races;
+import com.egor456788.entities.Entity;
+import com.egor456788.entities.Hattifattener;
+import com.egor456788.entities.Hemulen;
+
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -18,6 +25,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static com.egor456788.EnumLocalization.*;
 
 public class MainGUI extends JFrame {
     private String username;
@@ -41,9 +50,9 @@ public class MainGUI extends JFrame {
         this.bundle = ResourceBundle.getBundle("messages", currentLocale);
 
         enumValues = new HashMap<>();
-        enumValues.put("devotion", Arrays.asList("Flowers", "Barometer","Namira", "Light", "Boethiah"));
+        enumValues.put("devotion", Arrays.asList("Flowers", "Barometer", "Namira", "Light", "Boethiah"));
         enumValues.put("race", Arrays.asList("Hemulen", "Hattifattner"));
-        enumValues.put("gender", Arrays.asList("Male", "Female","Helicopter"));
+        enumValues.put("gender", Arrays.asList("Male", "Female", "Helicopter"));
 
         createUI();
         loadData();
@@ -73,7 +82,18 @@ public class MainGUI extends JFrame {
                 bundle.getString("column7"), bundle.getString("column8"), bundle.getString("column9")
         };
 
-        DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
+        DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                if (column == 0 || column == 8) {
+                    return false;
+                }
+
+                String rowUsername = (String) getValueAt(row, 8);
+                return rowUsername.equals(username);
+            }
+        };
+
         collectionTable = new JTable(tableModel);
         collectionTable.setAutoCreateRowSorter(true);
         JScrollPane scrollPane = new JScrollPane(collectionTable);
@@ -81,10 +101,10 @@ public class MainGUI extends JFrame {
         add(scrollPane, BorderLayout.CENTER);
 
 
-
         // Create the visualization panel
-        visualizationPanel = new JPanel();
+        visualizationPanel = new VisualizationPanel();
         visualizationPanel.setPreferredSize(new Dimension(200, 600));
+        visualizationPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(visualizationPanel, BorderLayout.EAST);
 
         // Create the filter panel
@@ -117,6 +137,8 @@ public class MainGUI extends JFrame {
         add(filterPanel, BorderLayout.SOUTH);
 
 
+        // 1) Боковые границы filterPanel должны совпадать с границами таблицы.
+        filterPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 197));
 
         // Button actions
         changeLanguageButton.addActionListener(new ActionListener() {
@@ -141,8 +163,15 @@ public class MainGUI extends JFrame {
                     int row = e.getFirstRow();
                     int column = e.getColumn();
                     DefaultTableModel model = (DefaultTableModel) e.getSource();
-                    String[] data = (String[]) Stream.of(model.getDataVector().elementAt(row).toArray()).map(Object::toString).toArray();
+                    String[] data = (String[]) Stream.of(model.getDataVector().elementAt(row).toArray()).map(Object::toString).toArray(String[]::new);
+                    Entity entity = null;
+                    if (Objects.equals(getRaceByLocalizedValue(data[3]), "HEMULEN")) {
 
+                        //int id,String name, Devotions devotion, int age, int height, int weight, Genders gender, Races race, String creatorName
+                        entity = new Hemulen(Integer.parseInt(data[0]), data[1], Integer.parseInt(data[4]), Integer.parseInt(data[5]), Integer.parseInt(data[6]), Genders.valueOf(getGenderByLocalizedValue(data[7])), Races.HEMULEN, data[8]);
+                    } else
+                        entity = new Hattifattener(Integer.parseInt(data[0]), data[1], Devotions.valueOf(getDevotionByLocalizedValue(data[2])), Integer.parseInt(data[4]), Integer.parseInt(data[5]), Integer.parseInt(data[6]), Genders.valueOf(getGenderByLocalizedValue(data[7])), Races.Hattifattner, data[8]);
+                    Sender.sendToServer("update_id", String.valueOf(entity.getId()), entity);
                 }
             }
         });
@@ -171,12 +200,11 @@ public class MainGUI extends JFrame {
         }
     }
 
-    public  List<String> getTranslatedEnumValues(String field) {
+    public List<String> getTranslatedEnumValues(String field) {
         return enumValues.get(field).stream()
                 .map(value -> bundle.getString(value))
                 .collect(Collectors.toList());
     }
-
 
 
     private void changeLanguage() {
@@ -258,7 +286,23 @@ public class MainGUI extends JFrame {
     }
 
     private void showCommandMenu() {
-        JOptionPane.showMessageDialog(this, bundle.getString("command_menu_placeholder"), bundle.getString("command_menu"), JOptionPane.INFORMATION_MESSAGE);
+        // 3) При нажатии на кнопку "Меню команд" должно открываться окно в котором 9 кнопок под команды.
+        JDialog commandDialog = new JDialog(this, bundle.getString("command_menu"), true);
+        commandDialog.setSize(400, 300);
+        commandDialog.setLayout(new GridLayout(3, 3));
+
+        for (int i = 1; i <= 9; i++) {
+            JButton commandButton = new JButton(bundle.getString("command") + " " + i);
+            commandButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Handle command button action here
+                }
+            });
+            commandDialog.add(commandButton);
+        }
+
+        commandDialog.setVisible(true);
     }
 
     private void loadData() {
@@ -291,9 +335,85 @@ public class MainGUI extends JFrame {
 
             model.addRow(rowData);
         }
+        ((VisualizationPanel) visualizationPanel).updateObjects(model.getDataVector());
+
     }
 
+    // 4) Реализовать область визуализации объектов коллекции.
+    private class VisualizationPanel extends JPanel {
+        private List<Vector> objects;
 
+        public VisualizationPanel() {
+            this.objects = new ArrayList<>();
+            this.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    for (Vector object : objects) {
+                        int id = Integer.parseInt(object.get(0).toString());
+                        int x = calculateX(id, Float.parseFloat((String) object.get(5))/Float.parseFloat((String) object.get(6)));
+                        int y = calculateY(id, Float.parseFloat((String) object.get(6))/Float.parseFloat((String) object.get(4)));
+                        int radius = calculateRadius(Integer.parseInt((String) object.get(5)));
+
+                        if (e.getX() >= x - radius && e.getX() <= x + radius && e.getY() >= y - radius && e.getY() <= y + radius) {
+                            // Display object information
+                            JOptionPane.showMessageDialog(null, object.toString(), bundle.getString("object_information"), JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    }
+                }
+            });
+        }
+        public int calculateRadius(int x){
+            return Math.max((int) ((Math.atan(x)) * 10), 2);
+        }
+
+        public void updateObjects(Vector<Vector> dataVector) {
+            this.objects = dataVector;
+            repaint();
+        }
+
+        private int calculateX(int id , float k) {
+            if(((int) (id*10*k))%180 >10) {
+                return ((int) (id * 10 * k)) % 180;
+            }
+            return id%4*10 + 10;
+
+
+        }
+
+        private int calculateY(int id,float k) {
+
+            if (((int) (id*10*k)%530) > 10) {
+                return ((int) (id * 10 * k)) % 530;
+            }
+            return id%7*15 + 10;
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            for (Vector object : objects) {
+                int id = Integer.parseInt(object.get(0).toString());
+                int x = calculateX(id, Float.parseFloat((String) object.get(5))/Float.parseFloat((String) object.get(6)));
+                int y = calculateY(id, Float.parseFloat((String) object.get(6))/Float.parseFloat((String) object.get(4)));
+                int radius = calculateRadius(Integer.parseInt((String) object.get(5)));
+
+
+                // 3) Цвет объектов в области визуализации должен вычисляться по какой-нибудь формуле которая однозначно выдаёт цвет на основе имени пользователя.
+                String user = object.get(8).toString();
+                g.setColor(getUserColor(user));
+                g.fillOval(x - radius, y - radius, radius * 2, radius * 2);
+            }
+        }
+
+        private Color getUserColor(String user) {
+            // Пример формулы для вычисления цвета на основе имени пользователя
+            int hash = user.hashCode();
+            int r = (hash & 0xFF0000) >> 16;
+            int g = (hash & 0x00FF00) >> 8;
+            int b = hash & 0x0000FF;
+            return new Color(r, g, b);
+        }
+    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {

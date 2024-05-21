@@ -34,7 +34,7 @@ public class Applicaton {
             @Override
             public void run() {
                 Locale initialLocale = new Locale("ru");
-                new MainGUI("User123", initialLocale).setVisible(true);
+                new MainGUI("wrq", initialLocale).setVisible(true);
             }
         });
 
