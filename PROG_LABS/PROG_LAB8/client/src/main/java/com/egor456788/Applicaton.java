@@ -21,7 +21,7 @@ public class Applicaton {
     static int clientPort = 6788;
     static int serverPort = 9875;
     static InetSocketAddress serverAddress = new InetSocketAddress("localhost", serverPort);
-    static Locale locale = Locale.forLanguageTag("lv");
+    static Locale locale = Locale.forLanguageTag("en");
 
     public void run(String[] args) {
         System.out.println(Sender.sendToServer("show"));
@@ -33,10 +33,11 @@ public class Applicaton {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Locale initialLocale = new Locale("ru");
-                new MainGUI("wrq", initialLocale).setVisible(true);
+                Locale initialLocale = new Locale("en");
+                new MainGUI("asd", initialLocale).setVisible(true);
             }
         });
+
 
 
         commands = Sender.getCommandPack();

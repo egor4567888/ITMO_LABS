@@ -23,7 +23,7 @@ public class PrintNameById extends Command{
         }
         try {
             Comparator<Entity> nameComparator = Comparator.comparing(Entity::getName);
-            return (T) collectionMeneger.getCollection().stream().sorted(nameComparator).toList().get(Integer.parseInt(args)).getName();
+            return (T) collectionMeneger.getCollection().stream().sorted(nameComparator).filter(e -> e.getId() == Integer.parseInt(args)).toList().get(0).getName();
         } catch (NumberFormatException e) {
             return (T) "Элемент не найден";
         }

@@ -1,9 +1,12 @@
 package com.egor456788.commands;
 
 import com.egor456788.Request;
+import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
+import com.egor456788.menegers.DataBaseManager;
 
 import java.util.Collections;
+import java.util.Objects;
 
 /**
  * Команда удаляющая элементы меньшие элемента с введённым индексом
@@ -17,7 +20,7 @@ public class RemoveLower extends Command{
     }
 
     /**
-     * Удаляет элементы меньшие элемента с введённым индексом
+     * Удаляет элементы меньшие элемента с введённым индексом (сравнение по возрасту)
      * @param request
      * @return
      * @param <T>
@@ -25,12 +28,15 @@ public class RemoveLower extends Command{
     @Override
     public <T> T execute(Request request) {
         String args = request.getArgs();
-        Collections.sort(collectionMeneger.getCollection());
-        try{
-        collectionMeneger.getCollection().removeAll(collectionMeneger.getCollection().subList(0, Integer.parseInt(args)));
-        return (T)"Элементы удалены";
-        } catch (RuntimeException e){
-            return (T) "Элемент не найден";
+        int min = Integer.parseInt(request.getArgs());
+
+        for(Entity entity: collectionMeneger.getCollection()){
+            if(entity.getAge() < min && Objects.equals(entity.getCreatorName(), request.getUserName())){
+                DataBaseManager.deleteEntityById(entity.getId());
+            }
         }
+        collectionMeneger.getCollection().removeIf(entity -> entity.getAge() < min && Objects.equals(entity.getCreatorName(), request.getUserName()));
+
+        return (T)"Элементы удалены";
     }
 }

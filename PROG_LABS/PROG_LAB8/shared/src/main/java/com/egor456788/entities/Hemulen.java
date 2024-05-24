@@ -20,6 +20,9 @@ public class Hemulen extends Entity{
     public Hemulen(int id,String name, int age, int height, int weight, Genders gender, Races race, String creatorName){
         super(id,name, Devotions.FLOWERS, age, height, weight, gender, race,creatorName);
     }
+    public Hemulen(String name, Devotions devotion, int age, int height, int weight, Genders gender, Races race, String creatorName) {
+        super(name, devotion, age, height, weight, gender, race, creatorName);
+    }
     private final ArrayList<Flower> herbarium = new ArrayList<>();
     public void collectFlower()
     {

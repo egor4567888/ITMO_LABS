@@ -1,7 +1,11 @@
 package com.egor456788.commands;
 
 import com.egor456788.Request;
+import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
+import com.egor456788.menegers.DataBaseManager;
+
+import java.util.Objects;
 
 /**
  * Команда отчищающая коллекцию
@@ -25,7 +29,12 @@ public class Clear extends Command{
         if (args != null)
             return (T)(getName() + ": ОШИБКА избыточное число аргументов");
         else args = "";
-        collectionMeneger.getCollection().clear();
+        for(Entity entity: collectionMeneger.getCollection()){
+            if (Objects.equals(entity.getCreatorName(), request.getUserName())){
+                DataBaseManager.deleteEntityById(entity.getId());
+            }
+        }
+        collectionMeneger.getCollection().removeIf(entity -> Objects.equals(entity.getCreatorName(), request.getUserName()));
         return (T)"Коллекция очищена";
     }
 }

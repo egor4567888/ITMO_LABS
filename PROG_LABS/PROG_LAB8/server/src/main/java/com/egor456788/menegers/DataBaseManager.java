@@ -123,6 +123,31 @@ public class DataBaseManager {
 
         }
     }
+
+    public static boolean deleteEntityById(int id) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM entities WHERE ent_id = ?");
+
+            preparedStatement.setInt(1, id);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+
+            if (rowsAffected > 0) {
+                Applicaton.logger.info("Существо с ID " + id + " успешно удалено.");
+                return true;
+            } else {
+                Applicaton.logger.info("Существо с ID " + id + " не найдено.");
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
     public static void updateEntity(Entity entity)  {
 
 
@@ -167,7 +192,7 @@ public class DataBaseManager {
 
             while (resultSet.next()) {
                 Entity entity = null;
-                if(resultSet.getString("race").equals(Races.Hattifattner.name())) {
+                if(resultSet.getString("race").equals(Races.HATTIFATTNER.name())) {
                      entity = new Hattifattener(
                             resultSet.getInt("id"),
                             resultSet.getString("name"),
@@ -189,7 +214,7 @@ public class DataBaseManager {
                             resultSet.getInt("height"),
                             resultSet.getInt("weight"),
                             Genders.valueOf(resultSet.getString("gender")),
-                            Races.valueOf(resultSet.getString("race")),
+                            Races.valueOf(resultSet.getString("race").toUpperCase()),
                             resultSet.getString("creator_name")
 
                             );

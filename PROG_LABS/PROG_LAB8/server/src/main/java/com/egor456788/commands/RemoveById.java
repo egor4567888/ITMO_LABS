@@ -3,9 +3,11 @@ package com.egor456788.commands;
 import com.egor456788.Request;
 import com.egor456788.entities.Entity;
 import com.egor456788.menegers.CollectionMeneger;
+import com.egor456788.menegers.DataBaseManager;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Objects;
 
 /**
  * Команда удаляющая элемент с введённым ID
@@ -26,14 +28,16 @@ public class RemoveById extends Command{
     @Override
     public <T> T execute(Request request) {
         String args = request.getArgs();
-        Comparator<Entity> nameComparator = Comparator.comparing(Entity::getName);
-        Collections.sort(collectionMeneger.getCollection(),nameComparator);
-        try {
-            collectionMeneger.getCollection().remove((Integer.parseInt(args)));
-            return (T) "Элемент удалён";
+        for(Entity e : collectionMeneger.getCollection()){
+            if(e.getId() == Integer.parseInt(args)){
+                if(!Objects.equals(e.getCreatorName(), request.getUserName())){
+                    return (T) "Отказано в доступе";
+                }
+                DataBaseManager.deleteEntityById(e.getId());
+                collectionMeneger.getCollection().remove(e);
+                return (T) "Элемент удалён";
+            }
         }
-        catch (RuntimeException e){
-            return (T) "Элемент не найден";
-        }
+        return (T) "Элемент не найден";
     }
 }

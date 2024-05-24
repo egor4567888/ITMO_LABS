@@ -35,7 +35,7 @@ public class Creator {
             }
             switch (line){
                 case "1" -> race = Races.HEMULEN;
-                case "2" -> race = Races.Hattifattner;
+                case "2" -> race = Races.HATTIFATTNER;
             }
             if (race == null)
                 throw new InputException("ОШИБКА неверный формат расы");

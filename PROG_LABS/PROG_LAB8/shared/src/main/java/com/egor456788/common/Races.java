@@ -3,7 +3,7 @@ package com.egor456788.common;
 import java.io.Serializable;
 
 public enum Races implements Serializable {
-    Hattifattner("Hattifattner"),
+    HATTIFATTNER("Hattifattner"),
     HEMULEN("Hemulen");
     private String race;
     Races(String race){
