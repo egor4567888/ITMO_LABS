@@ -30,13 +30,7 @@ public class Applicaton {
         CommandsPack commands = null;
 
         boolean isConnected = false;
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                Locale initialLocale = new Locale("en");
-                new MainGUI("asd", initialLocale).setVisible(true);
-            }
-        });
+
 
 
 

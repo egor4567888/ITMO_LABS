@@ -10,6 +10,7 @@ import java.net.DatagramSocket;
 import java.net.DatagramPacket;
 import java.net.InetSocketAddress;
 import java.io.*;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class LoginGUI {
@@ -81,14 +82,26 @@ public class LoginGUI {
             String hashedPassword = Applicaton.hashPassword(password);
 
             String receivedMessage = Sender.sendToServer(new Request(command, Applicaton.clientPort, username, hashedPassword, -1));
-            if (receivedMessage != null) {
+            if (receivedMessage == null) {
                 statusLabel.setText(bundle.getString("connection_error"));
             } else if (receivedMessage.contains("успешно")) {
                 statusLabel.setText(bundle.getString("status") + ": " + bundle.getString("login_successful"));
-                // Handle successful login (e.g., open the main application window)
-            } else {
-                statusLabel.setText(bundle.getString("status") + ": " + receivedMessage);
+                frame.dispose();
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        Locale initialLocale = new Locale("en");
+                        new MainGUI(username, initialLocale).setVisible(true);
+                    }
+                });
+            } else if(receivedMessage.contains("существует")) {
+                statusLabel.setText(bundle.getString("user_already_exist"));
             }
+                else if(receivedMessage.contains("Неверный")) {
+                statusLabel.setText(bundle.getString("wrong_login_or_password"));
+            }
+
+
 
         } catch (Exception e) {
             statusLabel.setText(bundle.getString("status") + ": Error: " + e.getMessage());

@@ -8,6 +8,7 @@ import com.egor456788.entities.Hattifattener;
 import com.egor456788.entities.Hemulen;
 
 import javax.swing.*;
+import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.TableModelEvent;
@@ -23,8 +24,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -44,14 +49,21 @@ public class MainGUI extends JFrame {
     private JPanel visualizationPanel;
     private JPanel filterPanel;
     private JTextField filterTextField;
+    private  List<AnimationObject> animationObjects = Collections.synchronizedList(new ArrayList<>());
+    private Timer animationTimer;
+
 
     private String[] enumFields = {"devotion", "race", "gender"};
     private static Map<String, List<String>> enumValues;
+    private List<Vector> objects;
+    private HashSet<Vector> oldObjects;
+    private HashSet<Integer> idSet = new HashSet<>();
 
     public MainGUI(String username, Locale initialLocale) {
         this.username = username;
         this.currentLocale = initialLocale;
         this.bundle = ResourceBundle.getBundle("messages", currentLocale);
+        this.objects = new ArrayList<>();
 
         enumValues = new HashMap<>();
         enumValues.put("devotion", Arrays.asList("Flowers", "Barometer", "Namira", "Light", "Boethiah"));
@@ -120,7 +132,7 @@ public class MainGUI extends JFrame {
 
         // Create the filter panel
         filterPanel = new JPanel(new GridLayout(1, columnNames.length));
-        filterTextField = new JTextField(20);
+
         for (int i = 0; i < columnNames.length; i++) {
             JTextField textField = new JTextField(10);
             filterPanel.add(new JLabel(columnNames[i] + ":"));
@@ -148,10 +160,9 @@ public class MainGUI extends JFrame {
         add(filterPanel, BorderLayout.SOUTH);
 
 
-        // 1) Боковые границы filterPanel должны совпадать с границами таблицы.
         filterPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 197));
 
-        // Button actions
+
         changeLanguageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -228,7 +239,6 @@ public class MainGUI extends JFrame {
     }
 
 
-    // Метод filterTable для фильтрации по всем столбцам
     private void filterTable() {
         DefaultTableModel model = (DefaultTableModel) collectionTable.getModel();
         TableRowSorter<DefaultTableModel> sorter = (TableRowSorter<DefaultTableModel>) collectionTable.getRowSorter();
@@ -301,15 +311,15 @@ public class MainGUI extends JFrame {
 
     private void updateFilters() {
         String[] columnNames = {
-                bundle.getString("column1"), bundle.getString("column2"), bundle.getString("column3"),
-                bundle.getString("column4"), bundle.getString("column5"), bundle.getString("column6"),
-                bundle.getString("column7"), bundle.getString("column8"), bundle.getString("column9")
+                bundle.getString("ent_id"), bundle.getString("name"), bundle.getString("devotion"),
+                bundle.getString("race"), bundle.getString("age"), bundle.getString("height"),
+                bundle.getString("weight"), bundle.getString("gender"), bundle.getString("creator")
         };
         int i = 0;
         for (Component component : filterPanel.getComponents()) {
             if (component instanceof JLabel) {
                 JLabel label = (JLabel) component;
-                // Обновляем текст подписи
+
                 label.setText(columnNames[i]);
                 i++;
             }
@@ -322,11 +332,11 @@ public class MainGUI extends JFrame {
         changeLanguageButton.setText(bundle.getString("change_language"));
         commandMenuButton.setText(bundle.getString("command_menu"));
 
-        // Update table headers
+
         String[] columnNames = {
-                bundle.getString("column1"), bundle.getString("column2"), bundle.getString("column3"),
-                bundle.getString("column4"), bundle.getString("column5"), bundle.getString("column6"),
-                bundle.getString("column7"), bundle.getString("column8"), bundle.getString("column9")
+                bundle.getString("ent_id"), bundle.getString("name"), bundle.getString("devotion"),
+                bundle.getString("race"), bundle.getString("age"), bundle.getString("height"),
+                bundle.getString("weight"), bundle.getString("gender"), bundle.getString("creator")
         };
         for (int i = 0; i < columnNames.length; i++) {
             collectionTable.getColumnModel().getColumn(i).setHeaderValue(columnNames[i]);
@@ -365,7 +375,9 @@ public class MainGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String response = Sender.sendToServer("clear", null, null, username);
                 loadData();
-                JOptionPane.showMessageDialog(clearButton, "collection_cleared");
+                JOptionPane.showMessageDialog(clearButton, bundle.getString("collection_cleared"));
+
+
             }
         });
         commandMenuDialog.add(clearButton);
@@ -379,6 +391,46 @@ public class MainGUI extends JFrame {
             }
         });
         commandMenuDialog.add(removeByIdButton);
+
+//"Тип: " + collectionMeneger.getCollection().get(0).getClass() + ", количество элементов: " + collectionMeneger.getCollection().size() + ", дата инициализации " + collectionMeneger.getCreationDate()
+        JButton infoButton = new JButton(bundle.getString("info"));
+        infoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String input = Sender.sendToServer("info");
+                String regex = "Тип: class ([\\w\\.]+), количество элементов: (\\d+), дата инициализации ([\\d-]+)T[\\d:.]+";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(input);
+                System.out.println(input);
+                if (matcher.find()) {
+                    String elementType = matcher.group(1);
+                    elementType = "Entity";
+                    int elementCount = Integer.parseInt(matcher.group(2));
+                    String dateString = matcher.group(3);
+
+                    // Преобразование строки в дату
+                    DateFormat inputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    Date initializationDate = null;
+                    try {
+                        initializationDate = inputDateFormat.parse(dateString);
+                    } catch (ParseException ex) {
+                        ex.printStackTrace();
+                    }
+
+                    // Локализация даты
+                    DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.LONG, currentLocale);
+                    String localizedDate = dateFormat.format(initializationDate);
+                    System.out.println(1);
+                    JOptionPane.showMessageDialog(infoButton, bundle.getString("type") + ": " + elementType + " " + bundle.getString("element_count")+": " + elementCount+ " " + bundle.getString("date") + ": " + localizedDate);
+                }
+                else{
+                    System.out.println(2);
+                    JOptionPane.showMessageDialog(infoButton, bundle.getString("collection_is_empty"));
+                }
+            }
+        });
+        commandMenuDialog.add(infoButton);
 
         JButton removeLowerButton = new JButton(bundle.getString("remove_lower"));
         removeLowerButton.addActionListener(new ActionListener() {
@@ -408,6 +460,7 @@ public class MainGUI extends JFrame {
 
         removeByIdObjectDialog.add(idField);
         removeByIdObjectDialog.add(createButton);
+
 
 
 
@@ -505,7 +558,7 @@ public class MainGUI extends JFrame {
         createObjectDialog.add(new JLabel());
         createObjectDialog.add(createButton);
 
-        // Set positive integer filters
+
         ((AbstractDocument) ageField.getDocument()).setDocumentFilter(new PositiveIntegerFilterWithDefault(ageField));
         ((AbstractDocument) heightField.getDocument()).setDocumentFilter(new PositiveIntegerFilterWithDefault(heightField));
         ((AbstractDocument) weightField.getDocument()).setDocumentFilter(new PositiveIntegerFilterWithDefault(weightField));
@@ -537,7 +590,6 @@ public class MainGUI extends JFrame {
                         Sender.sendToServer("add", null, entity, username);
                     }
                     loadData();
-                    visualizationPanel.repaint();
                 } catch (RuntimeException ex) {
                     System.out.println(ex);
                     JOptionPane.showMessageDialog(createObjectDialog, bundle.getString("incorrect_input"));
@@ -566,17 +618,19 @@ public class MainGUI extends JFrame {
         // Clear existing data
         model.setRowCount(0);
 
-        // Regex to match entries
+
         Pattern pattern = Pattern.compile("\\{(.*?)\\}");
         Matcher matcher = pattern.matcher(response);
+
+        Vector<Vector> newObjects = new Vector<>();
 
         while (matcher.find()) {
             String entry = matcher.group(1);
             String[] fields = entry.split(", ");
-            Object[] rowData = new Object[fields.length];
+            Vector<String> rowData = new Vector<>();
 
-            for (int i = 0; i < fields.length; i++) {
-                String[] keyValue = fields[i].split("=");
+            for (String field : fields) {
+                String[] keyValue = field.split("=");
                 String key = keyValue[0].trim();
                 String value = keyValue[1].replace("'", "").trim();
 
@@ -584,13 +638,35 @@ public class MainGUI extends JFrame {
                 if (Stream.of(enumFields).anyMatch(key::equals)) {
                     value = bundle.getString(value);
                 }
-                rowData[i] = value;
+                rowData.add(value);
             }
 
-            model.addRow(rowData);
-        }
-        ((VisualizationPanel) visualizationPanel).updateObjects(model.getDataVector());
 
+            model.addRow(rowData);
+            newObjects.add(rowData);
+        }
+        idSet.clear();
+        for(Vector row: model.getDataVector()){
+            idSet.add(Integer.parseInt((String) row.get(0)));
+        }
+
+        ((VisualizationPanel) visualizationPanel).updateObjects(newObjects);
+        animateNewObject();
+        visualizationPanel.repaint();
+    }
+
+
+
+
+
+
+    private Color getColorFromUsername(String username) {
+        // Hash the username to get a unique color
+        int hash = username.hashCode();
+        int r = (hash & 0xFF0000) >> 16;
+        int g = (hash & 0x00FF00) >> 8;
+        int b = (hash & 0x0000FF);
+        return new Color(r, g, b);
     }
 
     public class PositiveIntegerFilterWithDefault extends DocumentFilter {
@@ -637,12 +713,86 @@ public class MainGUI extends JFrame {
         }
     }
 
+    private void animateNewObject() {
+        List<AnimationObject> tempAmimationObjects = new ArrayList<>();
+        for(AnimationObject obj:animationObjects){
+            if(idSet.contains(obj.id)){
+                tempAmimationObjects.add(obj);
+            }
+        }
+        animationObjects = tempAmimationObjects;
+        for (Vector row : objects) {
+            float height = Float.parseFloat((String) row.get(5));
+            float age = Float.parseFloat((String) row.get(4));
+            float weight = Float.parseFloat((String) row.get(6));
+            int id = Integer.parseInt((String) row.get(0));
+            String creatorName = row.get(8).toString();
 
+            Color color = getColorFromUsername(creatorName);
+            int x = calculateX(id, height / weight);
+            int y = calculateY(id, weight / age);
+            int finalRadius = calculateRadius((int) height);
+
+            AnimationObject animationObject = new AnimationObject(x, y, finalRadius, color,id);
+            animationObjects.add(animationObject);
+        }
+
+        if (animationTimer == null) {
+            animationTimer = new Timer(40, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    for (AnimationObject obj : animationObjects) {
+                        obj.animate();
+                    }
+                    visualizationPanel.repaint();
+
+                    // Останавливаем таймер, если все анимации завершены
+                    if (animationObjects.stream().allMatch(AnimationObject::isComplete)) {
+                        animationTimer.stop();
+                        animationTimer = null;
+                    }
+                }
+            });
+            animationTimer.start();
+        }
+
+
+    }
+
+    public int calculateRadius(int x) {
+        return Math.max((int) ((Math.atan(x)) * 10), 2);
+    }
+
+    private int calculateX(int id, float k) {
+        if (((int) (id * 10 * k)) % 180 > 10) {
+            return ((int) (id * 10 * k)) % 180;
+        }
+        return id % 4 * 10 + 10;
+
+
+    }
+
+    private int calculateY(int id, float k) {
+
+        if (((int) (id * 10 * k) % 530) > 10) {
+            return ((int) (id * 10 * k)) % 530;
+        }
+        return id % 7 * 15 + 10;
+    }
     private class VisualizationPanel extends JPanel {
-        private List<Vector> objects;
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            for (AnimationObject obj : animationObjects) {
+                obj.draw(g);
+            }
+        }
+
+
 
         public VisualizationPanel() {
-            this.objects = new ArrayList<>();
+
+
             this.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
@@ -653,7 +803,7 @@ public class MainGUI extends JFrame {
                         int radius = calculateRadius(Integer.parseInt((String) object.get(5)));
 
                         if (e.getX() >= x - radius && e.getX() <= x + radius && e.getY() >= y - radius && e.getY() <= y + radius) {
-                            // Display object information
+
                             JOptionPane.showMessageDialog(null, object.toString(), bundle.getString("object_information"), JOptionPane.INFORMATION_MESSAGE);
                         }
                     }
@@ -661,49 +811,56 @@ public class MainGUI extends JFrame {
             });
         }
 
-        public int calculateRadius(int x) {
-            return Math.max((int) ((Math.atan(x)) * 10), 2);
+
+        private void drawObjects(Graphics g) {
+            System.out.println("draw: ");
+            DefaultTableModel model = (DefaultTableModel) collectionTable.getModel();
+                for (Vector row : objects) {
+
+                float height = Float.parseFloat((String) row.get(5));
+                float age = Float.parseFloat((String) row.get(4));
+                float weight = Float.parseFloat((String) row.get(6));
+                int id = Integer.parseInt((String) row.get(0));
+                String creatorName = row.get(8).toString();
+
+                Color color = getColorFromUsername(creatorName);
+                int x = calculateX(id, height / weight);
+                int y = calculateY(id, weight/ age);
+                int radius = calculateRadius((int) height);
+
+
+                g.setColor(color);
+                g.fillOval(x, y, radius, radius);
+                System.out.println("x: " + x+ " y: "+ y+" rad: " + radius+ " username: " + creatorName + " color: " + color);
+            }
         }
 
+
+
         public void updateObjects(Vector<Vector> dataVector) {
-            this.objects = dataVector;
+            oldObjects = new HashSet<>(objects);
+            objects = dataVector;
             repaint();
         }
 
 
-        private int calculateX(int id, float k) {
-            if (((int) (id * 10 * k)) % 180 > 10) {
-                return ((int) (id * 10 * k)) % 180;
-            }
-            return id % 4 * 10 + 10;
 
+//        @Override
+//        protected void paintComponent(Graphics g) {
+//            super.paintComponent(g);
+//            for (Vector object : objects) {
+//                int id = Integer.parseInt(object.get(0).toString());
+//                int x = calculateX(id, Float.parseFloat((String) object.get(5)) / Float.parseFloat((String) object.get(6)));
+//                int y = calculateY(id, Float.parseFloat((String) object.get(6)) / Float.parseFloat((String) object.get(4)));
+//                int radius = calculateRadius(Integer.parseInt((String) object.get(5)));
 
-        }
-
-        private int calculateY(int id, float k) {
-
-            if (((int) (id * 10 * k) % 530) > 10) {
-                return ((int) (id * 10 * k)) % 530;
-            }
-            return id % 7 * 15 + 10;
-        }
-
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            for (Vector object : objects) {
-                int id = Integer.parseInt(object.get(0).toString());
-                int x = calculateX(id, Float.parseFloat((String) object.get(5)) / Float.parseFloat((String) object.get(6)));
-                int y = calculateY(id, Float.parseFloat((String) object.get(6)) / Float.parseFloat((String) object.get(4)));
-                int radius = calculateRadius(Integer.parseInt((String) object.get(5)));
-
-
-                // 3) Цвет объектов в области визуализации должен вычисляться по какой-нибудь формуле которая однозначно выдаёт цвет на основе имени пользователя.
-                String user = object.get(8).toString();
-                g.setColor(getUserColor(user));
-                g.fillOval(x - radius, y - radius, radius * 2, radius * 2);
-            }
-        }
+//
+//
+//                String user = object.get(8).toString();
+//                g.setColor(getUserColor(user));
+//                g.fillOval(x - radius, y - radius, radius * 2, radius * 2);
+//            }
+//        }
 
         private Color getUserColor(String user) {
             // Пример формулы для вычисления цвета на основе имени пользователя
