@@ -1,0 +1,11 @@
+info
+show
+print_name_by_id 303
+execute_script script.txt
+add
+1
+asd
+1
+1
+1
+1
