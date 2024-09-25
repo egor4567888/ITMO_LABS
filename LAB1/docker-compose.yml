@@ -1,0 +1,9 @@
+services:
+  httpd:
+    build: .
+    container_name: apache
+    ports:
+      - "80:80"
+      - "9000:9000"
+    # command: ["/usr/local/bin/entrypoint.sh"]
+    command: ["apache2ctl","-D","FOREGROUND"]

@@ -1,0 +1,109 @@
+/* Стили для body */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Стили для заголовков */
+h1, h2 {
+  color: #e0e0e0;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Селектор класса для header */
+.header {
+  background: linear-gradient(90deg, #333, #444);
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin-bottom: 20px; /* Разделение между header и hitsPlot */
+}
+
+/* Стили для информации о студенте */
+.student-info {
+  font-family: sans-serif;
+  color: #e0e0e0;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Селектор для hitsPlot */
+#hitsPlot {
+  margin-bottom: 0; /* Убираем разделение после hitsPlot */
+}
+
+/* Селектор дочерних элементов для контейнера */
+#container > div {
+  margin: 0; /* Убираем разделения между блоками */
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Селектор псевдокласса для кнопки при наведении */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  cursor: pointer;
+}
+
+/* Стили для таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+table, th, td {
+  border: 1px solid #444;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #2c2c2c;
+}
+
+/* Отступы для элементов ввода */
+input[type="radio"], input[type="number"] {
+  margin: 5px 0;
+}
+
+/* Наследование и каскадирование */
+#variableSelection {
+  font-size: 16px;
+}
+
+#variableSelection b {
+  color: #e0e0e0;
+}
+
+#variableSelection input[type="number"] {
+  font-size: inherit; /* Наследование */
+  padding: 5px; /* Каскадирование */
+}
