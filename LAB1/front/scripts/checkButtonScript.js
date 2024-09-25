@@ -43,4 +43,3 @@ document.getElementById('submitButton').addEventListener('click', function () {
       console.error('Произошла ошибка:', error);
     });
   });
-  
