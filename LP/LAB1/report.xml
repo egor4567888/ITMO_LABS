@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<testsuite name="IOLibraryTest-20241004221849" tests="15" time="0.750" failures="3" errors="0">
+	<testcase classname="IOLibraryTest" name="test_print_char" time="0.047"/>
+	<testcase classname="IOLibraryTest" name="test_print_int" time="0.083"/>
+	<testcase classname="IOLibraryTest" name="test_print_string" time="0.047"/>
+	<testcase classname="IOLibraryTest" name="test_print_uint" time="0.080"/>
+	<testcase classname="IOLibraryTest" name="test_read_char" time="0.097"/>
+	<testcase classname="IOLibraryTest" name="test_read_word" time="0.014"/>
+	<testcase classname="IOLibraryTest" name="test_read_word_length" time="0.108"/>
+	<testcase classname="IOLibraryTest" name="test_read_word_too_long" time="0.028"/>
+	<testcase classname="IOLibraryTest" name="test_string_copy_too_long" time="0.043"/>
+	<testcase classname="IOLibraryTest" name="test_string_equals" time="0.054"/>
+	<testcase classname="IOLibraryTest" name="test_string_length" time="0.041"/>
+	<testcase classname="IOLibraryTest" name="test_string_not_equals" time="0.062"/>
+	<testcase classname="IOLibraryTest" name="test_parse_int" time="0.018">
+		<failure type="AssertionError" message="215 != 1 : parse_int('0') returned wrong length: 215, expected: 1"><![CDATA[AssertionError: 215 != 1 : parse_int('0') returned wrong length: 215, expected: 1
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_parse_uint" time="0.016">
+		<failure type="AssertionError" message="215 != 1 : parse_uint('0') returned wrong length: 215, expected: 1"><![CDATA[AssertionError: 215 != 1 : parse_uint('0') returned wrong length: 215, expected: 1
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_string_copy" time="0.013">
+		<failure type="AssertionError" message="'BBBBBBBBBBBBBBBBBBB' != 'ashdb asdhabs dahb'
+- BBBBBBBBBBBBBBBBBBB
++ ashdb asdhabs dahb
+ : string_copy('ashdb asdhabs dahb') put wrong string into buffer: 'BBBBBBBBBBBBBBBBBBB'"><![CDATA[AssertionError: 'BBBBBBBBBBBBBBBBBBB' != 'ashdb asdhabs dahb'
+- BBBBBBBBBBBBBBBBBBB
++ ashdb asdhabs dahb
+ : string_copy('ashdb asdhabs dahb') put wrong string into buffer: 'BBBBBBBBBBBBBBBBBBB'
+]]></failure>
+	</testcase>
+	<system-out><![CDATA[]]></system-out>
+	<system-err><![CDATA[]]></system-err>
+</testsuite>

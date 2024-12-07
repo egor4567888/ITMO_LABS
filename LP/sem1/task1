@@ -1,0 +1,6 @@
+grep "^.$" test
+grep "[0-9]" test
+grep -i "^0x[0-9A-F]+$" test
+grep "\<[a-zA-Zа-яа-Я]\{3\}\>" test
+grep "^$" test
+-v

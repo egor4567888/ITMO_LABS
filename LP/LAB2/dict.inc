@@ -1,0 +1,2 @@
+extern dict_find_word
+extern dict_print_word

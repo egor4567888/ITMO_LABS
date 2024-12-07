@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<testsuite name="IOLibraryTest-20241016141118" tests="15" time="0.072" failures="15" errors="0">
+	<testcase classname="IOLibraryTest" name="test_parse_int" time="0.003">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_parse_uint" time="0.004">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_print_char" time="0.005">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_print_int" time="0.004">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_print_string" time="0.008">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_print_uint" time="0.005">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_read_char" time="0.005">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_read_word" time="0.006">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_read_word_length" time="0.005">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_read_word_too_long" time="0.003">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_string_copy" time="0.003">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_string_copy_too_long" time="0.006">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_string_equals" time="0.006">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_string_length" time="0.003">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<testcase classname="IOLibraryTest" name="test_string_not_equals" time="0.005">
+		<failure type="AssertionError" message="1 != 0 : failed to compile"><![CDATA[AssertionError: 1 != 0 : failed to compile
+]]></failure>
+	</testcase>
+	<system-out><![CDATA[]]></system-out>
+	<system-err><![CDATA[]]></system-err>
+</testsuite>
