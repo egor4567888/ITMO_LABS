@@ -1,0 +1,23 @@
+<div>
+    <button *ngFor="let val of xValues" (click)="x=val">{{val}}</button>
+    <input type="number" [(ngModel)]="y" placeholder="Y (-3..3)" />
+    <button *ngFor="let val of rValues" (click)="r=val; drawShapes()">{{val}}</button>
+    <button (click)="sendPoint()">Проверить</button>
+    <br><br>
+    <canvas #canvas width="300" height="300" 
+      style="border:1px solid #000" 
+      (click)="canvasClick($event)">
+    </canvas>
+    <br>
+    <table border="1">
+      <tr><th>X</th><th>Y</th><th>R</th><th>Попадание</th></tr>
+      <tr *ngFor="let p of points">
+        <td>{{p.x}}</td>
+        <td>{{p.y}}</td>
+        <td>{{p.r}}</td>
+        <td [style.color]="p.hit?'green':'red'">{{p.hit}}</td>
+      </tr>
+    </table>
+    <br>
+    <a href="#" (click)="logout()">Выйти</a>
+  </div>
