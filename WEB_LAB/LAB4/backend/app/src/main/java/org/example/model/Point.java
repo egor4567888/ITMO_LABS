@@ -9,15 +9,15 @@ public class Point {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int x;
+    private double x;
     private double y;
-    private int r;
+    private double r;
     private boolean hit;
     private String owner;
 
     public Point() {}
 
-    public Point(int x, double y, int r, boolean hit, String owner) {
+    public Point(double x, double y, double r, boolean hit, String owner) {
         this.x = x;
         this.y = y;
         this.r = r;
@@ -29,7 +29,7 @@ public class Point {
         return id;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
@@ -37,7 +37,7 @@ public class Point {
         return y;
     }
 
-    public int getR() {
+    public double getR() {
         return r;
     }
 

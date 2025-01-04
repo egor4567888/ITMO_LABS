@@ -1,23 +1,96 @@
 <div>
-    <button *ngFor="let val of xValues" (click)="x=val">{{val}}</button>
-    <input type="number" [(ngModel)]="y" placeholder="Y (-3..3)" />
-    <button *ngFor="let val of rValues" (click)="r=val; drawShapes()">{{val}}</button>
-    <button (click)="sendPoint()">Проверить</button>
+
     <br><br>
-    <canvas #canvas width="300" height="300" 
-      style="border:1px solid #000" 
-      (click)="canvasClick($event)">
-    </canvas>
-    <br>
-    <table border="1">
-      <tr><th>X</th><th>Y</th><th>R</th><th>Попадание</th></tr>
-      <tr *ngFor="let p of points">
-        <td>{{p.x}}</td>
-        <td>{{p.y}}</td>
-        <td>{{p.r}}</td>
-        <td [style.color]="p.hit?'green':'red'">{{p.hit}}</td>
-      </tr>
-    </table>
-    <br>
+    <div>
+      <input type="range" min="-3" max="3" step="0.1" [(ngModel)]="x" />
+<span>{{ x }}</span>
+<br><br>
+
+<input type="number" [(ngModel)]="y" placeholder="Y (-3..3)" />
+<br><br>
+
+<input type="range" min="1" max="4" step="0.5" [(ngModel)]="r" (change)="drawShapes()" />
+<span>{{ r }}</span>
+<br><br>
+
+<button (click)="sendPoint()">Проверить</button>
+      <br><br>
+      <svg width="300" height="300" viewBox="0 0 100 100" (click)="handleClickOnCanvas($event)"
+           xmlns="http://www.w3.org/2000/svg" style="border:1px solid #000000;">
+          <!-- Прозрачный прямоугольник для обработки кликов по всей области SVG -->
+          <rect width="100%" height="100%" fill="transparent" />
+
+                    
+          <!--  треугольник -->
+          <polygon points="50,50 50,66.6 66.6,50" fill="lightblue" stroke="black" />
+
+          <!-- Полукруг -->
+          <path d="M 50,66.6 A 16.6,16.6 0 0 1 33.3,50 L 50,50 z" fill="lightblue" stroke="black" />
+
+          <!-- Квадрат -->
+          <rect x="50" y="16.6" width="33.3" height="33.3" fill="lightblue" stroke="black" />
+
+          <!-- Оси -->
+          <line x1="50" y1="0" x2="50" y2="100" stroke="black" />
+          <line x1="0" y1="50" x2="100" y2="50" stroke="black" />
+
+          <!-- Метки для оси X -->
+          <text x="95" y="56" font-size="5" fill="black">x</text>
+          <text x="83.3" y="46" font-size="5" fill="black">R</text>
+          <text x="66.6" y="46" font-size="5" fill="black">R/2</text>
+          <text x="33.3" y="46" font-size="5" fill="black">-R/2</text>
+          <text x="16.6" y="46" font-size="5" fill="black">-R</text>
+
+          <!-- Метки для оси Y -->
+          <text x="53" y="5" font-size="5" fill="black">y</text>
+          <text x="53" y="16.6" font-size="5" fill="black">R</text>
+          <text x="53" y="33.3" font-size="5" fill="black">R/2</text>
+          <text x="53" y="66.6" font-size="5" fill="black">-R/2</text>
+          <text x="53" y="83.3" font-size="5" fill="black">-R</text>
+
+          <!-- Points on X-axis -->
+          <circle cx="83.3" cy="50" r="1" fill="red" /> <!-- R -->
+          <circle cx="66.6" cy="50" r="1" fill="red" /> <!-- R/2 -->
+          <circle cx="33.3" cy="50" r="1" fill="red" /> <!-- -R/2 -->
+          <circle cx="16.6" cy="50" r="1" fill="red" /> <!-- -R -->
+
+          <!-- Points on Y-axis -->
+          <circle cx="50" cy="16.6" r="1" fill="red" /> <!-- R -->
+          <circle cx="50" cy="33.3" r="1" fill="red" /> <!-- R/2 -->
+          <circle cx="50" cy="66.6" r="1" fill="red" /> <!-- -R/2 -->
+          <circle cx="50" cy="83.3" r="1" fill="red" /> <!-- -R -->
+
+  
+          <!-- Точки из списка -->
+          <ng-container *ngFor="let p of filteredPoints">
+            <circle [attr.cx]="getSvgX(p.x)" [attr.cy]="getSvgY(p.y)" r="1.5"
+                    [attr.fill]="p.hit ? 'green' : 'blue'" />
+        </ng-container>
+  
+          <!--  стрелки для осей -->
+          <line x1="100" y1="50" x2="95" y2="47.5" stroke="black" />
+          <line x1="100" y1="50" x2="95" y2="52.5" stroke="black" />
+
+          <line x1="50" y1="0" x2="47.5" y2="5" stroke="black" />
+          <line x1="50" y1="0" x2="52.5" y2="5" stroke="black" />
+      </svg>
+      <br>
+      <table border="1">
+        <tr>
+          <th>X</th>
+          <th>Y</th>
+          <th>R</th>
+          <th>Попадание</th>
+        </tr>
+        <tr *ngFor="let p of points">
+          <td>{{ p.x | number:'1.1-5' }}</td>
+          <td>{{ p.y | number:'1.1-5' }}</td>
+          <td>{{ p.r }}</td>
+          <td [style.color]="p.hit ? 'green' : 'red'">{{ p.hit }}</td>
+        </tr>
+      </table>
+      <br>
+      
+  </div>
     <a href="#" (click)="logout()">Выйти</a>
   </div>

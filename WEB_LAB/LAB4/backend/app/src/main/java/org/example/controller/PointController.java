@@ -36,38 +36,39 @@ public class PointController {
         return pointRepository.save(point);
     }
 
-    private boolean checkHit(int x, double y, int r) {
-        // Первая четверть: квадрат со стороной r (0<=x<=r, 0<=y<=r)
+    private boolean checkHit(double x, double y, double r) {
+
         if (x >= 0 && y >= 0 && x <= r && y <= r) return true;
-        // Третья четверть: треугольник с катетами r/2
+
+        if (x >= 0 && y <= 0) {
+            double half = r / 2.0;
+            if (x-y<=half) return true;
+        }
+
         if (x <= 0 && y <= 0) {
             double half = r / 2.0;
-            if (x >= -half && y >= -half && (y >= -half - (2.0 / r) * x)) return true;
-        }
-        // Четвертая четверть: четверть окружности (x>=0,y<=0, x^2+y^2<=r^2)
-        if (x >= 0 && y <= 0) {
-            if (x * x + y * y <= r * r) return true;
+            if (x * x + y * y <= half * half) return true;
         }
         return false;
     }
 
     public static class PointRequest {
-        private int x;
+        private double x;
         private double y;
-        private int r;
+        private double r;
 
         public PointRequest() {}
 
-        public int getX() { return x; }
+        public double getX() { return x; }
 
-        public void setX(int x) { this.x = x; }
+        public void setX(double x) { this.x = x; }
 
         public double getY() { return y; }
 
         public void setY(double y) { this.y = y; }
 
-        public int getR() { return r; }
+        public double getR() { return r; }
 
-        public void setR(int r) { this.r = r; }
+        public void setR(double r) { this.r = r; }
     }
 }
