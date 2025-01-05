@@ -39,6 +39,7 @@ export class MainComponent implements OnInit {
 
 
   sendPoint() {
+    console.log('отправка');
     if (this.r <= 0 || this.y < -3 || this.y > 3) return;
     this.http.post<Point>('/points', { x: this.x, y: this.y, r: this.r }, { withCredentials: true })
       .subscribe({

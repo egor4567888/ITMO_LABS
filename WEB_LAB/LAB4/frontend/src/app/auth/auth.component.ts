@@ -28,15 +28,22 @@ export class AuthComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   login() {
-    this.http.post('/auth/login',
+    this.http.post(
+      '/auth/login',
       { username: this.username, password: this.password },
-      { responseType: 'text', withCredentials: true }
+      {
+        responseType: 'text',
+        withCredentials: true,
+        headers: { 'Content-Type': 'application/json' }
+      }
     ).subscribe({
-      next: () => this.router.navigate(['/main']),
+      next: token => {
+        localStorage.setItem('token', token);
+        this.router.navigate(['/main']);
+      },
       error: err => this.errorMsg = err.error
     });
   }
-
   register() {
     this.http.post('/auth/register',
       { username: this.username, password: this.password },
