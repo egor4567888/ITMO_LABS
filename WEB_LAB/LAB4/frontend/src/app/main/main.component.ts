@@ -119,6 +119,7 @@ getSvgY(y: number): number {
   }
 
   logout() {
+    localStorage.setItem('token', "");
     this.http.get('http://localhost:8080/auth/logout', { withCredentials: true, responseType: 'text' })
       .subscribe(() => {
         window.location.href = '/';

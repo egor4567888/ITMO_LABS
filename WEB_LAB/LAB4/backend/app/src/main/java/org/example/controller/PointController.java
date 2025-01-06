@@ -4,21 +4,26 @@ import com.example.model.Point;
 import com.example.repository.PointRepository;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
+
+import org.springframework.security.core.context.SecurityContextHolder;
 
 @RestController
 @RequestMapping("/points")
 public class PointController {
     private final PointRepository pointRepository;
+    private static final Logger logger = LoggerFactory.getLogger(PointController.class);
 
     public PointController(PointRepository pointRepository) {
         this.pointRepository = pointRepository;
     }
 
     @GetMapping
-    public List<Point> getAllPoints(HttpSession session) {
-        String user = (String) session.getAttribute("username");
+    public List<Point> getAllPoints() {
+        String user = SecurityContextHolder.getContext().getAuthentication().getName();
         if (user == null) {
             return List.of();
         }
@@ -26,8 +31,8 @@ public class PointController {
     }
 
     @PostMapping
-    public Point addPoint(@RequestBody PointRequest req, HttpSession session) {
-        String user = (String) session.getAttribute("username");
+    public Point addPoint(@RequestBody PointRequest req) {
+        String user = SecurityContextHolder.getContext().getAuthentication().getName();
         if (user == null) {
             return null;
         }
@@ -37,12 +42,11 @@ public class PointController {
     }
 
     private boolean checkHit(double x, double y, double r) {
-
         if (x >= 0 && y >= 0 && x <= r && y <= r) return true;
 
         if (x >= 0 && y <= 0) {
             double half = r / 2.0;
-            if (x-y<=half) return true;
+            if (x - y <= half) return true;
         }
 
         if (x <= 0 && y <= 0) {

@@ -30,12 +30,12 @@ public class SecurityConfig {
             .cors().and()
             .csrf().disable()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-            .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .requestMatchers("/auth/**").permitAll()
-                .requestMatchers("/points/**").authenticated()
-                .anyRequest().authenticated()
-            )
+            .authorizeHttpRequests(auth -> auth
+    .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+    .requestMatchers("/auth", "/auth/**").permitAll() 
+    .requestMatchers("/points/**").authenticated()
+    .anyRequest().authenticated()
+)
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
             .formLogin().disable()
             .httpBasic().disable();

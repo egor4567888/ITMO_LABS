@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.model.User;
 import com.example.repository.UserRepository;
+import com.example.util.TokenProvider;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,20 +14,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.jsonwebtoken.security.Keys;
 import java.security.Key;
+import java.util.Date;
 
 
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-    private static final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        private final TokenProvider tokenProvider;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
+    private final long expTime = 3600000;
 
     @Autowired
-    public AuthController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public AuthController(UserRepository userRepository,
+                          PasswordEncoder passwordEncoder,
+                          TokenProvider tokenProvider) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.tokenProvider = tokenProvider;
     }
 
     @PostMapping("/register")
@@ -52,10 +58,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Нет такого пользователя");
         }
         if (passwordEncoder.matches(req.getPassword(), user.getPassword())) {
-            String token = Jwts.builder()
-            .setSubject(user.getUsername())
-            .signWith(SECRET_KEY, SignatureAlgorithm.HS256)
-            .compact();
+            String token = tokenProvider.generateToken(user.getUsername());
             logger.info("User {} logged in successfully", req.getUsername());
             return ResponseEntity.ok(token);
         } else {
