@@ -4,5 +4,5 @@
   <input [(ngModel)]="password" name="password" type="password" placeholder="Пароль" required>
   <button type="submit">Войти</button>
   <button type="button" (click)="register()">Зарегистрироваться</button>
+  <p *ngIf="errorMsg">{{ errorMsg }}</p>
 </form>
-<p>{{ errorMsg }}</p>

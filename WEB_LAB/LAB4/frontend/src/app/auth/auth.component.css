@@ -1,0 +1,13 @@
+form {
+    width: auto; 
+  }
+  
+  input {
+    font-size: 1em; 
+    margin: 5px 0;
+  }
+  
+  p {
+    text-align: center;
+    color: red;
+  }

@@ -1,24 +1,21 @@
-// auth.component.ts
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { ResponseDTO } from '../models/response.dto';
+
+interface AuthTokens {
+  accessToken: string;
+  refreshToken: string;
+}
 
 @Component({
   selector: 'app-auth',
   standalone: true,
   imports: [NgIf, FormsModule],
-  template: `
-    <h2>ФИО: Иванов Иван Иванович, Группа: 12345, Вариант: 1</h2>
-    <form (ngSubmit)="login()">
-      <input [(ngModel)]="username" name="username" placeholder="Логин" required>
-      <input [(ngModel)]="password" name="password" type="password" placeholder="Пароль" required>
-      <button type="submit">Войти</button>
-      <button type="button" (click)="register()">Зарегистрироваться</button>
-    </form>
-    <p>{{ errorMsg }}</p>
-  `,
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
   username = '';
@@ -28,29 +25,44 @@ export class AuthComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   login() {
-    this.http.post(
+    this.http.post<ResponseDTO<AuthTokens>>(
       '/auth/login',
       { username: this.username, password: this.password },
-      {
-        responseType: 'text',
-        withCredentials: true,
-        headers: { 'Content-Type': 'application/json' }
-      }
+      { withCredentials: true, headers: { 'Content-Type': 'application/json' } }
     ).subscribe({
-      next: token => {
-        localStorage.setItem('token', token);
-        this.router.navigate(['/main']);
+      next: res => {
+        if (res.data) {
+          localStorage.setItem('accessToken', res.data.accessToken);
+          localStorage.setItem('refreshToken', res.data.refreshToken);
+          this.router.navigate(['/main']);
+        } else {
+          this.errorMsg = res.message || 'Login failed';
+        }
       },
-      error: err => this.errorMsg = err.error
+      error: err => {
+        if (err.error && err.error.message) {
+          this.errorMsg = err.error.message;
+        } else {
+          this.errorMsg = 'An unexpected error occurred';
+        }
+      }
     });
   }
+
   register() {
-    this.http.post('/auth/register',
+    this.http.post<ResponseDTO<string>>(
+      '/auth/register',
       { username: this.username, password: this.password },
-      { responseType: 'text', withCredentials: true }
+      { responseType: 'json', withCredentials: true }
     ).subscribe({
       next: () => this.login(),
-      error: err => this.errorMsg = err.error
+      error: err => {
+        if (err.error && err.error.message) {
+          this.errorMsg = err.error.message;
+        } else {
+          this.errorMsg = 'Registration failed';
+        }
+      }
     });
   }
 }

@@ -1,6 +1,7 @@
 package com.example.model;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "POINTS")
@@ -15,6 +16,8 @@ public class Point {
     private boolean hit;
     private String owner;
 
+    private LocalDateTime createdAt; 
+
     public Point() {}
 
     public Point(double x, double y, double r, boolean hit, String owner) {
@@ -23,6 +26,11 @@ public class Point {
         this.r = r;
         this.hit = hit;
         this.owner = owner;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        this.createdAt = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -47,5 +55,9 @@ public class Point {
 
     public String getOwner() {
         return owner;
+    }
+
+    public LocalDateTime getCreatedAt() { 
+        return createdAt;
     }
 }

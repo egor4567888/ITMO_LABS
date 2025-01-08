@@ -1,78 +1,57 @@
 package com.example.controller;
 
-import com.example.model.User;
-import com.example.repository.UserRepository;
-import com.example.util.TokenProvider;
-import jakarta.servlet.http.HttpSession;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.dto.ResponseDTO;
+import com.example.dto.UserDTO;
+import com.example.service.AuthService;
+import com.example.service.AuthTokens;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.jsonwebtoken.security.Keys;
-import java.security.Key;
-import java.util.Date;
-
 
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-        private final TokenProvider tokenProvider;
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
+    private final AuthService authService;
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
-    private final long expTime = 3600000;
 
-    @Autowired
-    public AuthController(UserRepository userRepository,
-                          PasswordEncoder passwordEncoder,
-                          TokenProvider tokenProvider) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.tokenProvider = tokenProvider;
+    public AuthController(AuthService authService) {
+        this.authService = authService;
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody AuthRequest req) {
-        logger.info("Register attempt for username: {}", req.getUsername());
-        if (userRepository.findByUsername(req.getUsername()) != null) {
-            logger.warn("Registration failed: User {} already exists", req.getUsername());
-            return ResponseEntity.badRequest().body("Пользователь уже существует");
+    public ResponseEntity<ResponseDTO<String>> register(@RequestBody UserDTO req) {
+        ResponseDTO<String> result = authService.register(req);
+        if ("Пользователь уже существует".equals(result.getMessage())) {
+            return ResponseEntity.badRequest().body(result);
         }
-        
-        User newUser = new User(req.getUsername(), passwordEncoder.encode(req.getPassword()));
-        userRepository.save(newUser);
-        logger.info("User {} registered successfully", req.getUsername());
-        return ResponseEntity.ok("Пользователь зарегистрирован");
+        return ResponseEntity.ok(result);
     }
 
-   @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody AuthRequest req) {
-        logger.info("Login attempt for username: {}", req.getUsername());
-        User user = userRepository.findByUsername(req.getUsername());
-        if (user == null) {
-            logger.warn("Login failed: No such user {}", req.getUsername());
-            return ResponseEntity.badRequest().body("Нет такого пользователя");
+     @PostMapping("/login")
+    public ResponseEntity<ResponseDTO<AuthTokens>> login(@RequestBody AuthRequest req) {
+        ResponseDTO<AuthTokens> result = authService.login(req.getUsername(), req.getPassword());
+        if ("Нет такого пользователя".equals(result.getMessage())) {
+            return ResponseEntity.badRequest().body(result);
         }
-        if (passwordEncoder.matches(req.getPassword(), user.getPassword())) {
-            String token = tokenProvider.generateToken(user.getUsername());
-            logger.info("User {} logged in successfully", req.getUsername());
-            return ResponseEntity.ok(token);
-        } else {
-            logger.warn("Login failed: Incorrect password for user {}", req.getUsername());
-            return ResponseEntity.status(401).body("Неверный пароль");
+        if ("Неверный пароль".equals(result.getMessage())) {
+            return ResponseEntity.status(401).body(result);
         }
+        return ResponseEntity.ok(result);
     }
-
     @GetMapping("/logout")
-    public ResponseEntity<String> logout(HttpSession session) {
-        logger.info("Logout attempt");
-        session.invalidate();
-        logger.info("Session invalidated");
-        return ResponseEntity.ok("Сессия завершена");
+    public ResponseEntity<ResponseDTO<String>> logout(HttpSession session) {
+        ResponseDTO<String> result = authService.logout(session);
+        return ResponseEntity.ok(result);
+    }
+    @PostMapping("/refresh")
+    public ResponseEntity<ResponseDTO<AuthTokens>> refresh(@RequestBody RefreshRequest req) {
+        ResponseDTO<AuthTokens> result = authService.refresh(req.getRefreshToken());
+        if ("Refresh token invalid or expired".equals(result.getMessage())) {
+            return ResponseEntity.status(401).body(result);
+        }
+        return ResponseEntity.ok(result);
     }
 
     public static class AuthRequest {
@@ -81,16 +60,15 @@ public class AuthController {
 
         public AuthRequest() {}
 
-        public String getUsername() {
-            return username;
-        }
-
+        public String getUsername() { return username; }
         public void setUsername(String username) { this.username = username; }
-
-        public String getPassword() {
-            return password;
-        }
-
+        public String getPassword() { return password; }
         public void setPassword(String password) { this.password = password; }
+    }
+    public static class RefreshRequest {
+        private String refreshToken;
+        public RefreshRequest() {}
+        public String getRefreshToken() { return refreshToken; }
+        public void setRefreshToken(String refreshToken) { this.refreshToken = refreshToken; }
     }
 }
