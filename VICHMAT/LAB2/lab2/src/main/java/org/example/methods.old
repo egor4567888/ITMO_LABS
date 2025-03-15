@@ -1,0 +1,154 @@
+package org.example;
+
+import java.util.function.Function;
+
+public class Methods {
+
+    public static MethodResult bisectionMethod(Function<Double, Double> f, double a, double b, double epsilon) {
+        double c = 0;
+        int iterations = 0;
+        while ((b - a) >= epsilon) {
+            iterations++;
+            c = (a + b) / 2;
+            if (f.apply(c) == 0.0) {
+                break;
+            } else if (f.apply(c) * f.apply(a) < 0) {
+                b = c;
+            } else {
+                a = c;
+            }
+        }
+        return new MethodResult(c, f.apply(c), iterations);
+    }
+
+    public static MethodResult chordMethod(Function<Double, Double> f, double a, double b, double epsilon) {
+        double x = 0;
+        int iterations = 0;
+        while (true) {
+            iterations++;
+            x = a - (f.apply(a) * (b - a)) / (f.apply(b) - f.apply(a));
+            if (Math.abs(f.apply(x)) < epsilon) {
+                break;
+            }
+            if (f.apply(a) * f.apply(x) < 0) {
+                b = x;
+            } else {
+                a = x;
+            }
+        }
+        return new MethodResult(x, f.apply(x), iterations);
+    }
+
+    public static MethodResult simpleIteration(Function<Double, Double> phi, Function<Double, Double> f, double x0, double epsilon) {
+        double x1;
+        int iterations = 0;
+        while (true) {
+            iterations++;
+            x1 = phi.apply(x0);
+            if (Math.abs(x1 - x0) < epsilon) {
+                break;
+            }
+            x0 = x1;
+        }
+        return new MethodResult(x1, f.apply(x1), iterations);
+    }
+
+    public static MethodResult secantMethod(Function<Double, Double> f, double x0, double x1, double epsilon) {
+        double x2;
+        int iterations = 0;
+        while (true) {
+            iterations++;
+            x2 = x1 - (f.apply(x1) * (x1 - x0)) / (f.apply(x1) - f.apply(x0));
+            if (Math.abs(x2 - x1) < epsilon) {
+                break;
+            }
+            x0 = x1;
+            x1 = x2;
+        }
+        return new MethodResult(x2, f.apply(x2), iterations);
+    }
+
+    public static MethodResult newtonMethod(Function<Double, Double> f, Function<Double, Double> df, double x0, double epsilon) {
+        double x1;
+        int iterations = 0;
+        while (true) {
+            iterations++;
+            double fx = f.apply(x0);
+            double dfx = df.apply(x0);
+            x1 = x0 - fx / dfx;
+            if (Math.abs(x1 - x0) < epsilon) {
+                break;
+            }
+            x0 = x1;
+        }
+        return new MethodResult(x1, f.apply(x1), iterations);
+    }
+
+    // Методы, принимающие объект UserInputData:
+    public static MethodResult bisectionMethod(UserInputData input) {
+        return bisectionMethod(
+                input.getFunction().getFunction(),
+                input.getA(),
+                input.getB(),
+                input.getEpsilon()
+        );
+    }
+
+    public static MethodResult chordMethod(UserInputData input) {
+        return chordMethod(
+                input.getFunction().getFunction(),
+                input.getA(),
+                input.getB(),
+                input.getEpsilon()
+        );
+    }
+
+    public static MethodResult simpleIteration(UserInputData input) {
+        double a = input.getA();
+        double b = input.getB();
+        // Вычисляем производные в концах интервала
+        double fpa = input.getFunction().getDerivative().apply(a);
+        double fpb = input.getFunction().getDerivative().apply(b);
+        double lambda;
+        if (fpa > 0 && fpb > 0) {
+            lambda = -1.0 / Math.max(Math.abs(fpa), Math.abs(fpb));
+        } else if (fpa < 0 && fpb < 0) {
+            lambda = 1.0 / Math.max(Math.abs(fpa), Math.abs(fpb));
+        } else {
+            throw new IllegalArgumentException("Не выполнено условие для выбора lambda у метода простой итерации.");
+        }
+        // Проверка условия сходимости: max(|phi'(a)|,|phi'(b)|) = max(|1+lambda*f'(a)|, |1+lambda*f'(b)|) < 1 - eps
+        double phiPrimeA = Math.abs(1 + lambda * fpa);
+        double phiPrimeB = Math.abs(1 + lambda * fpb);
+        double maxPhiPrime = Math.max(phiPrimeA, phiPrimeB);
+        if (maxPhiPrime >= 1 - input.getEpsilon()) {
+            throw new IllegalArgumentException("Условие сходимости метода простой итерации не выполнено: max(|phi'(a)|,|phi'(b)|) = " +
+                    maxPhiPrime + " >= " + (1 - input.getEpsilon()));
+        }
+        Function<Double, Double> phi = x -> x + lambda * input.getFunction().getFunction().apply(x);
+        return simpleIteration(
+                phi,
+                input.getFunction().getFunction(),
+                input.getX0(),
+                input.getEpsilon()
+        );
+    }
+
+    public static MethodResult secantMethod(UserInputData input) {
+        return secantMethod(
+                input.getFunction().getFunction(),
+                input.getX0(),
+                input.getX1(),
+                input.getEpsilon()
+        );
+    }
+
+    public static MethodResult newtonMethod(UserInputData input) {
+        return newtonMethod(
+                input.getFunction().getFunction(),
+                input.getFunction().getDerivative(),
+                input.getX0(),
+                input.getEpsilon()
+        );
+    }
+}

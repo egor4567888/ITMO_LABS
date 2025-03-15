@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Нахождение корня функции</title>
+</head>
+<body>
+    <h2>Нахождение корня одномерной функции</h2>
+    <form action="/solve" method="post">
+        <label for="function">Выберите функцию:</label>
+        <select id="function" name="function">
+            <option th:each="func : ${functions}"
+                    th:value="${func.ordinal() + 1}"
+                    th:text="${func.description}"></option>
+        </select>
+        <br/><br/>
+        <label for="method">Выберите метод:</label>
+        <select id="method" name="method">
+            <option th:each="met : ${methods}"
+                    th:value="${met.ordinal() + 1}"
+                    th:text="${met.description}"></option>
+        </select>
+        <br/><br/>
+        <label>Введите начало интервала (a):</label>
+        <input type="text" name="a" required>
+        <br/><br/>
+        <label>Введите конец интервала (b):</label>
+        <input type="text" name="b" required>
+        <br/><br/>
+        <label>Введите x₀ (для метода Ньютона и метода секущих):</label>
+        <input type="text" name="x0">
+        <br/><br/>
+        <label>Введите x₁ (для метода секущих):</label>
+        <input type="text" name="x1">
+        <br/><br/>
+        <label>Введите допустимую погрешность:</label>
+        <input type="text" name="epsilon" required>
+        <br/><br/>
+        <button type="submit">Найти корень</button>
+    </form>
+    
+    <br/>
+    <div th:if="${error != null}">
+        <h3 style="color: red;">Ошибка одномерного уравнения:</h3>
+        <p th:text="${error}"></p>
+    </div>
+    
+    <div th:if="${result != null}">
+        <h3>Результаты одномерного уравнения:</h3>
+        <p>Найденный корень: <span th:text="${result.root}"></span></p>
+        <p>Значение функции в корне: <span th:text="${result.functionValue}"></span></p>
+        <p>Количество итераций: <span th:text="${result.iterations}"></span></p>
+        <h3>График функции:</h3>
+        <img th:src="@{${chartUrl}}" alt="График функции" />
+    </div>
+    
+    <hr/>
+    
+    <h2>Нахождение корня системы уравнений методом простых итераций</h2>
+    <form action="/solveSystem" method="post">
+        <label for="system">Выберите систему уравнений:</label>
+        <select id="system" name="system">
+            <option th:each="sys : ${systems}"
+                    th:value="${sys.ordinal() + 1}"
+                    th:text="${sys.description}"></option>
+        </select>
+        <br/><br/>
+        <label>Введите начальное приближение x:</label>
+        <input type="text" name="x0sys" required>
+        <br/><br/>
+        <label>Введите начальное приближение y:</label>
+        <input type="text" name="y0sys" required>
+        <br/><br/>
+        <label>Введите допустимую погрешность:</label>
+        <input type="text" name="epsSys" required>
+        <br/><br/>
+        <button type="submit">Найти корень системы</button>
+    </form>
+    
+    <br/>
+    <div th:if="${errorSystem != null}">
+        <h3 style="color: red;">Ошибка системы:</h3>
+        <p th:text="${errorSystem}"></p>
+    </div>
+    
+    <div th:if="${systemResult != null}">
+        <h3>Результаты системы уравнений:</h3>
+        <p>Найденный корень x: <span th:text="${systemResult.x}"></span></p>
+        <p>Найденный корень y: <span th:text="${systemResult.y}"></span></p>
+        <p>Количество итераций: <span th:text="${systemResult.iterations}"></span></p>
+        <p>Погрешность по x: <span th:text="${systemResult.errorX}"></span></p>
+        <p>Погрешность по y: <span th:text="${systemResult.errorY}"></span></p>
+        <h3>3D-график системы:</h3>
+        <img th:src="@{${chart3dUrl}}" alt="3D-график системы" />
+    </div>
+</body>
+</html>

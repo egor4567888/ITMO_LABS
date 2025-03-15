@@ -35,7 +35,7 @@ public class User {
         return password;
     }
 
-    // Можно удалить целиком или оставить, если потребуются другие сценарии
+
     public static String hashPassword(String raw) {
         return BCrypt.hashpw(raw, BCrypt.gensalt());
     }
